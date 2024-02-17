@@ -3,8 +3,8 @@
 Rolls & Rolls Restaurant 
 Web Application
 
-Anthony Hu (Frontend Development)
-Jamie Choi (Backend & Database Development)
+Anthony Hu (Frontend Development),
+Jamie Choi (Backend & Database Development),
 Andrew Nguyen (Project Manager)
 
 
