@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { Architects_Daughter, Fredoka } from "next/font/google";
+import { Architects_Daughter } from "next/font/google";
+import "./hero.css";
 import Link from "next/link";
 const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
   weight: ["400"],
 });
 
-const fredoka = Fredoka({ subsets: ["latin"] });
 export default function Hero() {
   return (
     <section className="hero-section">

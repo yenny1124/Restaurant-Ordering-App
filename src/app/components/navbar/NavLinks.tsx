@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { Fredoka } from "next/font/google";
-const fredoka = Fredoka({ subsets: ["latin"] });
 
 export default function NavLinks() {
   return (
-    <nav className={`navbar-links ${fredoka.className}`}>
+    <nav className={`navbar-links`}>
       <Link href="/menu" className="navbar-link">
         Menu
       </Link>

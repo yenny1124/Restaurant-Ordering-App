@@ -1,0 +1,174 @@
+.hero-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 819px) {
+  .hero-section div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .hero-section div h1 {
+    font-size: 44px;
+    text-align: center;
+    color: black;
+    margin-bottom: 0;
+    line-height: 56px;
+    margin-top: 15px;
+  }
+
+  .hero-section div h3 {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  .hero-section div h4 {
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+  }
+
+  .hero-section div a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    background-color: black;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin: 18.72px;
+    margin-top: 30px;
+  }
+  .hero-section div img {
+    margin-top: -50px;
+    margin-bottom: -25px;
+    display: block;
+  }
+
+  .hero-section img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 820px) and (max-width: 1199px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+  }
+  .hero-section div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 25px;
+  }
+  .hero-section img {
+    width: 60%;
+    height: 45%;
+  }
+  .hero-section div img {
+    margin-top: -50px;
+    margin-bottom: -25px;
+    display: none;
+  }
+  .hero-section div h1 {
+    font-size: 44px;
+    text-align: center;
+    color: black;
+    margin-bottom: 0;
+    line-height: 56px;
+    margin-top: 15px;
+  }
+
+  .hero-section div h3 {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  .hero-section div h4 {
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .hero-section div a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    background-color: black;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin: 18.72px;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+  }
+  .hero-section div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .hero-section div img {
+    margin-top: -50px;
+    margin-bottom: -25px;
+    display: none;
+  }
+  .hero-section img {
+    width: 45%;
+    height: 30%;
+  }
+
+  .hero-section div h1 {
+    font-size: 44px;
+    text-align: center;
+    color: black;
+    margin-bottom: 0;
+    line-height: 56px;
+    margin-top: 15px;
+  }
+
+  .hero-section div h3 {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+  }
+  .hero-section div h4 {
+    color: black;
+    margin: 10px;
+    font-weight: bold;
+  }
+
+  .hero-section div a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    background-color: black;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    margin: 18.72px;
+    margin-top: 30px;
+  }
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import "./navbar.css";
 import HamburgerIcon from "./HamburgerIcon";
 import HamburgerMenu from "./HamburgerMenu";
 import RestaurantLogo from "./RestaurantLogo";

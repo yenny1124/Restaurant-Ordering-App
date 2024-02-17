@@ -1,12 +1,10 @@
 import Link from "next/link";
-import { Fredoka } from "next/font/google";
-const fredoka = Fredoka({ subsets: ["latin"] });
 export default function HamburgerMenu() {
   return (
     <div className="hamburger-menu">
       <div className="hamburger-top"></div>
 
-      <nav className={`burger-links ${fredoka.className}`}>
+      <nav className={`burger-links`}>
         <Link href="/" className="burger-link">
           <svg
             className="navbar-icon"
