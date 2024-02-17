@@ -28,6 +28,7 @@
   --background-color: #fff3e2;
   --background-color-2: #ffe5ca;
   --logo-red: #ed1c24;
+  --footer-height: 300px;
   /*
   #fff5e0 yellowish off-white
   FFEADD
@@ -43,4 +44,14 @@ body {
   padding: 0;
   color: rgb(var(--foreground-rgb));
   background-color: var(--background-color);
+}
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+main {
+  height: 100%;
+  padding-bottom: var(--footer-height);
 }

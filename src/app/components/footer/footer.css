@@ -1,5 +1,35 @@
 footer {
-  height: 200px;
   background-color: black;
   width: 100%;
+  color: white;
+  height: var(--footer-height);
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 90%;
+}
+
+.footer-content div {
+  padding-top: 12px;
+  position: relative;
+  font-size: 36px;
+}
+
+.copyright {
+  position: relative;
+  width: 100%;
+  height: 10%;
+  padding: 0;
+  margin: 0;
+}
+
+.copyright p {
+  text-align: center;
+  padding: 0;
+  margin: 0;
 }

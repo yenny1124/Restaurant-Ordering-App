@@ -14,7 +14,7 @@
   height: calc(var(--navbar-height) * var(--navbar-ratio));
   z-index: 10;
   padding: 0px calc(var(--navbar-height) * 0.25);
-  box-sizing: border-box; /** add this **/
+  box-sizing: border-box;
 }
 
 .burger-icon {
