@@ -9,8 +9,8 @@ export default function Footer() {
     <footer>
       <div className={`footer-content ${architectsDaughter.className}`}>
         <div>Address</div>
-        <div>Follow Us!</div>
-        <div>Hours</div>
+        <div>Opening Hours</div>
+        <div>Contacts</div>
       </div>
 
       <div className="copyright">

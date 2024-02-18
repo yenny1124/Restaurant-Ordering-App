@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Fredoka } from "next/font/google";
 import Footer from "./components/footer/Footer";
+import NavBar from "./components/navbar/NavBar";
 const fredoka = Fredoka({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -17,6 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={fredoka.className}>
+        <NavBar />
         {children}
         <Footer />
       </body>

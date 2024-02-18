@@ -17,14 +17,20 @@ export default function Hero() {
           Rolls&nbsp;&&nbsp;Rolls
         </h1>
         <Image src="/sushi.png" width={250} height={250} alt="" />
-        <h4 className={architectsDaughter.className}>Experience</h4>
-        <h3 className={architectsDaughter.className}>
+        <p
+          className={architectsDaughter.className}
+          style={{ margin: "10px", fontSize: "20px" }}
+        >
+          <b>Experience</b>
+        </p>
+        <p className={architectsDaughter.className}>
           New Artistry of Sushi,
           <br />
           New Journey of Flavors!
-        </h3>
-        <h3 className={architectsDaughter.className}></h3>
-        <Link href="order-online">Order Now!</Link>
+        </p>
+        <Link href="order-online" className="invert">
+          Order Now!
+        </Link>
       </div>
       <Image src="/sushiplatter.png" width={450} height={300} alt="" />
     </section>

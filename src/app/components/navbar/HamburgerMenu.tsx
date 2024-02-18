@@ -53,7 +53,7 @@ export default function HamburgerMenu() {
           </svg>
           About
         </Link>
-        <Link href="/order-online" className="burger-link">
+        <Link href="/order" className="burger-link">
           <svg
             className="navbar-icon"
             viewBox="0 0 24 24"
@@ -69,7 +69,7 @@ export default function HamburgerMenu() {
           </svg>
           Order Online
         </Link>
-        <Link href="/book-table" className="burger-link">
+        <Link href="/booktable" className="burger-link">
           <svg
             className="navbar-icon"
             viewBox="0 0 24 24"
@@ -85,7 +85,7 @@ export default function HamburgerMenu() {
           </svg>
           Book Table
         </Link>
-        <Link href="" className="burger-link">
+        <Link href="contact" className="burger-link">
           <svg
             className="navbar-icon"
             viewBox="0 0 24 24"
@@ -101,7 +101,7 @@ export default function HamburgerMenu() {
           </svg>
           Contact Us
         </Link>
-        <Link href="/bruh" className="burger-link">
+        <Link href="/cart" className="burger-link">
           <svg
             className="navbar-icon"
             viewBox="0 0 24 24"

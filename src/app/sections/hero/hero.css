@@ -23,18 +23,15 @@
     margin-top: 15px;
   }
 
-  .hero-section div h3 {
+  .hero-section div p {
     color: black;
     margin: 0;
     text-align: center;
     font-size: 24px;
   }
-  .hero-section div h4 {
-    color: black;
-    margin: 10px;
-    font-weight: bold;
+  .hero-section div a:hover {
+    animation: tilt 0.2s;
   }
-
   .hero-section div a {
     text-decoration: none;
     color: white;
@@ -47,6 +44,7 @@
     margin: 18.72px;
     margin-top: 30px;
   }
+
   .hero-section div img {
     margin-top: -50px;
     margin-bottom: -25px;
@@ -89,17 +87,11 @@
     margin-top: 15px;
   }
 
-  .hero-section div h3 {
+  .hero-section div p {
     color: black;
     margin: 0;
     text-align: center;
     font-size: 24px;
-  }
-  .hero-section div h4 {
-    color: black;
-    margin: 10px;
-    font-weight: bold;
-    text-align: center;
   }
 
   .hero-section div a {
@@ -147,28 +139,30 @@
     margin-top: 15px;
   }
 
-  .hero-section div h3 {
+  .hero-section div p {
     color: black;
     margin: 0;
     text-align: center;
     font-size: 24px;
   }
-  .hero-section div h4 {
+
+  .invert:hover {
+    background-color: white;
     color: black;
-    margin: 10px;
-    font-weight: bold;
   }
 
-  .hero-section div a {
+  .hero-section a {
+    transition: background-color 0.1s box-shadow;
     text-decoration: none;
     color: white;
     display: inline-block;
-    background-color: black;
+    background-color: var(--brown);
     width: 120px;
     height: 60px;
     text-align: center;
     line-height: 60px;
     margin: 18.72px;
     margin-top: 30px;
+    box-shadow: var(--box-shadow);
   }
 }

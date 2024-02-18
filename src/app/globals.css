@@ -27,8 +27,11 @@
   --hamburger-width: 250px;
   --background-color: #fff3e2;
   --background-color-2: #ffe5ca;
+  --brown: #4e3636;
   --logo-red: #ed1c24;
   --footer-height: 300px;
+  --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
+
   /*
   #fff5e0 yellowish off-white
   FFEADD
@@ -54,4 +57,19 @@ body {
 main {
   height: 100%;
   padding-bottom: var(--footer-height);
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
