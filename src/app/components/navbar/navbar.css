@@ -63,6 +63,7 @@
   /** add this **/
   background-color: white;
   border: 4px solid black;
+  z-index: 1;
 }
 
 .hamburger-top {
@@ -80,7 +81,6 @@
 
   cursor: pointer;
 }
-
 
 .restaurant-logo {
   height: var(--navbar-height);
@@ -162,7 +162,6 @@
   padding-bottom: 12px;
 }
 
-
 .navbar-link:hover {
   background-color: var(--background-color-2);
   color: var(--logo-red);
@@ -185,8 +184,6 @@
   width: calc(var(--navbar-height) * 0.4);
   cursor: pointer;
 }
-
-
 
 @media only screen and (max-width: 819px) {
   .navbar-links {
