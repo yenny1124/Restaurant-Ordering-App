@@ -28,7 +28,7 @@ export default function Hero() {
           <br />
           New Journey of Flavors!
         </p>
-        <Link href="order-online" className="invert">
+        <Link href="order-online" >
           Order Now!
         </Link>
       </div>

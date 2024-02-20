@@ -14,6 +14,7 @@
     flex-direction: column;
     flex-wrap: wrap;
   }
+
   .hero-section div h1 {
     font-size: 44px;
     text-align: center;
@@ -29,21 +30,7 @@
     text-align: center;
     font-size: 24px;
   }
-  .hero-section div a:hover {
-    animation: tilt 0.2s;
-  }
-  .hero-section div a {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    background-color: black;
-    width: 120px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    margin: 18.72px;
-    margin-top: 30px;
-  }
+
 
   .hero-section div img {
     margin-top: -50px;
@@ -62,6 +49,7 @@
     justify-content: space-evenly;
     margin-top: 50px;
   }
+
   .hero-section div {
     display: flex;
     flex-direction: column;
@@ -69,15 +57,18 @@
     align-items: center;
     margin-left: 25px;
   }
+
   .hero-section img {
     width: 60%;
     height: 45%;
   }
+
   .hero-section div img {
     margin-top: -50px;
     margin-bottom: -25px;
     display: none;
   }
+
   .hero-section div h1 {
     font-size: 44px;
     text-align: center;
@@ -94,18 +85,7 @@
     font-size: 24px;
   }
 
-  .hero-section div a {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    background-color: black;
-    width: 120px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    margin: 18.72px;
-    margin-top: 30px;
-  }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -114,17 +94,20 @@
     justify-content: space-evenly;
     margin-top: 50px;
   }
+
   .hero-section div {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
   }
+
   .hero-section div img {
     margin-top: -50px;
     margin-bottom: -25px;
     display: none;
   }
+
   .hero-section img {
     width: 45%;
     height: 30%;
@@ -146,23 +129,26 @@
     font-size: 24px;
   }
 
-  .invert:hover {
-    background-color: white;
-    color: black;
-  }
 
-  .hero-section a {
-    transition: background-color 0.1s box-shadow;
-    text-decoration: none;
-    color: white;
-    display: inline-block;
-    background-color: var(--brown);
-    width: 120px;
-    height: 60px;
-    text-align: center;
-    line-height: 60px;
-    margin: 18.72px;
-    margin-top: 30px;
-    box-shadow: var(--box-shadow);
-  }
+
+
+}
+
+.hero-section div a:hover {
+  animation: tilt 0.2s;
+
+}
+
+.hero-section a {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  background-color: var(--brown);
+  width: 120px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px;
+  margin: 18.72px;
+  margin-top: 30px;
+  box-shadow: var(--box-shadow);
 }

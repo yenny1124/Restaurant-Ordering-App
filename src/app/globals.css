@@ -9,25 +9,21 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
+  --primary-glow: conic-gradient(from 180deg at 50% 50%,
+      #16abff33 0deg,
+      #0885ff33 55deg,
+      #54d6ff33 120deg,
+      #0071ff33 160deg,
+      transparent 360deg);
+  --secondary-glow: radial-gradient(rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0));
 
   --navbar-height: 75px;
   --navbar-ratio: 1.5;
   --hamburger-width: 250px;
   --background-color: #fff3e2;
   --background-color-2: #ffe5ca;
-  --brown: #4e3636;
+  --brown: #8d5f5f;
   --logo-red: #ed1c24;
   --footer-height: 300px;
   --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -63,12 +59,15 @@ main {
   0% {
     transform: rotate(0);
   }
+
   25% {
     transform: rotate(5deg);
   }
+
   75% {
     transform: rotate(-5deg);
   }
+
   100% {
     transform: rotate(0);
   }
