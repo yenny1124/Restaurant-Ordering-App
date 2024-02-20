@@ -1,13 +1,15 @@
 import Image from "next/image";
-import { Architects_Daughter } from "next/font/google";
-import "./hero.css";
+import "./herosection.css";
 import Link from "next/link";
+import LinkButton from "@/app/components/linkbutton/LinkButton";
+import { Architects_Daughter } from "next/font/google";
+
 const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
   weight: ["400"],
 });
 
-export default function Hero() {
+export default function HeroSection() {
   return (
     <section className="hero-section">
       <div>
@@ -28,9 +30,7 @@ export default function Hero() {
           <br />
           New Journey of Flavors!
         </p>
-        <Link href="order-online" >
-          Order Now!
-        </Link>
+        <LinkButton link="order-online" text="Order Now!" />
       </div>
       <Image src="/sushiplatter.png" width={450} height={300} alt="" />
     </section>

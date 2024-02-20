@@ -1,0 +1,45 @@
+.about-section {
+  --about-section-height: 720px;
+  height: var(--about-section-height);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.about-section-contents {
+  height: var(--about-section-height);
+  color: black;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.about-section-image {
+  position: absolute;
+  height: var(--about-section-height);
+  background-attachment: fixed;
+  width: 100%;
+  background-image: url("atmosphere.jpg");
+  background-size: 100% auto;
+  background-position-y: center;
+  filter: blur(2px);
+}
+.about-section h1 {
+  font-weight: normal;
+  font-size: 40px;
+  z-index: 1;
+}
+
+.about-section p {
+  font-weight: normal;
+  font-size: 24px;
+  z-index: 1;
+}
+
+@media (max-width: 1200px) {
+  .about-section-image {
+    background-size: auto 100%;
+  }
+}

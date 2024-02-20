@@ -2,7 +2,9 @@
   position: relative;
   height: 180px;
   width: 320px;
-  border: double rgb(73, 63, 2) 4px;
+  border: double var(--brown) 4px;
+  background-color: white;
+  margin: 6px;
 }
 
 .menu-item-image {
@@ -42,7 +44,6 @@
 }
 
 .menu-item-title {
-  font-weight: bold;
   font-size: 2rem;
 }
 
@@ -61,9 +62,4 @@
 .blur-layer {
   background-color: grey;
   opacity: 80%;
-}
-
-.gallery-section {
-  height: 2000px;
-  width: 100%;
 }
