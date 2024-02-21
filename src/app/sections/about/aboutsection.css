@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   background-image: url("atmosphere.jpg");
-  background-size: 100% auto;
+  background-size: 100vh auto;
   background-repeat: repeat-y;
 }
 .about-section h1 {
@@ -40,6 +40,6 @@
 
 @media screen and (max-width: 1200px) {
   .about-section-image {
-    background-size: auto 100%;
+    background-size: auto 100vh;
   }
 }
