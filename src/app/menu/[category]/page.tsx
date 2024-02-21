@@ -32,7 +32,7 @@ export default async function Category({
   );
 }
 
-export const getItems = async () => {
+const getItems = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "force-cache",
   });

@@ -25,7 +25,7 @@ export default async function MenuNavbar() {
   );
 }
 
-export const getCategories = async () => {
+const getCategories = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "force-cache",
   });
