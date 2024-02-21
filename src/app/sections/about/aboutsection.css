@@ -23,7 +23,7 @@
   height: 100%;
   width: 100%;
   background-image: url("atmosphere.jpg");
-  background-size: 100vh auto;
+  background-size: 100vw auto;
   background-repeat: repeat-y;
 }
 .about-section h1 {
