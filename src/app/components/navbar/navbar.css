@@ -20,6 +20,7 @@
   z-index: 10;
   padding: 0px calc(var(--navbar-height) * 0.25);
   box-sizing: border-box;
+  pointer-events: none;
 }
 
 .burger-icon {
@@ -31,6 +32,7 @@
   cursor: pointer;
   box-shadow: var(--box-shadow);
   background-color: white;
+  pointer-events: auto;
 
   /*
       height: calc(var(--navbar-height) - 14px);
@@ -53,6 +55,9 @@
   .hamburger-menu {
     display: none;
   }
+  .restaurant-logo:hover {
+    animation: tilt 0.2s;
+  }
 }
 
 .hamburger-menu {
@@ -67,6 +72,7 @@
   background-color: white;
   border: 4px solid black;
   z-index: 1;
+  pointer-events: auto;
 }
 
 .hamburger-top {
@@ -89,9 +95,9 @@
   height: var(--navbar-height);
   cursor: pointer;
   box-shadow: var(--box-shadow);
-
   border-radius: 2px;
   background-color: white;
+  pointer-events: auto;
 }
 
 .show-outline {
@@ -131,6 +137,7 @@
   position: relative;
   background-color: white;
   box-shadow: var(--box-shadow);
+  pointer-events: auto;
 
   /*
     border-top: black 7px double;
@@ -196,10 +203,6 @@
   .burger-icon:active {
     opacity: 50%;
   }
-
-  .restaurant-logo:active {
-    opacity: 50%;
-  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -214,4 +217,8 @@
 
 .on-screen {
   transform: translateX(0%);
+}
+
+.restaurant-logo:active {
+  opacity: 50%;
 }

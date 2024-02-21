@@ -42,7 +42,7 @@
   .hero-section {
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 50px;
+    padding-top: 50px;
   }
 
   .hero-section div {
@@ -76,7 +76,7 @@
   .hero-section {
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top: 50px;
+    padding-top: 50px;
   }
 
   .hero-section div {
