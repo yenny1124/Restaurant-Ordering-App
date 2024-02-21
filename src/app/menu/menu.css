@@ -8,23 +8,44 @@
   justify-content: center;
 }
 
-.menu-navbar-content button {
-  background-color: white;
-  border: none;
-  cursor: pointer;
-  font: inherit;
+.menu-navbar-content {
+  width: 100%;
 }
 
-.menu-navbar-content button:hover {
-  background-color: var(--brown);
+.menu-navbar-content div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-navbar-content a {
+  background-color: var(--background-color-2);
+  border: black 1px solid;
   cursor: pointer;
   font: inherit;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+}
+
+.menu-navbar-content a:hover {
+  background-color: var(--brown);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-navbar-content div {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: left;
+    align-items: left;
+  }
 }
 
 .menu-content {
   display: flex;
-  overflow: hidden;
   width: 100%;
+  overflow-x: scroll;
 }
 
 .menu-category {

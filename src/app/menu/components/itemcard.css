@@ -1,0 +1,7 @@
+.item-card {
+  width: 200px;
+  height: 200px;
+  background-color: aquamarine;
+  border: black 1px solid;
+  overflow: hidden;
+}

@@ -1,0 +1,7 @@
+.category-page {
+}
+
+.category-page div {
+  display: flex;
+  flex-wrap: wrap;
+}
