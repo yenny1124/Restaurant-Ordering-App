@@ -1,7 +1,9 @@
 import Link from "next/link";
-export default function HamburgerMenu() {
+import { useRef, useState, forwardRef } from "react";
+
+export default function HamburgerMenu(props: any) {
   return (
-    <div className="hamburger-menu">
+    <div className={`hamburger-menu ${props.className}`}>
       <div className="hamburger-top"></div>
 
       <nav className={`burger-links`}>

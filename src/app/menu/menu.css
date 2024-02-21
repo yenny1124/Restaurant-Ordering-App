@@ -1,0 +1,42 @@
+.menu-main h1 {
+  text-align: center;
+}
+
+.menu-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-navbar-content button {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+}
+
+.menu-navbar-content button:hover {
+  background-color: var(--brown);
+  cursor: pointer;
+  font: inherit;
+}
+
+.menu-content {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+.menu-category {
+  height: 1000px;
+  width: 100%;
+}
+
+.menu-category-placeholder {
+  height: 1000px;
+  width: 100%;
+}
+
+.not-selected {
+  display: none;
+}

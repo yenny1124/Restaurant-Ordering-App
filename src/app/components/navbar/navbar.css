@@ -204,3 +204,11 @@
     animation: tilt 0.2s;
   }
 }
+
+.off-screen {
+  transform: translateX(-100%);
+}
+
+.on-screen {
+  transform: translateX(0%);
+}
