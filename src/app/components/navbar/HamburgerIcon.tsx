@@ -1,5 +1,3 @@
-"use client";
-
 export default function HamburgerIcon(props: any) {
   return (
     <div className="burger-icon" onClick={props.onClick}>

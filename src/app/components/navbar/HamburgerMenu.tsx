@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { useRef, useState, forwardRef } from "react";
 
 export default function HamburgerMenu(props: any) {
   return (

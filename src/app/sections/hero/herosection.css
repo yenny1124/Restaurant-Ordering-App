@@ -6,6 +6,9 @@
   flex-wrap: wrap;
   border-bottom: var(--brown) dashed 4px;
   padding-bottom: 45px;
+  position: relative;
+  z-index: 1;
+  background-color: var(--background-color);
 }
 
 @media screen and (max-width: 819px) {

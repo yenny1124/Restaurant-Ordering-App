@@ -1,5 +1,8 @@
 .navbar {
   display: flex;
+  position: relative;
+  z-index: 10;
+  background-color: var(--background-color);
 }
 
 .navbar-placeholder {
@@ -24,7 +27,7 @@
   transition: background-color 0.25s;
   height: var(--navbar-height);
   width: var(--navbar-height);
-  z-index: 20;
+  z-index: 1;
   cursor: pointer;
   box-shadow: var(--box-shadow);
   background-color: white;

@@ -18,14 +18,13 @@
   justify-content: center;
 }
 .about-section-image {
-  position: absolute;
-  height: var(--about-section-height);
-  background-attachment: fixed;
+  position: fixed;
+  top: 0%;
+  height: 100%;
   width: 100%;
   background-image: url("atmosphere.jpg");
   background-size: 100% auto;
-  background-position-y: center;
-  filter: blur(2px);
+  background-repeat: repeat-y;
 }
 .about-section h1 {
   font-weight: normal;
@@ -39,7 +38,7 @@
   z-index: 1;
 }
 
-@media (max-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .about-section-image {
     background-size: auto 100%;
   }
