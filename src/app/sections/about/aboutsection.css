@@ -32,7 +32,7 @@
   z-index: 1;
   position: relative;
   color: black;
-  background-color: var(--background-color);
+  background-color: white;
   padding: 0px 10px;
   box-shadow: var(--box-shadow);
 }
