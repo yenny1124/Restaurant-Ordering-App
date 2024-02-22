@@ -6,11 +6,11 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <div className="navbar-placeholder"></div>
+      <div className="section-buffer"></div>
       <GallerySection />
       <AboutSection />
       <LocationSection />
-      <div className="navbar-placeholder"></div>
+      <div className="section-buffer"></div>
     </main>
   );
 }

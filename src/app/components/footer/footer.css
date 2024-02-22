@@ -6,6 +6,8 @@ footer {
   height: var(--footer-height);
   position: absolute;
   bottom: 0;
+  box-shadow: var(--section-box-shadow);
+  z-index: 1;
 }
 
 .footer-content {

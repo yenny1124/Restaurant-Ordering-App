@@ -29,6 +29,7 @@
   --background-color-2: #ffe5ca;
   --brown: #8d5f5f;
   --logo-red: #ed1c24;
+  --blue: #421919;
   --footer-height: 300px;
   --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
   --section-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16),
@@ -64,6 +65,34 @@ p {
 body {
   min-height: 100vh;
   position: relative;
+}
+
+.section-buffer {
+  width: 200%;
+  left: -100%;
+  height: calc(var(--navbar-height) * var(--navbar-ratio));
+  background-color: var(--background-color);
+  position: relative;
+  z-index: 1;
+  background-image: url("/sushiicon.png");
+  /*
+ NEED TO ADD ATTRIBUTION FROM HERE LATERhttps://www.flaticon.com/free-icon/sushi_2252075?related_id=2252071&origin=search
+  */
+  background-size: auto 100%;
+  background-repeat: space;
+  animation: conveyor 20s linear infinite;
+}
+
+@keyframes conveyor {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @media screen and (max-width: 767px) {
