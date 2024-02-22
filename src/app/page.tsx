@@ -6,7 +6,6 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <div className="section-buffer"></div>
       <GallerySection />
       <AboutSection />
       <LocationSection />

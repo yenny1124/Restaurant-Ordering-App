@@ -31,8 +31,8 @@
   font-size: 2.5rem;
   z-index: 1;
   position: relative;
-  color: white;
-  background-color: var(--logo-red);
+  color: black;
+  background-color: var(--background-color);
   padding: 0px 10px;
   box-shadow: var(--box-shadow);
 }

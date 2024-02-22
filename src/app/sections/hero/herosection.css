@@ -5,9 +5,8 @@
   flex-wrap: wrap;
   padding-bottom: 45px;
   position: relative;
-  z-index: 3;
+  z-index: 4;
   background-color: var(--background-color);
-  box-shadow: var(--section-box-shadow);
 }
 
 .hero-section h1 {
