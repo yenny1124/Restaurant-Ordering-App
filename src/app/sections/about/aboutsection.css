@@ -1,6 +1,5 @@
 .about-section {
-  --about-section-height: 720px;
-  height: var(--about-section-height);
+  height: 540px;
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -8,7 +7,7 @@
 }
 
 .about-section-contents {
-  height: var(--about-section-height);
+  height: 100%;
   color: black;
 
   width: 100%;
@@ -26,6 +25,7 @@
   background-size: 100vw auto;
   background-repeat: repeat-y;
 }
+
 .about-section h1 {
   font-weight: normal;
   font-size: 40px;
@@ -38,7 +38,7 @@
   z-index: 1;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1079px) {
   .about-section-image {
     background-size: auto 100vh;
   }
