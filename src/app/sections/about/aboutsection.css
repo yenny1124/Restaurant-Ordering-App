@@ -4,12 +4,12 @@
   overflow: hidden;
   position: relative;
   z-index: 0;
+  box-shadow: var(--section-box-shadow);
 }
 
 .about-section-contents {
   height: 100%;
-  color: black;
-
+  color: white;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -28,14 +28,66 @@
 
 .about-section h1 {
   font-weight: normal;
-  font-size: 40px;
+  font-size: 2.5rem;
   z-index: 1;
+  position: relative;
+  color: white;
+  background-color: var(--logo-red);
+  padding: 0px 10px;
+  box-shadow: var(--box-shadow);
+}
+
+.rolling-text {
+  font-weight: normal;
+  font-size: 2.5rem;
+  z-index: -1;
+  position: absolute;
+  left: 0px;
+  transform-origin: bottom left;
+  transition: transform 2s;
+  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.delay-1 {
+  top: -1px;
+  animation: roll-animation 3s linear 0.05s infinite;
+  color: var(--background-color);
+}
+.delay-2 {
+  top: -2px;
+  animation: roll-animation 3s linear 0.1s infinite;
+  color: var(--background-color-2);
+}
+.delay-3 {
+  top: -3px;
+  animation: roll-animation 3s linear 0.15s infinite;
+  color: var(--brown);
+}
+.delay-4 {
+  top: -4px;
+  animation: roll-animation 3s linear 0.2s infinite;
+  color: var(--logo-red);
 }
 
 .about-section p {
   font-weight: normal;
-  font-size: 24px;
+  font-size: 1.5rem;
   z-index: 1;
+  text-align: center;
+  padding: 0px 12px;
+  text-shadow: 2px 2px black;
+}
+
+@keyframes roll-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 @media screen and (max-width: 1079px) {

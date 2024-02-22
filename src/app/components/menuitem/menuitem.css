@@ -1,9 +1,10 @@
 .menu-item-box {
   position: relative;
-
-  border: double var(--brown) 4px;
-  background-color: white;
   margin: 6px;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  border-width: 3px 3px 5px 5px;
+  border: black solid;
 }
 
 @media screen and (max-width: 1079px) {
@@ -79,6 +80,7 @@
 }
 
 .blur-layer {
-  background-color: grey;
-  opacity: 80%;
+  background-color: #ffffff;
+  opacity: 60%;
+  border-radius: var(--border-radius);
 }

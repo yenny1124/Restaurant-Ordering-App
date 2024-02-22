@@ -4,9 +4,13 @@ export default function AboutSection() {
     <section className="about-section">
       <div className="about-section-contents">
         <div className="about-section-image"></div>
-        <h1>Rolls and Rolls</h1>
-        <p>is a restaurant located in bellevue</p>
-        <div className="blur-box"></div>
+        <h1 className="text-pulse">rolls & rolls</h1>
+
+        <p>
+          lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam
+          lacus in ante hendrerit, ut lobortis tellus rutrum. Mauris imperdiet
+          ac lectus sed accumsan.
+        </p>
       </div>
     </section>
   );

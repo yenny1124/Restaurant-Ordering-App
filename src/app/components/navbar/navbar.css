@@ -2,12 +2,12 @@
   display: flex;
   position: relative;
   z-index: 10;
-  background-color: var(--background-color);
 }
 
 .navbar-placeholder {
   width: 100%;
   height: calc(var(--navbar-height) * var(--navbar-ratio));
+  background-color: var(white);
 }
 
 .navbar-contents {

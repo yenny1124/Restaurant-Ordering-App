@@ -25,17 +25,21 @@
   --navbar-height: 75px;
   --navbar-ratio: 1.5;
   --hamburger-width: 250px;
-  --background-color: #fff3e2;
+  --background-color: #fff5ef;
   --background-color-2: #ffe5ca;
   --brown: #8d5f5f;
   --logo-red: #ed1c24;
   --footer-height: 300px;
   --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
+  --section-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16),
+    0 4px 4px rgba(0, 0, 0, 0.2), 0 -4px 4px rgba(0, 0, 0, 0.2),
+    0 -8px 18px rgba(0, 0, 0, 0.16);
 
+  --border-radius: 3% 92% 4% 95%/95% 3% 92% 2%;
   /*
   #fff5e0 yellowish off-white
   FFEADD
-  FFF3E2
+  FFF3E2 VERSION 1
   */
 }
 
