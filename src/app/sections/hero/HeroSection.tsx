@@ -19,11 +19,8 @@ export default function HeroSection() {
           Rolls&nbsp;&&nbsp;Rolls
         </h1>
         <Image src="/sushi.png" width={250} height={250} alt="" />
-        <p
-          className={architectsDaughter.className}
-          style={{ margin: "10px", fontSize: "20px" }}
-        >
-          <b>Experience</b>
+        <p className={`${architectsDaughter.className} special-paragraph`}>
+          Experience
         </p>
         <p className={architectsDaughter.className}>
           New Artistry of Sushi,

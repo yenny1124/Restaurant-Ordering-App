@@ -2,7 +2,6 @@
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: column;
   flex-wrap: wrap;
   border-bottom: var(--brown) dashed 4px;
   padding-bottom: 45px;
@@ -11,20 +10,23 @@
   background-color: var(--background-color);
 }
 
-@media screen and (max-width: 819px) {
+.hero-section h1 {
+  text-align: center;
+  color: black;
+}
+
+@media screen and (max-width: 767px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
   .hero-section div {
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     flex-wrap: wrap;
-  }
-
-  .hero-section div p {
-    color: black;
-    margin: 0;
-    text-align: center;
-    font-size: 24px;
   }
 
   .hero-section div img {
@@ -36,13 +38,29 @@
   .hero-section img {
     display: none;
   }
+
+  .hero-section h1 {
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+
+  .hero-section div p {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .hero-section div .special-paragraph {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
 }
 
-@media screen and (min-width: 820px) and (max-width: 1199px) {
+@media screen and (min-width: 768px) and (max-width: 1079px) {
   .hero-section {
     flex-direction: row;
     justify-content: space-evenly;
-    padding-top: 50px;
   }
 
   .hero-section div {
@@ -53,26 +71,38 @@
     margin-left: 25px;
   }
 
-  .hero-section img {
-    width: 60%;
-    height: 45%;
-  }
-
   .hero-section div img {
     margin-top: -50px;
     margin-bottom: -25px;
+    display: block;
+  }
+
+  .hero-section img {
+    width: 60%;
+    height: 45%;
     display: none;
+  }
+
+  .hero-section h1 {
+    margin-bottom: 0;
+    margin-top: 15px;
   }
 
   .hero-section div p {
     color: black;
     margin: 0;
     text-align: center;
-    font-size: 24px;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+  }
+
+  .hero-section div .special-paragraph {
+    font-size: 2rem;
+    font-weight: bold;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1080px) {
   .hero-section {
     flex-direction: row;
     justify-content: space-evenly;
@@ -101,15 +131,12 @@
     color: black;
     margin: 0;
     text-align: center;
-    font-size: 24px;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
   }
-}
 
-.hero-section h1 {
-  font-size: 44px;
-  text-align: center;
-  color: black;
-  margin-bottom: 0;
-  line-height: 56px;
-  margin-top: 15px;
+  .hero-section div .special-paragraph {
+    font-size: 2rem;
+    font-weight: bold;
+  }
 }

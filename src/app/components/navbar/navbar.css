@@ -47,7 +47,7 @@
   justify-content: center;
 }
 
-@media only screen and (min-width: 820px) {
+@media only screen and (min-width: 1080px) {
   .burger-icon {
     display: none;
   }
@@ -113,7 +113,7 @@
   flex-direction: row;
   align-items: center;
   border-bottom: black solid 2px;
-  font-size: 20px;
+  font-size: 1.5rem;
   color: black;
   text-decoration: none;
   text-align: center;
@@ -159,7 +159,7 @@
   display: inline-block;
   flex-direction: row;
   align-items: center;
-  font-size: 20px;
+  font-size: 1.25rem;
   text-decoration: none;
 
   margin-right: 5px;
@@ -195,19 +195,13 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 819px) {
+@media only screen and (max-width: 1079px) {
   .navbar-links {
     display: none;
   }
 
   .burger-icon:active {
     opacity: 50%;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .restaurant-logo:hover {
-    animation: tilt 0.2s;
   }
 }
 

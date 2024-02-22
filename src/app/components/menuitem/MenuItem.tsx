@@ -13,10 +13,10 @@ export default function MenuItem() {
         key={`menuItem${numItems++}`}
       >
         <div className="menu-item-title-box">
-          <span className="menu-item-title">{itemName}</span>
+          <h2 className="menu-item-title">{itemName}</h2>
         </div>
         <div className="menu-item-description-box">
-          <span className="menu-item-description">{itemDescription}</span>
+          <p className="menu-item-description">{itemDescription}</p>
         </div>
       </div>
     </div>

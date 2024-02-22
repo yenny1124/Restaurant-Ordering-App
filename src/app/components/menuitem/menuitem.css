@@ -1,16 +1,44 @@
 .menu-item-box {
   position: relative;
-  height: 180px;
-  width: 320px;
+
   border: double var(--brown) 4px;
   background-color: white;
   margin: 6px;
 }
 
+@media screen and (max-width: 1079px) {
+  .menu-item-box {
+    height: 180px;
+    width: 320px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .menu-item-box {
+    height: 225px;
+    width: 400px;
+  }
+}
+
+.menu-item-title {
+  font-size: 2rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item-description {
+  font-size: 1.25rem;
+  text-align: center;
+  margin: 0;
+}
+
 .menu-item-image {
   height: 100%;
   width: 100%;
-  background-size: 320px 180px;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
   position: absolute;
 }
 
@@ -43,20 +71,11 @@
   align-items: center;
 }
 
-.menu-item-title {
-  font-size: 2rem;
-}
-
 .menu-item-description-box {
   height: 60%;
   width: 90%;
   display: flex;
   justify-content: center;
-}
-
-.menu-item-description {
-  font-size: 1rem;
-  text-align: center;
 }
 
 .blur-layer {

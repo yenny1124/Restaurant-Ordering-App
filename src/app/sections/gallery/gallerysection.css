@@ -10,7 +10,6 @@
 }
 
 .gallery-section h1 {
-  font-size: 44px;
   text-align: center;
   color: black;
   margin-bottom: 0;
@@ -23,4 +22,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-section h1 {
+    margin-bottom: 45px;
+  }
 }
