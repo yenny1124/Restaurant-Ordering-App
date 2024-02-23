@@ -16,7 +16,9 @@ export default function HeroSection() {
         <h1 className={architectsDaughter.className}>
           Welcome&nbsp;to
           <br />
-          Rolls&nbsp;&&nbsp;Rolls
+          <div style={{ display: "flex", flexDirection: "row" }}>
+            <div className="roll1">Rolls&nbsp;&&nbsp;Rolls</div>
+          </div>
         </h1>
         <Image src="/sushi.png" width={250} height={250} alt="" />
         <p className={`${architectsDaughter.className} special-paragraph`}>

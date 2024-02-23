@@ -14,6 +14,28 @@
   color: black;
 }
 
+.hero-section .roll1 {
+  transform: rotateZ(5deg);
+  margin: 0;
+  animation: roll 6s linear infinite;
+}
+.roll2 {
+  transform: rotateZ(-5deg);
+  text-shadow: 2px 2px;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
 @media screen and (max-width: 767px) {
   .hero-section {
     flex-direction: column;
