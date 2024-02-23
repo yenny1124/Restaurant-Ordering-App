@@ -1,0 +1,27 @@
+.conveyor-belt {
+  width: 200%;
+  left: -100%;
+  height: calc(var(--navbar-height) * var(--navbar-ratio));
+  background-color: var(--background-color);
+  position: relative;
+  z-index: 1;
+  background-image: url("/sushiicon.png");
+  /*
+   NEED TO ADD ATTRIBUTION FROM HERE LATERhttps://www.flaticon.com/free-icon/sushi_2252075?related_id=2252071&origin=search
+    */
+  background-size: auto 100%;
+  background-repeat: space;
+  animation: conveyor 20s linear infinite;
+}
+
+@keyframes conveyor {
+  0% {
+    transform: translateX(0%);
+  }
+  50% {
+    transform: translateX(50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
