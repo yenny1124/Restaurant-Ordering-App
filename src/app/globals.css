@@ -70,6 +70,11 @@ p {
   font-style: normal;
   text-align: center;
 }
+a {
+  font-size: 1.5rem;
+  font-style: normal;
+  text-align: center;
+}
 
 body {
   min-height: 100vh;

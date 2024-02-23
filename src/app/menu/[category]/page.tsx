@@ -2,6 +2,7 @@ import { create } from "domain";
 import { ItemCard } from "../components/ItemCard";
 import React from "react";
 import "./category.css";
+import MenuNavbar from "../components/MenuNavbar";
 export default async function Category({
   params,
 }: {
@@ -26,6 +27,7 @@ export default async function Category({
 
   return (
     <div className="category-page">
+      <MenuNavbar />
       {params.category}
       {createCards()}
     </div>
