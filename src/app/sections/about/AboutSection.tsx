@@ -4,7 +4,9 @@ export default function AboutSection() {
     <section className="about-section">
       <div className="about-section-contents">
         <div className="about-section-image"></div>
-        <h1 className="text-pulse">rolls & rolls</h1>
+        <div className="animated-box">
+          <h1>rolls & rolls</h1>
+        </div>
 
         <p>
           lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquam
