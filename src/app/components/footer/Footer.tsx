@@ -7,16 +7,33 @@ const architectsDaughter = Architects_Daughter({
 export default function Footer() {
   return (
     <footer>
-      <div className={`footer-content ${architectsDaughter.className}`}>
-        <div>
-          <h1>Address</h1>
-          <address>11011 NE 12th St c1, Bellevue, WA 98004</address>
+      <div className={`footer-content`}>
+        <address className="footer-content-section">
+          <h1
+            className={`footer-content-section ${architectsDaughter.className}`}
+          >
+            Address
+          </h1>
+          <p>11011 NE 12th St c1, Bellevue, WA 98004</p>
+        </address>
+        <div className="footer-content-section">
+          <h1
+            className={`footer-content-section ${architectsDaughter.className}`}
+          >
+            Opening Hours
+          </h1>
+          <p>
+            Tuesday - Saturday <br />
+            10:30 am - 9:00 pm
+          </p>
         </div>
-        <div>
-          <h1>Opening Hours</h1>
-        </div>
-        <div>
-          <h1>Contacts</h1>
+        <div className="footer-content-section">
+          <h1
+            className={`footer-content-section ${architectsDaughter.className}`}
+          >
+            Contacts
+          </h1>
+          <p>put phone number here and email here</p>
         </div>
       </div>
 

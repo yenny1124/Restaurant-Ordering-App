@@ -44,6 +44,12 @@
   */
 }
 
+@media (min-width: 1080px) {
+  :root {
+    --footer-height: 300px;
+  }
+}
+
 html {
   font-size: 16px;
 }
@@ -62,6 +68,7 @@ p {
   font-size: 1.5rem;
   padding: 0px 12px;
   font-style: normal;
+  text-align: center;
 }
 
 body {
@@ -69,8 +76,6 @@ body {
   position: relative;
 }
 
-h1 {
-}
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 2.5rem;
@@ -119,4 +124,8 @@ main {
   100% {
     transform: rotate(0);
   }
+}
+
+address {
+  font-style: normal;
 }
