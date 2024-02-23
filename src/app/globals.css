@@ -67,11 +67,14 @@ body {
   position: relative;
 }
 
+h1 {
+}
 @media screen and (max-width: 767px) {
   h1 {
     font-size: 2.5rem;
     line-height: 3.125rem;
     font-weight: lighter;
+    text-shadow: 1.5px 1.5px black;
   }
 }
 
@@ -80,6 +83,7 @@ body {
     font-size: 3.75rem;
     line-height: 4.6875rem;
     font-weight: lighter;
+    text-shadow: 2.5px 2.5px black;
   }
 }
 
@@ -88,6 +92,7 @@ body {
     font-size: 3.25rem;
     line-height: 4rem;
     font-weight: lighter;
+    text-shadow: 2px 2px black;
   }
 }
 
