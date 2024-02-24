@@ -65,3 +65,7 @@
     cursor: pointer;
   }
 }
+
+.current-category {
+  background-color: var(--background-color-2) !important;
+}
