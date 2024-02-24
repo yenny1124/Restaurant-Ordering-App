@@ -1,20 +1,14 @@
 import Link from "next/link";
 import React from "react";
+import "./menunavbar.css";
+import { usePathname } from "next/navigation";
+import MenuNavbarLink from "./MenuNavLink";
 export default async function MenuNavbar() {
   const categories = await getCategories();
   function createCategoryLinks() {
     let categoryElements: any = [];
     categories.forEach((element: string) => {
-      categoryElements.push(
-        React.createElement(
-          Link,
-          {
-            href: `/menu/category-${element}`,
-            key: `menu-navbar-link-${element}`,
-          },
-          `Category ${element}`
-        )
-      );
+      categoryElements.push(<MenuNavbarLink element={element} key={element} />);
     });
     return React.createElement("div", {}, categoryElements);
   }

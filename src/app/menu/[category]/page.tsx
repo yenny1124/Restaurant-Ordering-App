@@ -1,4 +1,3 @@
-import { create } from "domain";
 import { ItemCard } from "../components/ItemCard";
 import React from "react";
 import "./category.css";
@@ -12,37 +11,48 @@ export default async function Category({
 
   function createCards() {
     let itemCards: any = [];
-    items.forEach((element: { itemName: string; itemDescription: string }) => {
-      let itemCard = React.createElement(ItemCard, {
-        itemName: element.itemName,
-        itemDescription: element.itemDescription,
-        key: `item-card-${element.itemName}`,
-      });
+    items.forEach(
+      (element: {
+        category: string;
+        itemName: string;
+        itemDescription: string;
+      }) => {
+        if ("category-" + element.category != params.category) {
+          return;
+        }
+        let itemCard = React.createElement(ItemCard, {
+          itemName: element.itemName,
+          itemDescription: element.itemDescription,
+          key: `item-card-${element.category + element.itemName}`,
+        });
+        itemCards.push(itemCard);
+      }
+    );
 
-      itemCards.push(itemCard);
-    });
-
-    return React.createElement("div", {}, itemCards);
+    return React.createElement(
+      "div",
+      { className: "menu-category", key: "cards" + params.category },
+      itemCards
+    );
   }
-
   return (
-    <div className="category-page">
-      <MenuNavbar />
-      {params.category}
+    <main>
+      <MenuNavbar key={"navbar" + params.category} />
       {createCards()}
-    </div>
+    </main>
   );
 }
-
 const getItems = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "force-cache",
   });
   const data = await response.json();
   const categories = data.map((item: any) => {
-    return { itemName: item.title, itemDescription: item.body };
+    return {
+      category: item.userId,
+      itemName: item.title,
+      itemDescription: item.body,
+    };
   });
-  return categories.filter(
-    (item: string, index: number) => categories.indexOf(item) === index
-  );
+  return categories;
 };
