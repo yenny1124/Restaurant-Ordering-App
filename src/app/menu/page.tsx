@@ -8,7 +8,6 @@ const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
   weight: ["400"],
 });
-
 export default async function Menu() {
   const categories = await getCategories();
   function createCategoryLinks() {
@@ -30,7 +29,7 @@ export default async function Menu() {
   return (
     <main className="menu-main">
       <h1 className={architectsDaughter.className}>Menu</h1>
-      <nav className="menu-categories">{createCategoryLinks()}</nav>
+      <nav className="menu-category">{createCategoryLinks()}</nav>
     </main>
   );
 }

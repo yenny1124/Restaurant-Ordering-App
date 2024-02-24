@@ -1,0 +1,48 @@
+.menu-navbar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.menu-navbar-content {
+  width: 100%;
+}
+
+.menu-navbar-content div {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.menu-navbar-content a {
+  background-color: white;
+  border-radius: var(--border-radius);
+  border-width: 3px 3px 5px 5px;
+  border: black solid;
+  cursor: pointer;
+  font: inherit;
+  text-decoration: none;
+  font-size: 24px;
+  color: black;
+  text-wrap: nowrap;
+}
+
+.menu-navbar-content a:hover {
+  background-color: var(--brown);
+  cursor: pointer;
+}
+
+.menu-navbar-content div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 767px) {
+  .menu-navbar-content div {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: left;
+    align-items: left;
+  }
+}
