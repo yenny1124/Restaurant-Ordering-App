@@ -10,7 +10,7 @@ export default async function MenuNavbar() {
     categories.forEach((element: string) => {
       categoryElements.push(<MenuNavbarLink element={element} key={element} />);
     });
-    return React.createElement("div", {}, categoryElements);
+    return <>{categoryElements}</>;
   }
   return (
     <header className="menu-navbar">
