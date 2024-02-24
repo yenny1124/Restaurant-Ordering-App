@@ -1,7 +1,6 @@
 import { ItemCard } from "../components/ItemCard";
 import React from "react";
 import "./category.css";
-import MenuNavbar from "../components/MenuNavbar";
 export default async function Category({
   params,
 }: {
@@ -35,12 +34,7 @@ export default async function Category({
       itemCards
     );
   }
-  return (
-    <main>
-      <MenuNavbar key={"navbar" + params.category} />
-      {createCards()}
-    </main>
-  );
+  return <main>{createCards()}</main>;
 }
 const getItems = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {

@@ -1,7 +1,7 @@
 import { Architects_Daughter } from "next/font/google";
 import "./menu.css";
 import Link from "next/link";
-import MenuNavbar from "./components/MenuNavbar";
+import MenuNavbar from "./categories/components/MenuNavbar";
 import React from "react";
 
 const architectsDaughter = Architects_Daughter({
@@ -17,7 +17,7 @@ export default async function Menu() {
         React.createElement(
           Link,
           {
-            href: `/menu/category-${element}`,
+            href: `/menu/categories/category-${element}`,
             key: `menu-navbar-link-${element}`,
           },
           `Category ${element}`

@@ -5,7 +5,7 @@ export default function MenuNavbarLink(props: { element: string }) {
   return React.createElement(
     Link,
     {
-      href: `/menu/category-${props.element}`,
+      href: `/menu/categories/category-${props.element}`,
       key: `menu-navbar-link-${props.element}`,
     },
     `Category ${props.element}`
