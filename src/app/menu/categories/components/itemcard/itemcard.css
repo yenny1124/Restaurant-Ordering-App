@@ -1,7 +1,18 @@
 .item-card {
-  width: 200px;
-  height: 200px;
-  background-color: aquamarine;
-  border: black 1px solid;
+  width: 320px;
+  height: 180px;
+  background-color: white;
+  border: black 2px solid;
   overflow: hidden;
+  margin: 12px;
+}
+
+.item-card h2 {
+  font-weight: normal;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.item-card p {
+  font-size: 1.25 rem;
 }
