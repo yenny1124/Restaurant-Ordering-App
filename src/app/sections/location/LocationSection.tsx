@@ -28,7 +28,9 @@ export default function LocationSection() {
 
         <LinkButton text="Book Now!" link="booktable" />
       </div>
-      <div className="location-section-api"></div>
+      <div className="location-section-map">
+        <div className="map-api"></div>
+      </div>
     </section>
   );
 }
