@@ -7,6 +7,7 @@
   color: white;
   display: inline-block;
   background-color: var(--brown);
+
   text-align: center;
   margin: 20px;
   margin-top: 30px;
@@ -15,8 +16,8 @@
 
 @media screen and (max-width: 768px) {
   .link-button {
-    font-size: 1rem;
-    line-height: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     padding: 1.25rem 1rem;
   }
 }
