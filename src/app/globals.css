@@ -29,6 +29,7 @@
   --background-color-2: #ffe5ca;
   --brown: #8d5f5f;
   --logo-red: #ed1c24;
+  --secondary-red: #ff6969;
   --blue: #421919;
   --footer-height: 600px;
   --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
@@ -37,6 +38,7 @@
     0 -8px 18px rgba(0, 0, 0, 0.16);
 
   --border-radius: 3% 92% 4% 95%/95% 3% 92% 2%;
+  --tilt-animation: tilt 0.2s linear;
   /*
   #fff5e0 yellowish off-white
   FFEADD

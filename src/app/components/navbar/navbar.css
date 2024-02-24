@@ -58,7 +58,7 @@
     display: none;
   }
   .restaurant-logo:hover {
-    animation: tilt 0.2s;
+    animation: var(--tilt-animation);
   }
 }
 
