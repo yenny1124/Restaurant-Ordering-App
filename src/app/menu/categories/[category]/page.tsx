@@ -1,4 +1,4 @@
-import { ItemCard } from "../components/ItemCard";
+import { ItemCard } from "../components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
 export default async function Category({
@@ -34,7 +34,12 @@ export default async function Category({
       itemCards
     );
   }
-  return <main>{createCards()}</main>;
+
+  return (
+    <main>
+      <div className="centering-div">{createCards()}</div>
+    </main>
+  );
 }
 const getItems = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {

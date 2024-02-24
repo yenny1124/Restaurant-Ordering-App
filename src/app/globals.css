@@ -136,3 +136,8 @@ main {
 address {
   font-style: normal;
 }
+
+.centering-div {
+  width: 100%;
+  display: flex;
+}

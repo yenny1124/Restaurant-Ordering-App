@@ -9,10 +9,10 @@
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 100%;
   position: relative;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin: 0px 18.75px;
   margin-bottom: 3rem;
 }
