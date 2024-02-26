@@ -44,38 +44,6 @@
   */
 }
 
-.rolling-text {
-  font-weight: normal;
-  font-size: 2.5rem;
-  z-index: -1;
-  position: absolute;
-  left: 0px;
-  transform-origin: bottom left;
-  transition: transform 2s;
-  transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-}
-
-.delay-1 {
-  top: -1px;
-  animation: roll-animation 3s linear 0.05s infinite;
-  color: var(--background-color);
-}
-.delay-2 {
-  top: -2px;
-  animation: roll-animation 3s linear 0.1s infinite;
-  color: var(--background-color-2);
-}
-.delay-3 {
-  top: -3px;
-  animation: roll-animation 3s linear 0.15s infinite;
-  color: var(--brown);
-}
-.delay-4 {
-  top: -4px;
-  animation: roll-animation 3s linear 0.2s infinite;
-  color: var(--logo-red);
-}
-
 .about-section p {
   font-weight: normal;
   font-size: 1.5rem;
@@ -108,45 +76,70 @@ shows some undesired clipping/repeating.
   }
 }
 
-.animated-box::before {
-  transform: rotate(8deg);
-}
-
 .animated-box {
   width: auto;
   height: auto;
   display: flex;
   position: relative;
-  background-color: white;
+  background: white;
   overflow: hidden;
   justify-content: center;
   align-items: center;
   box-shadow: var(--box-shadow);
 }
-.animated-box::before {
-  position: absolute;
-  content: "";
-  width: 150%;
-  height: 50%;
-  background-color: BLACK;
-  cursor: pointer;
-  animation: spin 4s linear infinite;
-}
 
 @keyframes spin {
   0% {
-    transform: rotate(8deg);
+    transform: rotate(4deg);
   }
-  50% {
-    transform: rotate(180deg);
+  20% {
+    transform: rotate(12deg);
   }
   100% {
+    transform: rotate(184deg);
   }
 }
 
-.animated-box::after {
-  position: absolute;
-  content: "";
-  inset: 3px;
-  background-color: white;
+.about-section h1 span {
+  color: black;
+  text-shadow: none;
+  filter: blur(0px);
+  animation: flash 6s linear infinite;
+}
+
+@keyframes flash {
+  0%,
+  90% {
+    color: black;
+  }
+  91%,
+  100% {
+    color: red;
+    /*
+    filter: blur(2px);
+    text-shadow: 0 0 10px #00b3ff, 0 0 20px #00b3ff, 0 0 40px #00b3ff,
+      0 0 80px #00b3ff, 0 0 120px #00b3ff, 0 0 200px #00b3ff, 0 0 300px #00b3ff,
+      0 0 400px #00b3ff;
+      */
+  }
+  /*
+  ,
+  5%,
+  95% {
+    color: var(--brown);
+    filter: blur(0px);
+    text-shadow: 0px 0px 0p;
+  }
+  */
+}
+
+h1 span:nth-child(1) {
+  animation-delay: 0s;
+}
+h1 span:nth-child(2) {
+  animation-delay: 2s;
+}
+
+h1 span:nth-child(3) {
+  animation-delay: 4s;
 }

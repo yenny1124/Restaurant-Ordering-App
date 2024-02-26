@@ -5,7 +5,12 @@ export default function AboutSection() {
       <div className="about-section-contents">
         <div className="about-section-image"></div>
         <div className="animated-box">
-          <h1>rolls & rolls</h1>
+          <h1>
+            <span>rolls </span>
+            <span>& </span>
+
+            <span>rolls</span>
+          </h1>
         </div>
 
         <p>
