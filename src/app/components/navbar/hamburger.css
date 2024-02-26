@@ -67,7 +67,7 @@
   padding: 10px 10px 4px 10px;
 }
 
-.burger-link .navbar-icon {
+.burger-link svg {
   height: calc(var(--navbar-height) * 0.4);
   width: calc(var(--navbar-height) * 0.4);
   cursor: pointer;

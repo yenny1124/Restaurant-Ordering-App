@@ -47,30 +47,12 @@
   pointer-events: auto;
 }
 
-.show-outline {
-  opacity: 10%;
-  background-color: grey;
-}
-
 .navbar-links {
   display: flex;
   position: relative;
   background-color: white;
   box-shadow: var(--box-shadow);
   pointer-events: auto;
-
-  /*
-    border-top: black 7px double;
-    border-left: black 7px double;
-    border-right: black 15px double;
-    border-bottom: black 14px double;
-    */
-  /*
-    border-top: black 7px double;
-    border-left: black 7px double;
-    border-right: black 14px double;
-    border-bottom: black 14px double;
-    */
 }
 
 .navbar-link {

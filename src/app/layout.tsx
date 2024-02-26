@@ -3,6 +3,10 @@ import "./globals.css";
 import { Fredoka } from "next/font/google";
 import Footer from "./components/footer/Footer";
 import NavBar from "./components/navbar/NavBar";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+
 const fredoka = Fredoka({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
