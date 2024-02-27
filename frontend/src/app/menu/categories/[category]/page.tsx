@@ -1,9 +1,15 @@
-import { ItemCard } from "../components/itemcard/ItemCard";
+import { ItemCard } from "./components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
 import CategoryContent from "./components/CategoryContent";
 type CategoryTable = { _id: string; name: string; __v: number };
-type ItemTable = { _id: string; name: string; desc: string };
+type ItemTable = {
+  _id: string;
+  name: string;
+  desc: string;
+  img: string;
+  prices: Array<number>;
+};
 
 export default async function Category({
   params,

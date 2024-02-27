@@ -1,6 +1,12 @@
 import React from "react";
-import { ItemCard } from "../../components/itemcard/ItemCard";
-type ItemTable = { _id: string; name: string; desc: string };
+import { ItemCard } from "./itemcard/ItemCard";
+type ItemTable = {
+  _id: string;
+  name: string;
+  desc: string;
+  img: string;
+  prices: Array<number>;
+};
 
 export default function CategoryContent(props: {
   items: Array<ItemTable> | null;
@@ -16,6 +22,9 @@ export default function CategoryContent(props: {
           name: element.name,
           desc: element.desc,
           key: `item-card-${element._id}`,
+          img: element.img,
+          prices: element.prices,
+          _id: element._id,
         });
         itemCards.push(itemCard);
       });
