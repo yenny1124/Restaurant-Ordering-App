@@ -3,6 +3,15 @@
 import React, { ReactComponentElement, ReactHTML, useRef } from "react";
 import "./categorylinks.css";
 import MenuNavbarLink from "../menunavbar/MenuNavLink";
+import {
+  faCaretRight,
+  faCaretLeft,
+  faFont,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import {} from "@fortawesome/free-solid-svg-icons";
+
 export default function CategoryLinks(props: {
   categories: [];
   navType: string;
@@ -33,6 +42,10 @@ export default function CategoryLinks(props: {
     return <>{categoryElements}</>;
   }
   return (
-    <nav className={props.navType}>{createCategoryLinks(props.categories)}</nav>
+    <nav className={props.navType}>
+      <div className="arrow-buffer"></div>
+      {createCategoryLinks(props.categories)}
+      <div className="arrow-buffer"></div>
+    </nav>
   );
 }
