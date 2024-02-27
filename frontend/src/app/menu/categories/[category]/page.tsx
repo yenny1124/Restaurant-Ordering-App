@@ -1,53 +1,35 @@
 import { ItemCard } from "../components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
+import CategoryContent from "./components/CategoryContent";
+type CategoryTable = { _id: string; name: string; __v: number };
+type ItemTable = { _id: string; name: string; desc: string };
+
 export default async function Category({
   params,
 }: {
   params: { category: string };
 }) {
-  const items = await fetchProductsByCategory(params.category);
-
-  async function createCards() {
-    if (items == null || items == undefined) return;
-    let itemCards: any = [];
-    items.forEach((element: { _id: string; name: string; desc: string }) => {
-      let itemCard = React.createElement(ItemCard, {
-        name: element.name,
-        desc: element.desc,
-        key: `item-card-${element._id}`,
-      });
-      itemCards.push(itemCard);
-    });
-
-    return React.createElement(
-      "div",
-      { className: "menu-category", key: "cards" + params.category },
-      itemCards
-    );
-  }
-
   return (
     <main>
-      <div className="centering-div">{/*createCards()*/}</div>
+      <div className="centering-div">
+        <div className="menu-category">
+          <CategoryContent
+            items={await fetchProductsByCategory(params.category)}
+          />
+        </div>
+      </div>
     </main>
   );
 }
 
-const fetchCategories = async () => {
-  try {
-    const response = await fetch("http://localhost:3003/api/get/categories"); // Adjust URL as needed
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    return null;
-  }
-};
 // Fetch products by selected category
-const fetchProductsByCategory = async (category: string) => {
+const fetchProductsByCategory = async (
+  category: string
+): Promise<Array<ItemTable> | null> => {
   // FIX LATER
   // ugly way of finding category id for the current category
+
   let categories: []; // need to check this somehow
   try {
     const response = await fetch("http://localhost:3003/api/get/categories"); // Adjust URL as needed
@@ -60,8 +42,7 @@ const fetchProductsByCategory = async (category: string) => {
 
   let categoryId: string;
   categoryId = "i am putting this here so typescript is happy"; //FIX LATER
-  categories.forEach((element: { _id: string; name: string; __v: number }) => {
-    //console.log(element.name + category);
+  categories.forEach((element: CategoryTable) => {
     if (element.name == category.replace("-", " ")) categoryId = element._id;
   });
   try {
