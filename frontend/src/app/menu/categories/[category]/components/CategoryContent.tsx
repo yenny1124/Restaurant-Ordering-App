@@ -11,8 +11,6 @@ type ItemTable = {
 export default function CategoryContent(props: {
   items: Array<ItemTable> | null;
 }) {
-  console.log(props.items);
-
   function createCards() {
     if (props.items == null) return;
     let itemCards: any = [];
