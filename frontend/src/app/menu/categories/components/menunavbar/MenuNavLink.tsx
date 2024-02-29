@@ -6,14 +6,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { forwardRef } from "react";
 
-const MenuNavbarLink = forwardRef<
-  HTMLDivElement,
-  { category: string; scrollingFunction: any; refIndex: number }
->(
-  (
-    props: { category: string; scrollingFunction: any; refIndex: number },
-    ref: any
-  ) => {
+type LinkReference = {
+  category: string;
+  scrollingFunction: any;
+  refIndex: number;
+};
+
+// managed to get ref off of any, but then there is an issue with passing that to Link's ref. so im leaving it as any
+const MenuNavbarLink = forwardRef<HTMLDivElement, LinkReference>(
+  (props: LinkReference, ref: any) => {
     const [selectedClass, setClass] = useState("");
     const pathname = usePathname();
     const lastPath = pathname.substring(

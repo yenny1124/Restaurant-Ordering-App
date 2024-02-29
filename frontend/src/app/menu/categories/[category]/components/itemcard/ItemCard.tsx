@@ -3,14 +3,14 @@ import { useState } from "react";
 import "./itemcard.css";
 import Image from "next/image";
 
-type ItemTable = {
+type Item = {
   _id: string;
   name: string;
   desc: string;
   img: string;
   prices: Array<number>;
 };
-export function ItemCard(props: ItemTable) {
+export function ItemCard(props: Item) {
   const [modalState, setModalState] = useState(false);
   function modalOn() {
     setModalState(true);

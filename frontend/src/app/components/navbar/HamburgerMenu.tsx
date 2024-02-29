@@ -11,7 +11,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./hamburger.css";
 
-export default function HamburgerMenu(props: any) {
+export default function HamburgerMenu(props: { className: string }) {
   return (
     <div className={`hamburger-menu ${props.className}`}>
       <div className="hamburger-top"></div>

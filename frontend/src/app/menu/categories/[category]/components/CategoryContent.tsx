@@ -1,6 +1,6 @@
 import React from "react";
 import { ItemCard } from "./itemcard/ItemCard";
-type ItemTable = {
+type Item = {
   _id: string;
   name: string;
   desc: string;
@@ -8,14 +8,12 @@ type ItemTable = {
   prices: Array<number>;
 };
 
-export default function CategoryContent(props: {
-  items: Array<ItemTable> | null;
-}) {
+export default function CategoryContent(props: { items: Array<Item> | null }) {
   function createCards() {
     if (props.items == null) return;
     let itemCards: any = [];
     try {
-      props.items.forEach((element: ItemTable) => {
+      props.items.forEach((element: Item) => {
         let itemCard = React.createElement(ItemCard, {
           name: element.name,
           desc: element.desc,
