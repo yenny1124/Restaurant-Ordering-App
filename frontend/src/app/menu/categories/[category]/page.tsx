@@ -2,16 +2,9 @@ import { ItemCard } from "./components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
 import CategoryContent from "./components/CategoryContent";
-type CategoryTable = { _id: string; name: string; __v: number };
-type ItemTable = {
-  _id: string;
-  name: string;
-  desc: string;
-  img: string;
-  prices: Array<number>;
-};
+import { CategoryType, ItemType } from "@/app/types";
 
-export default async function Category({
+export default async function CategoryType({
   params,
 }: {
   params: { category: string };
@@ -32,7 +25,7 @@ export default async function Category({
 // Fetch products by selected category
 const fetchProductsByCategory = async (
   category: string
-): Promise<Array<ItemTable> | null> => {
+): Promise<Array<ItemType> | null> => {
   // FIX LATER
   // ugly way of finding category id for the current category
 
@@ -48,7 +41,7 @@ const fetchProductsByCategory = async (
 
   let categoryId: string;
   categoryId = "i am putting this here so typescript is happy"; //FIX LATER
-  categories.forEach((element: CategoryTable) => {
+  categories.forEach((element: CategoryType) => {
     if (element.name == category.replace("-", " ")) categoryId = element._id;
   });
   try {

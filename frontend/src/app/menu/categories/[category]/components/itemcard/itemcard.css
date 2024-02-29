@@ -25,13 +25,3 @@
 .item-card p {
   font-size: 1.25 rem;
 }
-
-.modal {
-  width: 80vw;
-  height: 80vh;
-  background-color: red;
-  z-index: 10;
-  position: fixed;
-  text-align: center;
-  top: 10%;
-}
