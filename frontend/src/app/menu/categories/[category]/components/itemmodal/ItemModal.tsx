@@ -10,6 +10,7 @@ const ItemModal = () => {
   const setModalContext = useContext(ModalContext).setModalContent;
 
   useEffect(() => {
+    console.log("hes");
     if (modalContent.open == true) {
       setModalState(true);
     } else {
@@ -20,7 +21,19 @@ const ItemModal = () => {
   return (
     <>
       <dialog className="modal" open={modalState}>
-        <div className="modal-background"></div>
+        <div
+          className="modal-background"
+          onClick={() => {
+            setModalContext({
+              _id: modalContent._id,
+              name: modalContent.name,
+              desc: modalContent.desc,
+              img: modalContent.img,
+              prices: modalContent.prices,
+              open: false,
+            });
+          }}
+        ></div>
         <div className="modal-content">
           <h2>{modalContent.name}</h2>
           <div className="item-card-image">
