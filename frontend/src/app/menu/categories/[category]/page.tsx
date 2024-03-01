@@ -23,6 +23,7 @@ export default async function CategoryType({
 }
 
 // Fetch products by selected category
+// !IMPORTANT! FIX LATER category from URL is being used for fetching items, potential sql injection vulnerability
 const fetchProductsByCategory = async (
   category: string
 ): Promise<Array<ItemType> | null> => {
@@ -40,11 +41,12 @@ const fetchProductsByCategory = async (
   }
 
   let categoryId: string;
-  categoryId = "i am putting this here so typescript is happy"; //FIX LATER
+  categoryId = ""; //FIX LATER
   categories.forEach((element: CategoryType) => {
     if (element.name == category.replace("-", " ")) categoryId = element._id;
   });
   try {
+    if (categoryId == "") throw new Error();
     let url = `http://localhost:3003/api/get/products/category/${categoryId}`;
     const response = await fetch(url);
     const data = await response.json();
