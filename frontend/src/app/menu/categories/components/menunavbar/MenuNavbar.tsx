@@ -11,10 +11,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default async function MenuNavbar() {
   return (
     <header className="menu-navbar">
-      <div className="arrow-layer">
-        <FontAwesomeIcon icon={faCaretLeft} />
-        <FontAwesomeIcon icon={faCaretRight} style={{ right: "0" }} />
-      </div>
       <CategoryLinks
         categories={await fetchCategories()}
         navType="menu-navbar-content"

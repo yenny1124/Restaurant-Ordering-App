@@ -8,7 +8,6 @@
 }
 
 .menu-navbar-content {
-  margin-bottom: 2rem;
   width: 100%;
   display: flex;
   margin: 0px 18.75px;
@@ -17,12 +16,12 @@
 
 @media screen and (max-width: 767px) {
   .menu-navbar-content {
-    border: 2px black solid;
     flex-wrap: nowrap;
     overflow-x: scroll;
     justify-content: left;
     align-items: left;
     box-shadow: var(--box-shadow);
+    border: black 2px solid;
   }
 
   .menu-navbar-content a {
@@ -58,7 +57,7 @@
     flex-shrink: 0;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    margin: 0px 18.75px;
   }
 
   .arrow-layer svg {
@@ -68,14 +67,15 @@
     width: 40px;
     content: "";
     height: 45px;
-    margin: 0px 18.75px;
+    margin: 0px 18px;
     z-index: 1;
+    top: 2px;
   }
   .arrow-layer svg:first-child {
-    border-left: black solid 1px;
+    left: 2px;
   }
   .arrow-layer svg:last-child {
-    border-right: black solid 1px;
+    right: 3px;
   }
 }
 

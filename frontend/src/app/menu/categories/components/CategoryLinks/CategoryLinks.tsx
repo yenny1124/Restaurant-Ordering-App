@@ -18,7 +18,7 @@ export default function CategoryLinks(props: {
 }) {
   let ref = useRef<Array<HTMLDivElement | null>>([]);
   function scrollToLink(i: number) {
-    ref.current[i]?.scrollIntoView({ behavior: "smooth", inline: "center" });
+    ref.current[i]?.scrollIntoView({ behavior: "smooth" });
   }
 
   function createCategoryLinks(categories: []) {
@@ -42,10 +42,6 @@ export default function CategoryLinks(props: {
     return <>{categoryElements}</>;
   }
   return (
-    <nav className={props.navType}>
-      <div className="arrow-buffer"></div>
-      {createCategoryLinks(props.categories)}
-      <div className="arrow-buffer"></div>
-    </nav>
+    <nav className={props.navType}>{createCategoryLinks(props.categories)}</nav>
   );
 }
