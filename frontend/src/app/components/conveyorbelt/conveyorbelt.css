@@ -2,9 +2,9 @@
   width: 200%;
   left: -100%;
   height: calc(var(--navbar-height) * var(--navbar-ratio));
-  background-color: var(--background-color);
+  background-color: var(--background-color-2);
   position: relative;
-  z-index: 1;
+  z-index: 3;
   background-image: url("/nigiri.png");
   /*
    NEED TO ADD ATTRIBUTION FROM HERE LATERhttps://www.flaticon.com/free-icon/sushi_2252075?related_id=2252071&origin=search
@@ -12,6 +12,10 @@
   background-size: auto 100%;
   background-repeat: space;
   animation: conveyor 20s linear infinite;
+  border: black solid 2px;
+}
+
+svg {
 }
 
 @media screen and (min-width: 1080px) {
