@@ -1,3 +1,4 @@
+import ConveyorBelt from "../conveyorbelt/ConveyorBelt";
 import "./footer.css";
 import { Architects_Daughter } from "next/font/google";
 const architectsDaughter = Architects_Daughter({
@@ -7,6 +8,7 @@ const architectsDaughter = Architects_Daughter({
 export default function Footer() {
   return (
     <footer>
+      <ConveyorBelt />
       <div className={`footer-content`}>
         <address className="footer-content-section">
           <h1

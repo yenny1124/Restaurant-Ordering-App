@@ -4,7 +4,6 @@
   height: calc(var(--navbar-height) * var(--navbar-ratio));
   background-color: var(--background-color-2);
   position: relative;
-  z-index: 3;
   background-image: url("/nigiri.png");
   /*
    NEED TO ADD ATTRIBUTION FROM HERE LATERhttps://www.flaticon.com/free-icon/sushi_2252075?related_id=2252071&origin=search

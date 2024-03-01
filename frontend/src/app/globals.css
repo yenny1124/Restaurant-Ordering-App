@@ -31,7 +31,7 @@
   --logo-red: #ed1c24;
   --secondary-red: #ff6969;
   --blue: #421919;
-  --footer-height: 600px;
+  --footer-height: 716.5px;
   --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
   --section-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16),
     0 4px 4px rgba(0, 0, 0, 0.2), 0 -4px 4px rgba(0, 0, 0, 0.2),
@@ -48,7 +48,7 @@
 
 @media (min-width: 1080px) {
   :root {
-    --footer-height: 300px;
+    --footer-height: 516.5px;
   }
 }
 
