@@ -1,44 +1,56 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, forwardRef } from "react";
 import { ModalContext } from "../CategoryContent";
 import "./itemmodal.css";
-export default function ItemModal() {
+
+const ItemModal = () => {
   const [modalState, setModalState] = useState(false);
-  const modalContext = useContext(ModalContext);
+  const modalContent = useContext(ModalContext).modalContent;
+  const setModalContext = useContext(ModalContext).setModalContent;
+
   useEffect(() => {
-    /*
-    modalContext.setModalContent({
-      _id: "_id",
-      name: "_name",
-      desc: "_desc",
-      img: "_img",
-      prices: [1, 2, 3],
-    });
-*/
-    modalContext.modalContent;
+    if (modalContent.open == true) {
+      setModalState(true);
+    } else {
+      setModalState(false);
+    }
   });
-  function modalOn() {
-    setModalState(true);
-  }
-  function modalOff() {
-    setModalState(false);
-  }
+
   return (
     <>
-      <button className="button open-modal" onClick={modalOn}>
-        open modal
-      </button>
       <dialog className="modal" open={modalState}>
-        <h2>props.name</h2>
+        <h2>{modalContent.name}</h2>
         <div className="item-card-image">
-          {/*<img src={props.img} alt={props.name} width="200px" height="200px" />*/}
+          {
+            <img
+              src={modalContent.img}
+              alt={modalContent.name}
+              width="200px"
+              height="200px"
+            />
+          }
         </div>
-        <p>props.prices</p>
-        <p>props.desc</p>
-        <button className=" button close-button" onClick={modalOff}>
+        <p>{modalContent.prices}</p>
+        <p>{modalContent.desc}</p>
+        <button
+          className=" button close-button"
+          onClick={() => {
+            setModalContext({
+              _id: modalContent._id,
+              name: modalContent.name,
+              desc: modalContent.desc,
+              img: modalContent.img,
+              prices: modalContent.prices,
+              open: false,
+            });
+          }}
+        >
           close modal
         </button>
       </dialog>
     </>
   );
-}
+};
+
+ItemModal.displayName = "ItemModal";
+export default ItemModal;

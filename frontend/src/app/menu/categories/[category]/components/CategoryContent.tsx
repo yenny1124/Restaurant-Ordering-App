@@ -1,14 +1,23 @@
 "use client";
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useRef } from "react";
 
 import { ItemCard } from "./itemcard/ItemCard";
 import { ItemType } from "@/app/types";
 import ItemModal from "./itemmodal/ItemModal";
 
 interface ModalContext {
-  modalContent: ItemType;
-  setModalContent: React.Dispatch<React.SetStateAction<ItemType>>;
+  modalContent: ModalType;
+  setModalContent: React.Dispatch<React.SetStateAction<ModalType>>;
 }
+
+type ModalType = {
+  _id: string;
+  name: string;
+  desc: string;
+  img: string;
+  prices: number[];
+  open: boolean;
+};
 
 const defaultItemType = {
   _id: "loading",
@@ -16,6 +25,7 @@ const defaultItemType = {
   desc: "loading",
   img: "loading",
   prices: [0],
+  open: false,
 };
 export const ModalContext = React.createContext<ModalContext>({
   modalContent: defaultItemType,
@@ -25,8 +35,7 @@ export const ModalContext = React.createContext<ModalContext>({
 export default function CategoryContent(props: {
   items: Array<ItemType> | null;
 }) {
-  const [modalContent, setModalContent] = useState<ItemType>(defaultItemType);
-
+  const [modalContent, setModalContent] = useState<ModalType>(defaultItemType);
   function createCards() {
     if (props.items == null) return;
     let itemCards: any = [];
