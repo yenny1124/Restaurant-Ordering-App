@@ -2,7 +2,8 @@
 import { useContext, useEffect, useState, forwardRef } from "react";
 import { ModalContext } from "../CategoryContent";
 import "./itemmodal.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faX } from "@fortawesome/free-solid-svg-icons";
 const ItemModal = () => {
   const [modalState, setModalState] = useState(false);
   const modalContent = useContext(ModalContext).modalContent;
@@ -19,34 +20,37 @@ const ItemModal = () => {
   return (
     <>
       <dialog className="modal" open={modalState}>
-        <h2>{modalContent.name}</h2>
-        <div className="item-card-image">
-          {
-            <img
-              src={modalContent.img}
-              alt={modalContent.name}
-              width="200px"
-              height="200px"
-            />
-          }
+        <div className="modal-background"></div>
+        <div className="modal-content">
+          <h2>{modalContent.name}</h2>
+          <div className="item-card-image">
+            {
+              <img
+                src={modalContent.img}
+                alt={modalContent.name}
+                width="200px"
+                height="200px"
+              />
+            }
+          </div>
+          <p>{modalContent.prices}</p>
+          <p>{modalContent.desc}</p>
+
+          <FontAwesomeIcon
+            icon={faX}
+            className="close-button"
+            onClick={() => {
+              setModalContext({
+                _id: modalContent._id,
+                name: modalContent.name,
+                desc: modalContent.desc,
+                img: modalContent.img,
+                prices: modalContent.prices,
+                open: false,
+              });
+            }}
+          />
         </div>
-        <p>{modalContent.prices}</p>
-        <p>{modalContent.desc}</p>
-        <button
-          className=" button close-button"
-          onClick={() => {
-            setModalContext({
-              _id: modalContent._id,
-              name: modalContent.name,
-              desc: modalContent.desc,
-              img: modalContent.img,
-              prices: modalContent.prices,
-              open: false,
-            });
-          }}
-        >
-          close modal
-        </button>
       </dialog>
     </>
   );
