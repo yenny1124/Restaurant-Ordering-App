@@ -18,7 +18,11 @@ export default function CategoryLinks(props: {
 }) {
   let ref = useRef<Array<HTMLDivElement | null>>([]);
   function scrollToLink(i: number) {
-    ref.current[i]?.scrollIntoView({ behavior: "smooth" });
+    ref.current[i]?.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "nearest",
+    });
   }
 
   function createCategoryLinks(categories: []) {

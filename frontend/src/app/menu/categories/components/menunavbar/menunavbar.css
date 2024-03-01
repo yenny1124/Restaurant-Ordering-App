@@ -33,6 +33,12 @@
     color: black;
     text-wrap: nowrap;
     padding: 8px 10px;
+    white-space: nowrap;
+    word-wrap: break-word;
+    border-right: 1px black solid;
+  }
+  .menu-navbar-content a:last-child {
+    border: none;
   }
 
   .menu-navbar-content a:active {
