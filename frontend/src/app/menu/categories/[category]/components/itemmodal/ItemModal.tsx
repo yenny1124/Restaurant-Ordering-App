@@ -4,19 +4,19 @@ import { ModalContext } from "../CategoryContent";
 import "./itemmodal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
+import Image from "next/image";
 const ItemModal = () => {
   const [modalState, setModalState] = useState(false);
   const modalContent = useContext(ModalContext).modalContent;
   const setModalContext = useContext(ModalContext).setModalContent;
 
   useEffect(() => {
-    console.log("hes");
     if (modalContent.open == true) {
       setModalState(true);
     } else {
       setModalState(false);
     }
-  });
+  }, [modalContent.open]);
 
   return (
     <>
@@ -40,14 +40,14 @@ const ItemModal = () => {
           <p>{modalContent.desc}</p>
 
           <div className="item-card-image">
-            {
-              <img
+            {modalContent.name != "loading" && (
+              <Image
                 src={modalContent.img}
                 alt={modalContent.name}
-                width="200px"
-                height="200px"
+                width={1000}
+                height={1000}
               />
-            }
+            )}
           </div>
 
           <FontAwesomeIcon

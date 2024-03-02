@@ -1,5 +1,5 @@
 "use client";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import "./itemcard.css";
 import Image from "next/image";
 import { ItemType } from "@/app/types";
@@ -8,15 +8,21 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
+  const [isClient, setIsClient] = useState(false); // to avoid hydration issues with conditional rendering
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <div className="item-card">
       <div className="item-card-image">
-        <img src={props.img} alt={props.name} />
+        <Image src={props.img} alt={props.name} width={100} height={100} />
       </div>
       <div className="item-info">
         <h2>{props.name}</h2>
         <p>{props.prices}</p>
-        {window.innerWidth > 575 && (
+        {isClient && window.innerWidth > 575 && (
           <p style={{ fontSize: "1.25rem" }}>{props.desc}</p>
         )}
       </div>
