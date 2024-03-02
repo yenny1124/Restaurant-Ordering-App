@@ -36,6 +36,9 @@ const ItemModal = () => {
         ></div>
         <div className="modal-content">
           <h2>{modalContent.name}</h2>
+          <p>{modalContent.prices}</p>
+          <p>{modalContent.desc}</p>
+
           <div className="item-card-image">
             {
               <img
@@ -46,8 +49,6 @@ const ItemModal = () => {
               />
             }
           </div>
-          <p>{modalContent.prices}</p>
-          <p>{modalContent.desc}</p>
 
           <FontAwesomeIcon
             icon={faX}
