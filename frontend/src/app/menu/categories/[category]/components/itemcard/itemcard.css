@@ -1,6 +1,5 @@
 .item-card {
-  width: 320px;
-  height: 180px;
+  height: var(--card-height);
   background-color: white;
   overflow: hidden;
   position: relative;
@@ -9,6 +8,55 @@
   display: flex;
   text-align: center;
   box-shadow: var(--box-shadow);
+  margin-bottom: 32px;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 575px) {
+  .item-card {
+    width: 320px;
+
+    --card-height: 120px;
+  }
+
+  .item-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .item-card {
+    width: 320px;
+    --card-height: 180px;
+  }
+
+  .item-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item-card {
+    width: 480px;
+    --card-height: 240px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+  .item-info {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 .item-card-main {
@@ -18,8 +66,8 @@
 }
 
 .item-card-image img {
-  height: 120px;
-  width: 120px;
+  height: var(--card-height);
+  width: var(--card-height);
   border-right: 0.5px grey solid;
 }
 
@@ -62,20 +110,6 @@
 }
 
 @media screen and (max-width: 767px) {
-  .item-card {
-    width: 100%;
-    height: 120px;
-    margin-bottom: 32px;
-    justify-content: space-between;
-  }
-
-  .item-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-
   .add-cart-button:active {
     background-color: var(--background-color-2);
   }
