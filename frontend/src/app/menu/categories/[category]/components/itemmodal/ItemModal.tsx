@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useEffect, useState, forwardRef } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ModalContext } from "../CategoryContent";
 import "./itemmodal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
