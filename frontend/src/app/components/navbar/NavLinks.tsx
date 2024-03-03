@@ -48,8 +48,10 @@ export default function NavLinks() {
       </Link>
       <Link href="/cart" className="navbar-link">
         Cart
-        <span> {cartItems}</span>
-        <FontAwesomeIcon icon={faCircle} />
+        <div className="cart-item-counter">
+          <FontAwesomeIcon icon={faCircle} />
+          <span> {cartItems}</span>
+        </div>
       </Link>
     </nav>
   );

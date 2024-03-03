@@ -114,3 +114,25 @@
 .restaurant-logo:active {
   opacity: 50%;
 }
+
+.cart-item-counter {
+  margin-left: 6px;
+  position: relative;
+  display: inline-block;
+  justify-content: center;
+}
+
+.cart-item-counter span {
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.cart-item-counter svg {
+  position: absolute;
+  color: var(--logo-red);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+}
