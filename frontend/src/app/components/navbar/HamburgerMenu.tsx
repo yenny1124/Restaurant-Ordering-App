@@ -8,10 +8,34 @@ import {
   faCalendarDay,
   faPhone,
   faCartShopping,
+  faCircle,
 } from "@fortawesome/free-solid-svg-icons";
 import "./hamburger.css";
+import { useState, useEffect } from "react";
 
 export default function HamburgerMenu(props: { className: string }) {
+  const [cartItems, setCartItems] = useState(0);
+
+  useEffect(() => {
+    if (
+      localStorage.getItem("cartItems") === null ||
+      localStorage.getItem("cartItems") == "NaN"
+    )
+      localStorage.setItem("cartItems", "0");
+    const cartItemsListener = () => {
+      const numItems = localStorage.getItem("cartItems");
+      console.log(numItems);
+      if (numItems != null) setCartItems(parseInt(numItems));
+    };
+
+    cartItemsListener();
+    window.addEventListener("storage", cartItemsListener);
+
+    return () => {
+      window.removeEventListener("storage", cartItemsListener);
+    };
+  }, []);
+
   return (
     <div className={`hamburger-menu ${props.className}`}>
       <div className="hamburger-top"></div>
@@ -44,6 +68,10 @@ export default function HamburgerMenu(props: { className: string }) {
         <Link href="/cart" className="burger-link">
           <FontAwesomeIcon icon={faCartShopping} />
           Cart
+          <div className="cart-item-counter">
+            <FontAwesomeIcon icon={faCircle} />
+            <span> {cartItems}</span>
+          </div>
         </Link>
       </nav>
     </div>
