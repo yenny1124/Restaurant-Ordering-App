@@ -4,7 +4,7 @@ import "./navbar.css";
 import HamburgerIcon from "./HamburgerIcon";
 import HamburgerMenu from "./HamburgerMenu";
 import RestaurantLogo from "./RestaurantLogo";
-import NavLinks from "./NavLinks";
+import NavBarLinks from "./NavBarLinks";
 import { useState } from "react";
 
 export default function NavBar() {
@@ -21,7 +21,7 @@ export default function NavBar() {
       <div className="navbar-placeholder"></div>
       <div className="navbar-contents">
         <RestaurantLogo />
-        <NavLinks />
+        <NavBarLinks />
         <HamburgerIcon onClick={handleMenu} />
       </div>
       <HamburgerMenu className={menuState} />

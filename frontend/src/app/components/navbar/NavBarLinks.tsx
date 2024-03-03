@@ -2,9 +2,12 @@
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
+import NavBarLink from "./NavBarLink";
 
-export default function NavLinks() {
+import { useEffect, useState } from "react";
+import CartLink from "./CartLink";
+
+export default function NavBarLinks() {
   const [cartItems, setCartItems] = useState(0);
 
   useEffect(() => {
@@ -26,33 +29,16 @@ export default function NavLinks() {
       window.removeEventListener("storage", cartItemsListener);
     };
   }, []);
+
   return (
     <nav className={`navbar-links`}>
-      <Link href="/" className="navbar-link">
-        Home
-      </Link>
-      <Link href="/menu" className="navbar-link">
-        Menu
-      </Link>
-      <Link href="/about" className="navbar-link">
-        About
-      </Link>
-      <Link href="/order" className="navbar-link">
-        Order Online
-      </Link>
-      <Link href="/booktable" className="navbar-link">
-        Book Table
-      </Link>
-      <Link href="/contact" className="navbar-link">
-        Contact Us
-      </Link>
-      <Link href="/cart" className="navbar-link">
-        Cart
-        <div className="cart-item-counter">
-          <FontAwesomeIcon icon={faCircle} />
-          <span> {cartItems}</span>
-        </div>
-      </Link>
+      <NavBarLink path="/home" text="Home" />
+      <NavBarLink path="/menu" text="Menu" />
+      <NavBarLink path="/About" text="About" />
+      <NavBarLink path="/order" text="Order" />
+      <NavBarLink path="/booktable" text="Book Table" />
+      <NavBarLink path="/contact" text="Contact Us" />
+      <CartLink path="/cart" text="Cart" />
     </nav>
   );
 }

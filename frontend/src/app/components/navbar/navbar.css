@@ -136,3 +136,7 @@
   width: 30px;
   height: 30px;
 }
+
+.current-page {
+  border-bottom: 1px black solid;
+}
