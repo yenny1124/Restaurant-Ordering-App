@@ -1,8 +1,11 @@
 "use client";
 import "./cart.css";
-import { ItemCard } from "../menu/categories/[category]/components/itemcard/ItemCard";
+import { ItemCard } from "../components/itemcard/ItemCard";
 import React from "react";
+import { useEffect, useState } from "react";
 export default function Cart() {
+  const [cartItems, setCartItems] = useState(createCards());
+
   function createCards() {
     const localStorageKeys = Object.keys(localStorage);
     let itemCards: any = [];
@@ -26,6 +29,20 @@ export default function Cart() {
 
     return itemCards;
   }
+
+  useEffect(() => {
+    const cartItemsListener = () => {
+      setCartItems(createCards());
+    };
+
+    cartItemsListener();
+    window.addEventListener("storage", cartItemsListener);
+
+    return () => {
+      window.removeEventListener("storage", cartItemsListener);
+    };
+  }, []);
+
   return (
     <main className="cart-main">
       <span>hello world</span>
@@ -41,7 +58,7 @@ export default function Cart() {
       >
         clear cart
       </button>
-      {createCards()}
+      {cartItems}
     </main>
   );
 }

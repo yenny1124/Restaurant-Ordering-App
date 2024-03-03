@@ -1,4 +1,4 @@
-import { ItemCard } from "./components/itemcard/ItemCard";
+import { ItemCard } from "../../../components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
 import CategoryContent from "./components/CategoryContent";
