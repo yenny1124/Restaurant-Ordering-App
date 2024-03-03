@@ -6,6 +6,7 @@ import { ItemType } from "@/app/types";
 import { ModalContext } from "../CategoryContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
   const [isClient, setIsClient] = useState(false); // to avoid hydration issues with conditional rendering
@@ -51,12 +52,14 @@ export function ItemCard(props: ItemType) {
             if (
               localStorage.getItem("cartItems") === null ||
               localStorage.getItem("cartItems") == "NaN"
-            )
+            ) {
               localStorage.setItem("cartItems", "0");
-            localStorage.setItem(
-              "cartItems",
-              (parseInt(localStorage.getItem("cartItems") ?? "") + 1).toString()
-            );
+            }
+            const numItems =
+              parseInt(localStorage.getItem("cartItems") ?? "") + 1;
+
+            localStorage.setItem("cartItems", numItems.toString());
+            localStorage.setItem(`cart-item${numItems}`, JSON.stringify(props));
             window.dispatchEvent(new Event("storage"));
           }}
           style={{ height: "25px", width: "25px", color: "black" }}
