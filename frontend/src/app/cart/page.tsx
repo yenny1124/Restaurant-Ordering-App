@@ -3,24 +3,29 @@ import "./cart.css";
 import { ItemCard } from "../components/itemcard/ItemCard";
 import React from "react";
 import { useEffect, useState } from "react";
+import { render } from "react-dom";
 export default function Cart() {
-  const [cartItems, setCartItems] = useState(createCards());
-
-  function createCards() {
+  const [cartItems, setCartItems] = useState(loadItems());
+  const [isClient, setIsClient] = useState(false);
+  // load all cart items and display
+  function loadItems() {
+    if (typeof localStorage === "undefined") {
+      return <p>uh oh</p>;
+    }
     const localStorageKeys = Object.keys(localStorage);
     let itemCards: any = [];
     try {
-      localStorageKeys.forEach((key: string, i: number) => {
+      localStorageKeys.forEach((key: string) => {
         if (!key.includes("cart-item")) return;
         const item = JSON.parse(localStorage.getItem(key) ?? "");
-        let itemCard = React.createElement(ItemCard, {
-          name: item.name,
-          desc: item.desc,
-          key: `item-card-${item._id + i}`,
-          img: item.img,
-          prices: item.prices,
-          _id: item._id,
-        });
+
+        let itemCard = React.createElement(
+          "p",
+          {
+            key: `item-card-${item.item._id}`,
+          },
+          JSON.stringify(item)
+        );
         itemCards.push(itemCard);
       });
     } catch (error) {
@@ -30,9 +35,21 @@ export default function Cart() {
     return itemCards;
   }
 
+  // clears cart items and count in local storage
+  function clearCart() {
+    const localStorageKeys = Object.keys(localStorage);
+    localStorageKeys.forEach((key) => {
+      if (key.includes("cart-item")) localStorage.removeItem(key);
+    });
+    localStorage.setItem("cartCount", "0");
+    window.dispatchEvent(new Event("storage"));
+  }
+
+  // makes sure cart related state renders correctly when local storage is changed
   useEffect(() => {
+    setIsClient(true);
     const cartItemsListener = () => {
-      setCartItems(createCards());
+      setCartItems(loadItems());
     };
 
     cartItemsListener();
@@ -45,20 +62,8 @@ export default function Cart() {
 
   return (
     <main className="cart-main">
-      <span>hello world</span>
-      <button
-        onClick={() => {
-          const localStorageKeys = Object.keys(localStorage);
-          localStorageKeys.forEach((key) => {
-            if (key.includes("cart-item")) localStorage.removeItem(key);
-          });
-          localStorage.setItem("cartItems", "0");
-          window.dispatchEvent(new Event("storage"));
-        }}
-      >
-        clear cart
-      </button>
-      {cartItems}
+      <button onClick={clearCart}>clear cart</button>
+      {isClient && cartItems}
     </main>
   );
 }

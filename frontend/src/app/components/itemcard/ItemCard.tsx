@@ -9,11 +9,35 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
-  const [isClient, setIsClient] = useState(false); // to avoid hydration issues with conditional rendering
+  const [isClient, setIsClient] = useState(false);
 
+  // to avoid hydration issues with conditional rendering
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  // adds a single item to local storage, if it already exists the quantity is incremented
+  function addToCart() {
+    if (
+      localStorage.getItem("cartCount") === null ||
+      localStorage.getItem("cartCount") == "NaN"
+    ) {
+      localStorage.setItem("cartCount", "0");
+    }
+    let numItems = parseInt(localStorage.getItem("cartCount") ?? "0") + 1;
+    localStorage.setItem("cartCount", numItems.toString());
+
+    let item = localStorage.getItem(`cart-item${props._id}`);
+    let quantity =
+      item === null ? 0 : parseInt(JSON.parse(item ?? "").quantity ?? "0");
+    quantity++;
+
+    localStorage.setItem(
+      `cart-item${props._id}`,
+      JSON.stringify({ item: props, quantity })
+    );
+    window.dispatchEvent(new Event("storage"));
+  }
 
   return (
     <div className="item-card">
@@ -48,20 +72,7 @@ export function ItemCard(props: ItemType) {
       <button className="add-cart-button">
         <FontAwesomeIcon
           icon={faPlus}
-          onClick={() => {
-            if (
-              localStorage.getItem("cartItems") === null ||
-              localStorage.getItem("cartItems") == "NaN"
-            ) {
-              localStorage.setItem("cartItems", "0");
-            }
-            const numItems =
-              parseInt(localStorage.getItem("cartItems") ?? "") + 1;
-
-            localStorage.setItem("cartItems", numItems.toString());
-            localStorage.setItem(`cart-item${numItems}`, JSON.stringify(props));
-            window.dispatchEvent(new Event("storage"));
-          }}
+          onClick={addToCart}
           style={{ height: "25px", width: "25px", color: "black" }}
         />
       </button>

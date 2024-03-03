@@ -14,6 +14,7 @@ export default function CartLink(props: { path: string; text: string }) {
     pathname.length
   );
 
+  // set style to current page's link
   useEffect(() => {
     if (lastPath == props.path) {
       setClass("current-page");
@@ -22,24 +23,25 @@ export default function CartLink(props: { path: string; text: string }) {
     }
   }, [lastPath, props, props.path]);
 
-  const [cartItems, setCartItems] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
 
+  // correctly render when local storage state changes
   useEffect(() => {
     if (
-      localStorage.getItem("cartItems") === null ||
-      localStorage.getItem("cartItems") == "NaN"
+      localStorage.getItem("cartCount") === null ||
+      localStorage.getItem("cartCount") == "NaN"
     )
-      localStorage.setItem("cartItems", "0");
-    const cartItemsListener = () => {
-      const numItems = localStorage.getItem("cartItems");
-      if (numItems != null) setCartItems(parseInt(numItems));
+      localStorage.setItem("cartCount", "0");
+    const cartCountListener = () => {
+      const count = localStorage.getItem("cartCount");
+      if (count != null) setCartCount(parseInt(count));
     };
 
-    cartItemsListener();
-    window.addEventListener("storage", cartItemsListener);
+    cartCountListener();
+    window.addEventListener("storage", cartCountListener);
 
     return () => {
-      window.removeEventListener("storage", cartItemsListener);
+      window.removeEventListener("storage", cartCountListener);
     };
   }, []);
 
@@ -48,7 +50,7 @@ export default function CartLink(props: { path: string; text: string }) {
       {props.text}
       <div className="cart-item-counter">
         <FontAwesomeIcon icon={faCircle} />
-        <span> {cartItems}</span>
+        <span> {cartCount}</span>
       </div>
     </Link>
   );

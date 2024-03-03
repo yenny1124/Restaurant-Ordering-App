@@ -14,24 +14,25 @@ import "./hamburger.css";
 import { useState, useEffect } from "react";
 
 export default function HamburgerMenu(props: { className: string }) {
-  const [cartItems, setCartItems] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
 
+  // render cart count when localstorage changes
   useEffect(() => {
     if (
-      localStorage.getItem("cartItems") === null ||
-      localStorage.getItem("cartItems") == "NaN"
+      localStorage.getItem("cartCount") === null ||
+      localStorage.getItem("cartCount") == "NaN"
     )
-      localStorage.setItem("cartItems", "0");
-    const cartItemsListener = () => {
-      const numItems = localStorage.getItem("cartItems");
-      if (numItems != null) setCartItems(parseInt(numItems));
+      localStorage.setItem("cartCount", "0");
+    const cartCountListener = () => {
+      const numCount = localStorage.getItem("cartCount");
+      if (numCount != null) setCartCount(parseInt(numCount));
     };
 
-    cartItemsListener();
-    window.addEventListener("storage", cartItemsListener);
+    cartCountListener();
+    window.addEventListener("storage", cartCountListener);
 
     return () => {
-      window.removeEventListener("storage", cartItemsListener);
+      window.removeEventListener("storage", cartCountListener);
     };
   }, []);
 
@@ -69,7 +70,7 @@ export default function HamburgerMenu(props: { className: string }) {
           Cart
           <div className="cart-item-counter">
             <FontAwesomeIcon icon={faCircle} />
-            <span> {cartItems}</span>
+            <span> {cartCount}</span>
           </div>
         </Link>
       </nav>

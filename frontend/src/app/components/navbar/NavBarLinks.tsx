@@ -1,11 +1,7 @@
 import NavBarLink from "./NavBarLink";
-
-import { useEffect, useState } from "react";
 import CartLink from "./CartLink";
 
 export default function NavBarLinks() {
-  const [cartItems, setCartItems] = useState(0);
-
   return (
     <nav className={`navbar-links`}>
       <NavBarLink path="/home" text="Home" />
