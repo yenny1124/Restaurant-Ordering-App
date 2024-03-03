@@ -48,7 +48,16 @@ export function ItemCard(props: ItemType) {
         <FontAwesomeIcon
           icon={faPlus}
           onClick={() => {
-            console.log("add to cart goes here");
+            if (
+              localStorage.getItem("cartItems") === null ||
+              localStorage.getItem("cartItems") == "NaN"
+            )
+              localStorage.setItem("cartItems", "0");
+            localStorage.setItem(
+              "cartItems",
+              (parseInt(localStorage.getItem("cartItems") ?? "") + 1).toString()
+            );
+            window.dispatchEvent(new Event("storage"));
           }}
           style={{ height: "25px", width: "25px", color: "black" }}
         />
