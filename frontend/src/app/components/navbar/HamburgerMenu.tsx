@@ -24,7 +24,6 @@ export default function HamburgerMenu(props: { className: string }) {
       localStorage.setItem("cartItems", "0");
     const cartItemsListener = () => {
       const numItems = localStorage.getItem("cartItems");
-      console.log(numItems);
       if (numItems != null) setCartItems(parseInt(numItems));
     };
 

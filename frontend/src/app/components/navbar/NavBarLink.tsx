@@ -12,9 +12,6 @@ export default function NavBarLink(props: { path: string; text: string }) {
   );
 
   useEffect(() => {
-    console.log(lastPath);
-    console.log(props.path);
-
     if (lastPath == props.path) {
       setClass("current-page");
     } else {

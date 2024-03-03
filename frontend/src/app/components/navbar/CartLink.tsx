@@ -15,9 +15,6 @@ export default function CartLink(props: { path: string; text: string }) {
   );
 
   useEffect(() => {
-    console.log(lastPath);
-    console.log(props.path);
-
     if (lastPath == props.path) {
       setClass("current-page");
     } else {
@@ -35,7 +32,6 @@ export default function CartLink(props: { path: string; text: string }) {
       localStorage.setItem("cartItems", "0");
     const cartItemsListener = () => {
       const numItems = localStorage.getItem("cartItems");
-      console.log(numItems);
       if (numItems != null) setCartItems(parseInt(numItems));
     };
 
