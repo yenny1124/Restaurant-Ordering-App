@@ -37,8 +37,9 @@
     0 4px 4px rgba(0, 0, 0, 0.2), 0 -4px 4px rgba(0, 0, 0, 0.2),
     0 -8px 18px rgba(0, 0, 0, 0.16);
 
-  --border-radius: 3% 92% 4% 95%/95% 3% 92% 2%;
+  --cool-border-radius: 3% 92% 4% 95%/95% 3% 92% 2%;
   --tilt-animation: tilt 0.2s linear;
+  --light-grey: rgb(238, 238, 238);
   /*
   #fff5e0 yellowish off-white
   FFEADD

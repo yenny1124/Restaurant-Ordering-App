@@ -29,6 +29,13 @@
   background-color: white;
   box-sizing: content-box;
   border: black 2px solid;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.modal-info {
+  display: block;
 }
 
 .modal h2 {
@@ -38,13 +45,41 @@
 
 .close-button {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  height: 50px;
-  width: 50px;
+  top: 10px;
+  right: 10px;
+  height: 40px;
+  width: 40px;
 }
 
 .close-button:hover {
   background-color: var(--background-color-2);
   color: var(--logo-red);
+}
+
+.modal-content-image {
+  width: 100%;
+  height: 40%;
+  position: relative;
+  background-color: var(--light-grey);
+}
+.modal-content-image img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media screen and (min-width: 1080px) {
+  .modal-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .modal-content-image {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    background-color: var(--light-grey);
+  }
+  .modal-info {
+    width: 50%;
+  }
 }

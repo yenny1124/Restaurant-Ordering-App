@@ -18,6 +18,29 @@ const ItemModal = () => {
     }
   }, [modalContent.open]);
 
+  // adds a single item to local storage, if it already exists the quantity is incremented
+  function addToCart() {
+    if (
+      localStorage.getItem("cartCount") === null ||
+      localStorage.getItem("cartCount") == "NaN"
+    ) {
+      localStorage.setItem("cartCount", "0");
+    }
+    let numItems = parseInt(localStorage.getItem("cartCount") ?? "0") + 1;
+    localStorage.setItem("cartCount", numItems.toString());
+
+    let item = localStorage.getItem(`cart-item${modalContent._id}`);
+    let quantity =
+      item === null ? 0 : parseInt(JSON.parse(item ?? "").quantity ?? "0");
+    quantity++;
+
+    localStorage.setItem(
+      `cart-item${modalContent._id}`,
+      JSON.stringify({ item: modalContent, quantity })
+    );
+    window.dispatchEvent(new Event("storage"));
+  }
+
   return (
     <>
       <dialog className="modal" open={modalState}>
@@ -34,20 +57,24 @@ const ItemModal = () => {
             });
           }}
         ></div>
-        <div className="modal-content">
-          <h2>{modalContent.name}</h2>
-          <p>{modalContent.prices}</p>
-          <p>{modalContent.desc}</p>
 
-          <div className="item-card-image">
+        <div className="modal-content">
+          <div className="modal-content-image">
             {modalContent.name != "loading" && (
               <Image
                 src={modalContent.img}
                 alt={modalContent.name}
-                width={1000}
-                height={1000}
+                width={1920}
+                height={1080}
               />
             )}
+          </div>
+
+          <div className="modal-info">
+            <h2>{modalContent.name + " " + modalContent.prices}</h2>
+            <p>{modalContent.desc}</p>
+            <p>INGREDIENTS STUFF</p>
+            <button onClick={addToCart}>add to cart</button>
           </div>
 
           <FontAwesomeIcon

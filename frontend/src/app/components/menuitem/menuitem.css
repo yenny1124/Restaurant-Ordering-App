@@ -1,7 +1,7 @@
 .menu-item-box {
   position: relative;
   margin: 6px;
-  border-radius: var(--border-radius);
+  border-radius: var(--cool-border-radius);
   border-width: 3px 3px 5px 5px;
   border: black solid;
 }

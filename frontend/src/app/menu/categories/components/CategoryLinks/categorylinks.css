@@ -20,7 +20,7 @@
   color: black;
   margin: 10px 0px;
   border: black solid;
-  border-radius: var(--border-radius);
+  border-radius: var(--cool-border-radius);
   background-image: url("/nigiri.png");
   background-size: auto 100%;
   background-position: center;

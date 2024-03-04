@@ -1,7 +1,7 @@
 "use client";
 import React, { createContext, useState, useRef } from "react";
 
-import { ItemCard } from "../../../../components/itemcard/ItemCard";
+import { ItemCard } from "../../components/itemcard/ItemCard";
 import { ItemType } from "@/app/types";
 import ItemModal from "./itemmodal/ItemModal";
 

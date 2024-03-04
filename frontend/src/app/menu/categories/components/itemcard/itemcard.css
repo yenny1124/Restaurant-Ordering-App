@@ -5,26 +5,24 @@
   position: relative;
   background-position: center;
   background-size: auto 100%;
-  display: flex;
+  display: grid;
   text-align: center;
   box-shadow: var(--box-shadow);
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   justify-content: space-between;
+  border-radius: 12px;
+  grid-template-columns: var(--card-height) 1fr;
+}
+
+.item-info {
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (max-width: 575px) {
   .item-card {
-    width: 320px;
-
-    --card-height: 120px;
-  }
-
-  .item-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    justify-content: center;
+    --card-height: 140px;
   }
 }
 
@@ -33,42 +31,40 @@
     width: 100%;
     --card-height: 180px;
   }
-
-  .item-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-  }
 }
 
 @media screen and (min-width: 768px) {
   .item-card {
-    width: 480px;
-    --card-height: 240px;
+    width: 450px;
+    --card-height: 180px;
     margin-left: 16px;
     margin-right: 16px;
   }
-  .item-info {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-  }
 }
 
-.item-card-main {
-  display: flex;
+.item-desc {
+  font-size: 1rem;
 }
-.item-card {
+
+.item-price {
+  font-size: 1.25rem;
+}
+
+.item-card-image {
+  height: var(--card-height);
+  width: var(--card-height);
+  background-color: var(--light-grey);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-card-image img {
-  height: var(--card-height);
-  width: var(--card-height);
-  border-right: 0.5px grey solid;
+  height: 90%;
+  width: 90%;
+  border-radius: 12px;
+  background-color: white;
 }
 
 .item-card h2 {
@@ -77,11 +73,7 @@
   text-align: center;
   margin-top: 0.75rem;
   margin-bottom: 0;
-}
-
-.item-card p {
-  font-size: 1.25 rem;
-  margin: 0;
+  position: relative;
 }
 
 .add-cart-button {
@@ -91,12 +83,14 @@
   justify-content: center;
   align-items: center;
   background: none;
-  border: black 1px solid;
   position: absolute;
   right: 5px;
   bottom: 5px;
   cursor: pointer;
-  border-radius: 4px;
+  border: none;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
 }
 
 .add-cart-button svg {
@@ -105,12 +99,12 @@
 }
 @media screen and (min-width: 768px) {
   .add-cart-button:hover {
-    background-color: var(--background-color-2);
+    background-color: var(--logo-red);
   }
 }
 
 @media screen and (max-width: 767px) {
   .add-cart-button:active {
-    background-color: var(--background-color-2);
+    background-color: var(--logo-red);
   }
 }

@@ -12,7 +12,7 @@ export default function NavBarLink(props: { path: string; text: string }) {
   );
 
   useEffect(() => {
-    if (lastPath == props.path) {
+    if (pathname.includes(props.path.substring(1, props.path.length))) {
       setClass("current-page");
     } else {
       setClass("");

@@ -3,17 +3,23 @@ import { useState, useContext, useEffect } from "react";
 import "./itemcard.css";
 import Image from "next/image";
 import { ItemType } from "@/app/types";
-import { ModalContext } from "../../menu/categories/[category]/components/CategoryContent";
+import { ModalContext } from "../../[category]/components/CategoryContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
   const [isClient, setIsClient] = useState(false);
-
+  const [screenSize, setScreenSize] = useState("sm");
   // to avoid hydration issues with conditional rendering
   useEffect(() => {
-    setIsClient(true);
+    const updateSize = () => {
+      if (window.innerWidth <= 575) setScreenSize("sm");
+      else setScreenSize("md");
+    };
+    window.addEventListener("resize", updateSize);
+    updateSize();
+    return () => window.removeEventListener("resize", updateSize);
   }, []);
 
   // adds a single item to local storage, if it already exists the quantity is incremented
@@ -42,14 +48,11 @@ export function ItemCard(props: ItemType) {
   return (
     <div className="item-card">
       <div className="item-card-image">
-        <Image src={props.img} alt={props.name} width={100} height={100} />
+        <Image src={props.img} alt={props.name} width={1920} height={1080} />
       </div>
       <div className="item-info">
-        <h2>{props.name}</h2>
-        <p>{props.prices}</p>
-        {isClient && window.innerWidth > 575 && (
-          <p style={{ fontSize: "1.25rem" }}>{props.desc}</p>
-        )}
+        <h2>{props.name + " " + props.prices}</h2>
+        <p className="item-desc">{props.desc}</p>
       </div>
       <div
         style={{
@@ -73,7 +76,7 @@ export function ItemCard(props: ItemType) {
         <FontAwesomeIcon
           icon={faPlus}
           onClick={addToCart}
-          style={{ height: "25px", width: "25px", color: "black" }}
+          style={{ height: "25px", width: "25px" }}
         />
       </button>
     </div>

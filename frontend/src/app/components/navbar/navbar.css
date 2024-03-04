@@ -25,10 +25,8 @@
   pointer-events: none;
 }
 
-@media only screen and (min-width: 1080px) {
-  .restaurant-logo:hover {
-    animation: var(--tilt-animation);
-  }
+.restaurant-logo:hover {
+  animation: var(--tilt-animation);
 }
 
 .navbar-icon {
@@ -138,5 +136,5 @@
 }
 
 .current-page {
-  border-bottom: 1px black solid;
+  border-bottom: 2px red solid;
 }

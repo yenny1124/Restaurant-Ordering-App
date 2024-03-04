@@ -21,7 +21,8 @@
     justify-content: left;
     align-items: left;
     box-shadow: var(--box-shadow);
-    border: black 2px solid;
+    margin: 0px;
+    background-color: var(--light-grey);
   }
 
   .menu-navbar-content a {
@@ -35,7 +36,8 @@
     padding: 8px 10px;
     white-space: nowrap;
     word-wrap: break-word;
-    border-right: 1px black solid;
+    border-radius: var(--border-radius);
+    margin-right: 8px;
   }
   .menu-navbar-content a:last-child {
     border: none;
@@ -105,15 +107,17 @@
     text-wrap: nowrap;
     padding: 8px 10px;
     margin: 8px;
-    border: black solid 2px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
   }
 
   .menu-navbar-content a:hover {
-    background-color: grey;
+    background-color: var(--background-color-2);
+    color: red;
     cursor: pointer;
   }
 }
 
 .current-category {
-  background-color: var(--background-color-2) !important;
+  border-bottom: red solid 2px;
 }

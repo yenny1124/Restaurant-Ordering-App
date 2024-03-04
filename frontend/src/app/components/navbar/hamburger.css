@@ -23,6 +23,9 @@
   align-items: center;
 }
 
+.burger-icon:hover {
+  animation: var(--tilt-animation);
+}
 .burger-icon svg {
   height: 80%;
   width: 80%;
