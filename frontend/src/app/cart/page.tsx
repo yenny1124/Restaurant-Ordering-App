@@ -1,6 +1,6 @@
 "use client";
 import "./cart.css";
-import { ItemCard } from "../menu/categories/components/itemcard/ItemCard";
+import { ItemCard } from "../menu/components/itemcard/ItemCard";
 import React from "react";
 import { useEffect, useState } from "react";
 import { render } from "react-dom";

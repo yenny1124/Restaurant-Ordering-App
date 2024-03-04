@@ -3,7 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import "./itemcard.css";
 import Image from "next/image";
 import { ItemType } from "@/app/types";
-import { ModalContext } from "../../[category]/components/CategoryContent";
+import { ModalContext } from "../CategoryContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 

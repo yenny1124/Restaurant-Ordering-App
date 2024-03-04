@@ -1,7 +1,7 @@
-import { ItemCard } from "../components/itemcard/ItemCard";
+import { ItemCard } from "../../components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
-import CategoryContent from "./components/CategoryContent";
+import CategoryContent from "../../components/CategoryContent";
 import { CategoryType, ItemType } from "@/app/types";
 
 export default async function CategoryType({
