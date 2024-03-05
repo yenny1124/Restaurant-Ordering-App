@@ -4,6 +4,7 @@ const { getProducts, getProductById, createProductByCategory, updateProduct, del
 const { getCategories, createCategory, getCategoryById, updateCategoryById, deleteCategoryById } = require('../controllers/productController');
 const { getProductsByCategoryID } = require('../controllers/productController');
 const { createOrder, getOrders } = require('../controllers/orderController');
+const { createReservation, getReservations } = require('../controllers/reservationController')
 const router = Router()
 
 router.get('/get/categories', getCategories);
@@ -22,5 +23,8 @@ router.delete("/delete/product/:id", deleteProduct)
 
 router.post("/save/order", createOrder)
 router.get('/get/orders', getOrders);
+
+router.post("/save/reservation", createReservation)
+router.get('/get/reservations', getReservations);
 
 module.exports = router;
