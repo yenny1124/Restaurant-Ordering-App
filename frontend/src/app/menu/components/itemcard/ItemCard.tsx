@@ -9,18 +9,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
-  const [isClient, setIsClient] = useState(false);
-  const [screenSize, setScreenSize] = useState("sm");
   // to avoid hydration issues with conditional rendering
-  useEffect(() => {
-    const updateSize = () => {
-      if (window.innerWidth <= 575) setScreenSize("sm");
-      else setScreenSize("md");
-    };
-    window.addEventListener("resize", updateSize);
-    updateSize();
-    return () => window.removeEventListener("resize", updateSize);
-  }, []);
 
   // adds a single item to local storage, if it already exists the quantity is incremented
   function addToCart() {
