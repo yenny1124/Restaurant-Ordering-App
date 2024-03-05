@@ -1,4 +1,4 @@
-import ConveyorBelt from "../conveyorbelt/ConveyorBelt";
+import ConveyorBelt from "./ConveyorBelt";
 import "./footer.css";
 import { Architects_Daughter } from "next/font/google";
 const architectsDaughter = Architects_Daughter({

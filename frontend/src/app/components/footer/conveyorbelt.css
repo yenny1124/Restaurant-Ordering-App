@@ -1,7 +1,7 @@
 .conveyor-belt {
   width: 200%;
   left: -100%;
-  height: calc(var(--navbar-height) * var(--navbar-ratio));
+  height: calc(var(--main-navbar-height) * var(--main-navbar-ratio));
   background-color: var(--background-color-2);
   position: relative;
   background-image: url("/nigiri.png");

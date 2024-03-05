@@ -46,7 +46,10 @@ export default function CartLink(props: { path: string; text: string }) {
   }, []);
 
   return (
-    <Link href={`${props.path}`} className={`navbar-link ${selectedClass}`}>
+    <Link
+      href={`${props.path}`}
+      className={`main-navbar-link ${selectedClass}`}
+    >
       {props.text}
       <div className="cart-item-counter">
         <FontAwesomeIcon icon={faCircle} />

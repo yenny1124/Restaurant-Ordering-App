@@ -20,7 +20,10 @@ export default function NavBarLink(props: { path: string; text: string }) {
   }, [lastPath, props, props.path]);
 
   return (
-    <Link href={`${props.path}`} className={`navbar-link ${selectedClass}`}>
+    <Link
+      href={`${props.path}`}
+      className={`main-navbar-link ${selectedClass}`}
+    >
       {props.text}
     </Link>
   );

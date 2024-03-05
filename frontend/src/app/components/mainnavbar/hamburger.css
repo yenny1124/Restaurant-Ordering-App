@@ -1,8 +1,8 @@
 .burger-icon {
   position: relative;
   transition: background-color 0.25s;
-  height: var(--navbar-height);
-  width: var(--navbar-height);
+  height: var(--main-navbar-height);
+  width: var(--main-navbar-height);
   z-index: 1;
   cursor: pointer;
   box-shadow: var(--box-shadow);
@@ -10,8 +10,8 @@
   pointer-events: auto;
 
   /*
-        height: calc(var(--navbar-height) - 14px);
-      width: calc(var(--navbar-height) - 22px);
+        height: calc(var(--main-navbar-height) - 14px);
+      width: calc(var(--main-navbar-height) - 22px);
         background-color: white;
       border-top: black 7px double;
       border-left: black 7px double;
@@ -37,7 +37,7 @@
   height: 100vh;
   position: fixed;
   transition: transform 1s;
-  padding: 0px calc(var(--navbar-height) * 0.25);
+  padding: 0px calc(var(--main-navbar-height) * 0.25);
   box-sizing: border-box;
   /** add this **/
   background-color: white;
@@ -52,7 +52,7 @@
   align-items: center;
   justify-content: right;
   width: 100%;
-  height: calc(var(--navbar-height) * var(--navbar-ratio));
+  height: calc(var(--main-navbar-height) * var(--main-navbar-ratio));
 }
 
 .burger-link {
@@ -71,8 +71,8 @@
 }
 
 .burger-link svg {
-  height: calc(var(--navbar-height) * 0.4);
-  width: calc(var(--navbar-height) * 0.4);
+  height: calc(var(--main-navbar-height) * 0.4);
+  width: calc(var(--main-navbar-height) * 0.4);
   cursor: pointer;
   margin-right: 8px;
 }

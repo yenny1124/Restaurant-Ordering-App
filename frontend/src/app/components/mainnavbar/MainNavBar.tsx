@@ -1,13 +1,13 @@
 "use client";
 import Link from "next/link";
-import "./navbar.css";
+import "./mainnavbar.css";
 import HamburgerIcon from "./HamburgerIcon";
 import HamburgerMenu from "./HamburgerMenu";
 import RestaurantLogo from "./RestaurantLogo";
-import NavBarLinks from "./NavBarLinks";
+import MainNavBarLinks from "./MainNavBarLinks";
 import { useState } from "react";
 
-export default function NavBar() {
+export default function MainNavBar() {
   const [menuOn, toggleMenu] = useState(false);
   const [menuState, setMenuState] = useState("on-screen");
   function handleMenu() {
@@ -17,11 +17,11 @@ export default function NavBar() {
   }
 
   return (
-    <header className="navbar">
-      <div className="navbar-placeholder"></div>
-      <div className="navbar-contents">
+    <header className="main-navbar">
+      <div className="main-navbar-placeholder"></div>
+      <div className="main-navbar-contents">
         <RestaurantLogo />
-        <NavBarLinks />
+        <MainNavBarLinks />
         <HamburgerIcon onClick={handleMenu} />
       </div>
       <HamburgerMenu className={menuState} />

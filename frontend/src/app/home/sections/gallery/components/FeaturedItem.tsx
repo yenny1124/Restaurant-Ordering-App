@@ -1,4 +1,4 @@
-import "./menuitem.css";
+import "./featureditem.css";
 
 export default function MenuItem() {
   let numItems = 0;
