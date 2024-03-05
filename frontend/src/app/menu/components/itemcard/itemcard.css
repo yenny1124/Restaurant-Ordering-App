@@ -75,8 +75,8 @@
 }
 
 .add-cart-button {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -97,12 +97,14 @@
 }
 @media screen and (min-width: 768px) {
   .add-cart-button:hover {
-    background-color: var(--logo-red);
+    background-color: var(--background-color-2);
+    color: var(--logo-red);
   }
 }
 
 @media screen and (max-width: 767px) {
   .add-cart-button:active {
-    background-color: var(--logo-red);
+    background-color: var(--background-color-2);
+    color: var(--logo-red);
   }
 }
