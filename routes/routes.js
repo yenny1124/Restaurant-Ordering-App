@@ -3,6 +3,7 @@ const { Router } = require("express")
 const { getProducts, getProductById, createProductByCategory, updateProduct, deleteProduct } = require("../controllers/productController");
 const { getCategories, createCategory, getCategoryById, updateCategoryById, deleteCategoryById } = require('../controllers/productController');
 const { getProductsByCategoryID } = require('../controllers/productController');
+const { createOrder, getOrders } = require('../controllers/orderController');
 const router = Router()
 
 router.get('/get/categories', getCategories);
@@ -18,5 +19,8 @@ router.get("/get/product/:id", getProductById);
 router.post("/save/product", createProductByCategory)
 router.put("/update/product/:id", updateProduct)
 router.delete("/delete/product/:id", deleteProduct)
+
+router.post("/save/order", createOrder)
+router.get('/get/orders', getOrders);
 
 module.exports = router;
