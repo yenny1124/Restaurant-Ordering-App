@@ -6,7 +6,7 @@ export default function NavBarLinks() {
     <nav className={`main-navbar-links`}>
       <MainNavBarLink path="/home" text="Home" />
       <MainNavBarLink path="/menu" text="Menu" />
-      <MainNavBarLink path="/About" text="About" />
+      <MainNavBarLink path="/about" text="About" />
       <MainNavBarLink path="/order" text="Order" />
       <MainNavBarLink path="/booktable" text="Book Table" />
       <MainNavBarLink path="/contact" text="Contact Us" />
