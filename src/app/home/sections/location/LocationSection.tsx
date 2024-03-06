@@ -1,8 +1,7 @@
-import Image from "next/image";
 import { Architects_Daughter } from "next/font/google";
 import "./locationsection.css";
-import Link from "next/link";
 import LinkButton from "@/app/components/linkbutton/LinkButton";
+import Map from "@/app/components/map/Map";
 const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
   weight: ["400"],
@@ -29,7 +28,7 @@ export default function LocationSection() {
         <LinkButton text="Book Now!" link="booktable" />
       </div>
       <div className="location-section-map">
-        <div className="map-api"></div>
+        <Map />
       </div>
     </section>
   );
