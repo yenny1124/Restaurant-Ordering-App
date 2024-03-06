@@ -32,7 +32,9 @@ const fetchProductsByCategory = async (
 
   let categories: []; // need to check this somehow
   try {
-    const response = await fetch("http://localhost:3003/api/get/categories"); // Adjust URL as needed
+    const response = await fetch(
+      "https://restaurant-ecommerce.onrender.com/api/get/categories"
+    ); // Adjust URL as needed
     const data = await response.json();
     categories = data;
   } catch (error) {
@@ -47,7 +49,7 @@ const fetchProductsByCategory = async (
   });
   try {
     if (categoryId == "") throw new Error();
-    let url = `http://localhost:3003/api/get/products/category/${categoryId}`;
+    let url = `https://restaurant-ecommerce.onrender.com/api/get/products/category/${categoryId}`;
     const response = await fetch(url);
     const data = await response.json();
     return data;

@@ -22,7 +22,9 @@ export default async function MenuNavbar() {
 // fetch categories
 const fetchCategories = async () => {
   try {
-    const response = await fetch("http://localhost:3003/api/get/categories"); // Adjust URL as needed
+    const response = await fetch(
+      "https://restaurant-ecommerce.onrender.com/api/get/categories"
+    ); // Adjust URL as needed
     const data = await response.json();
     // console.log(data); // to debug
     return data;

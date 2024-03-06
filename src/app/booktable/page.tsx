@@ -34,7 +34,7 @@ export default function BookTable() {
 
     try {
       const response = await fetch(
-        "http://localhost:3003/api/save/reservation",
+        "https://restaurant-ecommerce.onrender.com//api/save/reservation",
         {
           method: "POST",
           headers: {

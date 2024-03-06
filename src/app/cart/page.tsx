@@ -63,7 +63,7 @@ export default function Cart() {
         if (objectValue === undefined) return;
 
         response = await fetch(
-          `http://localhost:3003/api/get/product/${objectValue._id}`
+          `https://restaurant-ecommerce.onrender.com/api/get/product/${objectValue._id}`
         );
 
         if (!response.ok) {
