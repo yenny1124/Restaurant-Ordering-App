@@ -1,25 +1,25 @@
-import { Architects_Daughter } from "next/font/google";
-import "./menu.css";
-import CategoryLinks from "./components/categorylinks/CategoryLinks";
-const architectsDaughter = Architects_Daughter({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-export default async function Menu() {
-  // fetch categories
+import Link from "next/link";
+import React from "react";
+import "./menunavbar.css";
+import CategoryLinks from "../categorylinks/CategoryLinks";
+import {
+  faCaretRight,
+  faCaretLeft,
+  faFont,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+export default async function MenuNavbar() {
   return (
-    <main className="menu-main">
-      <h1 className={architectsDaughter.className}>Menu</h1>
-      <div className="centering-div">
-        <CategoryLinks
-          categories={await fetchCategories()}
-          navType="menu-category"
-        />
-      </div>
-    </main>
+    <header className="menu-navbar">
+      <CategoryLinks
+        categories={await fetchCategories()}
+        navType="menu-navbar-content"
+      />
+    </header>
   );
 }
 
+// fetch categories
 const fetchCategories = async () => {
   try {
     const response = await fetch("http://localhost:3003/api/get/categories"); // Adjust URL as needed
@@ -31,8 +31,8 @@ const fetchCategories = async () => {
     return null;
   }
 };
-/*
-old example using json placeholder, keeping here just in case
+
+/* old example using json placeholder
 const getCategories = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "force-cache",

@@ -1,0 +1,55 @@
+.book-table-page {
+  display: flex;
+  height: 1000px;
+  width: 100%;
+}
+
+.book-table-content {
+  position: relative;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-table-form {
+  width: auto;
+  height: auto;
+}
+.book-table-input {
+  height: 1.5rem;
+  width: 200px;
+  border: 1px black solid;
+  margin-bottom: 12px;
+}
+
+.book-table-input-label {
+  font-size: 1.25rem;
+}
+
+.submit-button {
+  height: 3.5rem;
+  width: 7rem;
+  background-color: var(--brown);
+  border: none;
+  box-shadow: var(--box-shadow);
+  font-size: 1.25rem;
+  color: white;
+  margin-top: 12px;
+  cursor: pointer;
+  border-radius: var(border-radius);
+}
+
+.submit-button:hover {
+  animation: var(--tilt-animation);
+}
+@media screen and (max-width: 1079px) {
+  .book-table-page {
+    flex-direction: column;
+  }
+  .book-table-content {
+    position: relative;
+    width: 100%;
+  }
+}

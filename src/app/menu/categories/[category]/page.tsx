@@ -1,46 +1,63 @@
-import { ItemCard } from "../components/itemcard/ItemCard";
+import { ItemCard } from "../../components/itemcard/ItemCard";
 import React from "react";
 import "./category.css";
-export default async function Category({
+import CategoryContent from "../../components/CategoryContent";
+import { CategoryType, ItemType } from "@/app/types";
+
+export default async function CategoryType({
   params,
 }: {
   params: { category: string };
 }) {
-  const items = await getItems();
-
-  function createCards() {
-    let itemCards: any = [];
-    items.forEach(
-      (element: {
-        category: string;
-        itemName: string;
-        itemDescription: string;
-      }) => {
-        if ("category-" + element.category != params.category) {
-          return;
-        }
-        let itemCard = React.createElement(ItemCard, {
-          itemName: element.itemName,
-          itemDescription: element.itemDescription,
-          key: `item-card-${element.category + element.itemName}`,
-        });
-        itemCards.push(itemCard);
-      }
-    );
-
-    return React.createElement(
-      "div",
-      { className: "menu-category", key: "cards" + params.category },
-      itemCards
-    );
-  }
-
   return (
     <main>
-      <div className="centering-div">{createCards()}</div>
+      <div className="centering-div">
+        <div className="menu-category">
+          <CategoryContent
+            items={await fetchProductsByCategory(params.category)}
+          />
+        </div>
+      </div>
     </main>
   );
 }
+
+// Fetch products by selected category
+// !IMPORTANT! FIX LATER category from URL is being used for fetching items, potential sql injection vulnerability
+const fetchProductsByCategory = async (
+  category: string
+): Promise<Array<ItemType> | null> => {
+  // FIX LATER
+  // ugly way of finding category id for the current category
+
+  let categories: []; // need to check this somehow
+  try {
+    const response = await fetch("http://localhost:3003/api/get/categories"); // Adjust URL as needed
+    const data = await response.json();
+    categories = data;
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    categories = [];
+  }
+
+  let categoryId: string;
+  categoryId = ""; //FIX LATER
+  categories.forEach((element: CategoryType) => {
+    if (element.name == category.replace("-", " ")) categoryId = element._id;
+  });
+  try {
+    if (categoryId == "") throw new Error();
+    let url = `http://localhost:3003/api/get/products/category/${categoryId}`;
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching products:", error);
+    return null;
+  }
+};
+
+/* old example using json placeholder
 const getItems = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/posts", {
     cache: "force-cache",
@@ -55,3 +72,4 @@ const getItems = async () => {
   });
   return categories;
 };
+*/

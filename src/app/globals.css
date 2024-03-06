@@ -22,8 +22,8 @@
     rgba(255, 255, 255, 0)
   );
 
-  --navbar-height: 75px;
-  --navbar-ratio: 1.5;
+  --main-navbar-height: 75px;
+  --main-navbar-ratio: 1.5;
   --hamburger-width: 250px;
   --background-color: #fff3e2;
   --background-color-2: #ffe5ca;
@@ -31,14 +31,15 @@
   --logo-red: #ed1c24;
   --secondary-red: #ff6969;
   --blue: #421919;
-  --footer-height: 600px;
+  --footer-height: 716.5px;
   --box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16), 0 4px 4px rgba(0, 0, 0, 0.2);
   --section-box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16),
     0 4px 4px rgba(0, 0, 0, 0.2), 0 -4px 4px rgba(0, 0, 0, 0.2),
     0 -8px 18px rgba(0, 0, 0, 0.16);
 
-  --border-radius: 3% 92% 4% 95%/95% 3% 92% 2%;
+  --cool-border-radius: 3% 92% 4% 95%/95% 3% 92% 2%;
   --tilt-animation: tilt 0.2s linear;
+  --light-grey: rgb(238, 238, 238);
   /*
   #fff5e0 yellowish off-white
   FFEADD
@@ -48,7 +49,7 @@
 
 @media (min-width: 1080px) {
   :root {
-    --footer-height: 300px;
+    --footer-height: 516.5px;
   }
 }
 
