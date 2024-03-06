@@ -1,6 +1,6 @@
 import { Architects_Daughter } from "next/font/google";
 import "./menu.css";
-import CategoryLinks from "./components/tmp/CategoryLinks";
+import CategoryLinks from "./components/categorylinks/CategoryLinks";
 const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
   weight: ["400"],

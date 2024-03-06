@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import "./menunavbar.css";
-import CategoryLinks from "../tmp/CategoryLinks";
+import CategoryLinks from "../categorylinks/CategoryLinks";
 import {
   faCaretRight,
   faCaretLeft,
