@@ -18,7 +18,6 @@ export default function BookTable() {
   const [submissionStatus, setSubmissionStatus] = useState(0);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value);
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -59,7 +58,6 @@ export default function BookTable() {
       // Optionally inform the user of the failure to submit the order
     }
   };
-  console.log(formData);
   return (
     <main className="book-table-page">
       <div className="book-table-header">
