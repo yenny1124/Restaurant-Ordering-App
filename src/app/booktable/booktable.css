@@ -44,6 +44,13 @@
   margin-bottom: 12px;
 }
 
+.book-table-input:valid {
+  border: green 1px solid;
+}
+
+.book-table-input:not(:placeholder-shown):invalid {
+  border: red 1px solid;
+}
 .book-table-input-label {
   font-size: 1.25rem;
 }
