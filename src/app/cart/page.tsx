@@ -4,11 +4,11 @@ import React, { useLayoutEffect } from "react";
 import { useEffect, useState } from "react";
 import { CartItemType, ItemType } from "../types";
 import CartItems from "./CartItems";
+import ItemizedBill from "./ItemizedBill";
+import Link from "next/link";
+import LinkButton from "../components/linkbutton/LinkButton";
 export default function Cart() {
   const [cartItems, setCartItems] = useState<Array<CartItemType>>([]);
-  const [isClient, setIsClient] = useState(false);
-  // const [orderTotal, setOrderTotal] = useState(calculateTotal());
-  //const [itemPrices, setItemPrices] = useState(createItemizedBill());
 
   useEffect(() => {
     getItems();
@@ -46,6 +46,7 @@ export default function Cart() {
     });
     setCartItems(updatedCartItems);
   }
+
   const getItems = async () => {
     if (typeof localStorage === "undefined") {
       return;
@@ -98,100 +99,9 @@ export default function Cart() {
         <button onClick={clearCart}>clear cart</button>
       </div>
       <div className="cart-bill">
-        {/*isClient && itemPrices*/}
-        <p> {/*isClient && orderTotal*/}</p>
+        <ItemizedBill items={cartItems} />
+        <LinkButton link="/checkout" text="Checkout" />
       </div>
     </main>
   );
 }
-
-/*
-  // load all cart items and display
-  function createItemList() {
-    if (typeof localStorage === "undefined") {
-      return <p>uh oh</p>;
-    }
-    const localStorageKeys = Object.keys(localStorage);
-    let itemCards: any = [];
-    try {
-      localStorageKeys.forEach((key: string) => {
-        if (!key.includes("cart-item")) return;
-        const item = JSON.parse(localStorage.getItem(key) ?? "");
-
-        let itemCard = React.createElement(CartItem, {
-          key: `item-card-${item.item._id}`,
-          item: item,
-        });
-        itemCards.push(itemCard);
-      });
-    } catch (error) {
-      return <h2>An error occured</h2>;
-    }
-
-    return itemCards;
-  }
-  */
-/*
-  function calculateTotal() {
-    if (typeof localStorage === "undefined") {
-      return <p>uh oh</p>;
-    }
-    let orderTotal = 0;
-    const localStorageKeys = Object.keys(localStorage);
-    let itemTotals: any = [];
-    try {
-      localStorageKeys.forEach((key: string) => {
-        if (!key.includes("cart-item")) return;
-        const item = JSON.parse(localStorage.getItem(key) ?? "");
-        orderTotal += parseFloat(item.item.prices) * item.quantity;
-        let itemCard = React.createElement(
-          "p",
-          {
-            key: `item-total-${item.item._id}`,
-          },
-          `${item.item.name} x${item.quantity} = $${
-            item.quantity * item.item.prices
-          }`
-        );
-        itemTotals.push(itemCard);
-      });
-    } catch (error) {
-      return <h2>An error occured</h2>;
-    }
-    return orderTotal;
-  }
-
-  function createItemizedBill() {
-    if (typeof localStorage === "undefined") {
-      return <p>uh oh</p>;
-    }
-    const localStorageKeys = Object.keys(localStorage);
-    let itemTotals: any = [];
-    try {
-      localStorageKeys.forEach((key: string) => {
-        if (!key.includes("cart-item")) return;
-        const item = JSON.parse(localStorage.getItem(key) ?? "");
-        let itemCard = React.createElement(
-          "p",
-          {
-            key: `item-total-${item.item._id}`,
-          },
-          `${item.item.name} x${item.quantity} = $${
-            item.quantity * item.item.prices
-          }`
-        );
-        itemTotals.push(itemCard);
-      });
-    } catch (error) {
-      return <h2>An error occured</h2>;
-    }
-    return itemTotals;
-  }
-  */
-
-/*
-    we want to update the cart items array only
-    more specifically, we want to remove items or update tehe quantity
-    to do this we will need to make a copy of the array
-    we will need to check local storage
-    */

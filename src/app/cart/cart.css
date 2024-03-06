@@ -14,8 +14,9 @@
 }
 
 .cart-bill {
-  background-color: var(--brown);
+  background-color: var(--background-color-2);
   height: auto;
+  border-left: 1px solid black;
 }
 
 @media screen and (max-width: 575px) {

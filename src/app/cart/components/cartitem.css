@@ -1,7 +1,7 @@
 .cart-item {
   --cart-item-height: 160px;
   width: 100%;
-  border-bottom: black 4px solid;
+  border-bottom: black 1px solid;
   height: var(--cart-item-height);
   display: grid;
   grid-template-columns: var(--cart-item-height) 1fr;

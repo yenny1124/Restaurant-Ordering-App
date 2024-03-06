@@ -71,7 +71,7 @@ export default function CartItem(props: { item: ItemType; quantity: number }) {
         ></Image>
       </div>
       <div className="cart-item-info">
-        {props.item.name + " " + props.item.prices}
+        {`${props.item.name} ${props.item.prices} x${props.quantity}`}
 
         <div className="cart-item-quantity">
           <button onClick={decrement}>-</button>

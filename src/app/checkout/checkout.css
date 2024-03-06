@@ -1,0 +1,9 @@
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-form input {
+  width: 100px;
+}
