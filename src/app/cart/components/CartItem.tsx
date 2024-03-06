@@ -1,14 +1,14 @@
 import "./cartitem.css";
-import { CartItemType } from "@/app/types";
+import { ItemType } from "@/app/types";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-export default function CartItem(props: { item: CartItemType }) {
+export default function CartItem(props: { item: ItemType; quantity: number }) {
   const [itemQuantity, setItemQuantity] = useState(0);
 
   // correctly render when local storage state changes
   useEffect(() => {
     const cartCountListener = () => {
-      let stringItem = localStorage.getItem(`cart-item${props.item.item._id}`);
+      let stringItem = localStorage.getItem(`cart-item${props.item._id}`);
       if (stringItem === null) {
         setItemQuantity(0);
         return;
@@ -27,16 +27,16 @@ export default function CartItem(props: { item: CartItemType }) {
   }, [itemQuantity]);
 
   function decrement() {
-    let stringItem = localStorage.getItem(`cart-item${props.item.item._id}`);
+    let stringItem = localStorage.getItem(`cart-item${props.item._id}`);
     if (stringItem === null) return;
     let objectItem = JSON.parse(stringItem);
     let quantity = objectItem.quantity - 1;
     if (quantity <= 0) {
-      localStorage.removeItem(`cart-item${props.item.item._id}`);
+      localStorage.removeItem(`cart-item${props.item._id}`);
     } else {
       localStorage.setItem(
-        `cart-item${props.item.item._id}`,
-        JSON.stringify({ item: props.item.item, quantity })
+        `cart-item${props.item._id}`,
+        JSON.stringify({ _id: props.item._id, quantity })
       );
     }
 
@@ -45,14 +45,14 @@ export default function CartItem(props: { item: CartItemType }) {
     window.dispatchEvent(new Event("storage"));
   }
   function increment() {
-    let stringItem = localStorage.getItem(`cart-item${props.item.item._id}`);
+    let stringItem = localStorage.getItem(`cart-item${props.item._id}`);
     if (stringItem === null) return;
     let objectItem = JSON.parse(stringItem);
     let quantity = objectItem.quantity + 1;
 
     localStorage.setItem(
-      `cart-item${props.item.item._id}`,
-      JSON.stringify({ item: props.item.item, quantity })
+      `cart-item${props.item._id}`,
+      JSON.stringify({ _id: props.item._id, quantity })
     );
 
     let cartItems = parseInt(localStorage.getItem("cartCount") ?? "0") + 1;
@@ -64,14 +64,14 @@ export default function CartItem(props: { item: CartItemType }) {
     <div className="cart-item">
       <div className="cart-item-image">
         <Image
-          src={props.item.item.img}
-          alt={props.item.item.name}
+          src={props.item.img}
+          alt={props.item.name}
           height={100}
           width={100}
         ></Image>
       </div>
       <div className="cart-item-info">
-        {props.item.item.name + " " + props.item.item.prices}
+        {props.item.name + " " + props.item.prices}
 
         <div className="cart-item-quantity">
           <button onClick={decrement}>-</button>

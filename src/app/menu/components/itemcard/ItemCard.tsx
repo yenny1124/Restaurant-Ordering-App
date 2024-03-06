@@ -29,7 +29,7 @@ export function ItemCard(props: ItemType) {
 
     localStorage.setItem(
       `cart-item${props._id}`,
-      JSON.stringify({ item: props, quantity })
+      JSON.stringify({ _id: props._id, quantity })
     );
     window.dispatchEvent(new Event("storage"));
   }
