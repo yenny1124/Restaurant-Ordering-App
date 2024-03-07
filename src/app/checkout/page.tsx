@@ -17,6 +17,12 @@ export default function Checkout() {
     cvv: "",
     pickUpDateTime: "",
   });
+  const [submissionStatus, setSubmissionStatus] = useState(0);
+  const statusMessage = [
+    <p></p>,
+    <p>Submission Success</p>,
+    <p>Submission Failed</p>,
+  ];
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -41,7 +47,11 @@ export default function Checkout() {
     };
 
     try {
-      if (calculateTotal() <= 0) throw new Error("Not a valid cart");
+      if (calculateTotal() <= 0) {
+        setSubmissionStatus(2);
+
+        throw new Error("Not a valid cart");
+      }
 
       const response = await fetch(
         "https://restaurant-ecommerce.onrender.com/api/save/order",
@@ -60,12 +70,15 @@ export default function Checkout() {
 
       const result = await response.json();
       console.log("Order submitted successfully", result);
+      setSubmissionStatus(1);
       // Optionally clear the cart after successful order submission
       clearCart();
       // Navigate to a success page or show a success message
       //navigate(`/order/${result._id}`); // Adjust the route as needed
     } catch (error) {
       console.error("Order submission error:", error);
+      setSubmissionStatus(2);
+
       // Optionally inform the user of the failure to submit the order
     }
   };
@@ -81,7 +94,6 @@ export default function Checkout() {
   }
   useEffect(() => {
     getItems();
-    window.addEventListener("storage", updateCartItems);
   }, []);
 
   useEffect(() => {
@@ -159,61 +171,105 @@ export default function Checkout() {
 
   return (
     <main className="cart-main">
-      <form onSubmit={handleSubmit} className="checkout-form">
-        <h1>Checkout Form</h1>
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          name="name"
-          placeholder="name"
-          onChange={handleChange}
-          required
-        ></input>
-        <label htmlFor="billingAddress">Billing Address</label>
-        <input
-          type="address"
-          name="billingAddress"
-          placeholder="billing address"
-          onChange={handleChange}
-          required
-        ></input>
-        <label htmlFor="cardNumber">Card Number</label>
-        <input
-          type="text"
-          name="cardNumber"
-          placeholder="card number"
-          onChange={handleChange}
-          required
-        ></input>
-        <label htmlFor="expiryDate">Expiry Date</label>
-        <input
-          type="text"
-          name="expiryDate"
-          placeholder="MM/DD"
-          onChange={handleChange}
-          required
-        ></input>
-        <label htmlFor="cvv">CVV</label>
-        <input
-          type="text"
-          name="cvv"
-          placeholder="cvv"
-          onChange={handleChange}
-          required
-        ></input>
-        <label htmlFor="pickUpDateTime">Pick Up Time</label>
-        <input
-          type="datetime-local"
-          name="pickUpDateTime"
-          placeholder="pickUpDateTime"
-          onChange={handleChange}
-          required
-        ></input>
-        <input type="submit" className="submit-button"></input>
-      </form>
+      <h1 style={{ textAlign: "center" }}>Checkout</h1>
+      <div className="checkout-body">
+        <div className="checkout-content">
+          <div className="checkout-summary">
+            <h2>Order Summary</h2>
+            <ItemizedBill items={cartItems} />
+          </div>
 
-      <div className="cart-bill">
-        <ItemizedBill items={cartItems} />
+          <form onSubmit={handleSubmit} className="checkout-form">
+            <h2>Credit Card Details</h2>
+            <div>
+              <label htmlFor="name">
+                Name
+                <br />
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                onChange={handleChange}
+                required
+              ></input>
+            </div>
+            <div>
+              <label htmlFor="billingAddress">
+                Billing Address
+                <br />
+              </label>
+              <input
+                type="address"
+                name="billingAddress"
+                placeholder="billing address"
+                onChange={handleChange}
+                required
+              ></input>
+            </div>
+
+            <div>
+              <label htmlFor="cardNumber">
+                Card Number
+                <br />
+              </label>
+              <input
+                type="text"
+                name="cardNumber"
+                placeholder="card number"
+                onChange={handleChange}
+                required
+              ></input>
+            </div>
+
+            <div>
+              <label htmlFor="expiryDate">
+                Expiry Date
+                <br />
+              </label>
+              <input
+                type="text"
+                name="expiryDate"
+                placeholder="MM/DD"
+                onChange={handleChange}
+                required
+              ></input>
+            </div>
+
+            <div>
+              <label htmlFor="cvv">
+                CVV
+                <br />
+              </label>
+              <input
+                type="text"
+                name="cvv"
+                placeholder="cvv"
+                onChange={handleChange}
+                required
+              ></input>
+            </div>
+
+            <div>
+              <label htmlFor="pickUpDateTime">
+                Pick Up Time
+                <br />
+              </label>
+              <input
+                type="datetime-local"
+                name="pickUpDateTime"
+                placeholder="pickUpDateTime"
+                onChange={handleChange}
+                required
+              ></input>
+            </div>
+
+            <button type="submit" className="submit-button">
+              Submit
+            </button>
+            {statusMessage[submissionStatus]}
+          </form>
+        </div>
       </div>
     </main>
   );

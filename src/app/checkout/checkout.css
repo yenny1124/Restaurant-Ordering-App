@@ -22,3 +22,56 @@
 .checkout-form label {
   font-size: 1.25rem;
 }
+
+.submit-button {
+  margin-top: 12px;
+  padding: 16px 20px;
+  font-size: 1.25rem;
+  border: none;
+  background-color: var(--brown);
+  color: white;
+  box-shadow: var(--box-shadow);
+}
+
+.submit-button:hover {
+  animation: var(--tilt-animation);
+}
+
+.checkout-body {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+.checkout-content {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  padding: 20px 40px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  .checkout-content {
+    flex-direction: column;
+  }
+  .checkout-summary {
+    border-bottom: 1px solid black;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .checkout-summary {
+    border-right: 1px solid black;
+    padding-right: 40px;
+  }
+  .checkout-form {
+    padding-left: 40px;
+  }
+}
+
+.cart-main h2 {
+  font-size: 2rem;
+  font-weight: normal;
+}

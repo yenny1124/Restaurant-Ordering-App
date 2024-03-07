@@ -22,7 +22,7 @@ export default function ItemizedBill(props: { items: Array<CartItemType> }) {
         <p key={item._id}>{`${item.prices[0]} x ${quantity} = ${itemTotal}`}</p>
       );
     });
-    cards.push(<p key="total">{`The Total Is $${round(total)}`}</p>);
+    cards.push(<p key="total">{`Order Total: $${round(total)}`}</p>);
     return cards;
   }
 
