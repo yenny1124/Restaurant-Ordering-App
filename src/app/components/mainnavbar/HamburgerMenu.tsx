@@ -41,7 +41,7 @@ export default function HamburgerMenu(props: { className: string }) {
       <div className="hamburger-top"></div>
 
       <nav className={`burger-links`}>
-        <Link href="/" className="burger-link">
+        <Link href="/home" className="burger-link">
           <FontAwesomeIcon icon={faHouse} />
           Home
         </Link>
@@ -53,18 +53,12 @@ export default function HamburgerMenu(props: { className: string }) {
           <FontAwesomeIcon icon={faTimeline} />
           About
         </Link>
-        <Link href="/order" className="burger-link">
-          <FontAwesomeIcon icon={faUtensils} />
-          Order Online
-        </Link>
+
         <Link href="/booktable" className="burger-link">
           <FontAwesomeIcon icon={faCalendarDay} />
           Book Table
         </Link>
-        <Link href="contact" className="burger-link">
-          <FontAwesomeIcon icon={faPhone} />
-          Contact Us
-        </Link>
+
         <Link href="/cart" className="burger-link">
           <FontAwesomeIcon icon={faCartShopping} />
           Cart

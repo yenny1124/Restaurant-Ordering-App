@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function RestaurantLogo() {
   return (
-    <Link href="/" className="restaurant-logo">
+    <Link href="/home" className="restaurant-logo">
       <Image
         width={75}
         height={75}
