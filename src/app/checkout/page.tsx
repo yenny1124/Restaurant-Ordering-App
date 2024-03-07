@@ -32,7 +32,6 @@ export default function Checkout() {
       cvv: formData.cvv,
       pickUpDateTime: formData.pickUpDateTime,
       items: cartItems.map((item) => {
-        console.log(item);
         return {
           productId: item.item._id,
           quantity: item.quantity,
@@ -40,9 +39,10 @@ export default function Checkout() {
       }),
       total: calculateTotal(), // Include the total calculated from the cart
     };
-    console.log(orderData);
 
     try {
+      if (calculateTotal() <= 0) throw new Error("Not a valid cart");
+
       const response = await fetch(
         "https://restaurant-ecommerce.onrender.com/api/save/order",
         {
@@ -165,49 +165,49 @@ export default function Checkout() {
         <input
           type="text"
           name="name"
-          id="name"
           placeholder="name"
           onChange={handleChange}
+          required
         ></input>
         <label htmlFor="billingAddress">Billing Address</label>
         <input
-          type="text"
+          type="address"
           name="billingAddress"
-          id="billingAddress"
           placeholder="billing address"
           onChange={handleChange}
+          required
         ></input>
         <label htmlFor="cardNumber">Card Number</label>
         <input
           type="text"
           name="cardNumber"
-          id="cardNumber"
           placeholder="card number"
           onChange={handleChange}
+          required
         ></input>
         <label htmlFor="expiryDate">Expiry Date</label>
         <input
           type="text"
           name="expiryDate"
-          id="expiryDate"
-          placeholder="expiryDate"
+          placeholder="MM/DD"
           onChange={handleChange}
+          required
         ></input>
         <label htmlFor="cvv">CVV</label>
         <input
           type="text"
           name="cvv"
-          id="cvv"
           placeholder="cvv"
           onChange={handleChange}
+          required
         ></input>
         <label htmlFor="pickUpDateTime">Pick Up Time</label>
         <input
-          type="text"
+          type="datetime-local"
           name="pickUpDateTime"
-          id="pickUpDateTime"
           placeholder="pickUpDateTime"
           onChange={handleChange}
+          required
         ></input>
         <input type="submit" className="submit-button"></input>
       </form>

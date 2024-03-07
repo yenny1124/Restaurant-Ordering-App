@@ -1,12 +1,28 @@
 .cart-item {
   --cart-item-height: 160px;
   width: 100%;
-  border-bottom: black 1px solid;
   height: var(--cart-item-height);
   display: grid;
   grid-template-columns: var(--cart-item-height) 1fr;
+  border-radius: var(--border-radius);
+  background-color: white;
+  box-shadow: var(--box-shadow);
 }
 
+.cart-item-holder {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.cart-item-quantity-holder {
+  padding: 6px 0px;
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+}
 .cart-item-image {
   height: var(--cart-item-height);
   width: var(--cart-item-height);
@@ -14,9 +30,12 @@
   justify-content: center;
   align-items: center;
   background-color: var(--light-grey);
+  border-radius: var(--border-radius);
 }
 
 .cart-item-image img {
+  border-radius: var(--border-radius);
+
   height: 90%;
   width: 90%;
 }
@@ -29,21 +48,29 @@
 }
 
 .cart-item-quantity {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
+  position: relative;
+  right: 0px;
   height: 30px;
-  width: 60px;
-  background-color: var(--light-grey);
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  width: 100px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: var(--border-radius);
   align-items: center;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
 }
 
 .cart-item-quantity button {
   height: 100%;
   width: 100%;
   cursor: pointer;
+  border-radius: var(--border-radius);
+  border: none;
+}
+.cart-item-quantity button:hover {
+  background-color: var(--background-color-2);
+  color: var(--logo-red);
 }
 
 .cart-item-quantity span {
@@ -51,12 +78,45 @@
   width: 100%;
   text-align: center;
 }
-@media screen and (max-width: 575px) {
+
+.cart-item h2 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  position: relative;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.cart-item p {
+  font-weight: normal;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
   .cart-item {
     --cart-item-height: 140px;
   }
+  .cart-item h2 {
+    font-size: 1.25rem;
+  }
+  .cart-item p {
+    font-size: 1rem;
+  }
 }
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .cart-content {
+    width: 450px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
   .cart-content {
     width: 576px;
   }

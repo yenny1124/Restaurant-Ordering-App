@@ -61,18 +61,22 @@ export default function CartItem(props: { item: ItemType; quantity: number }) {
   }
 
   return (
-    <div className="cart-item">
-      <div className="cart-item-image">
-        <Image
-          src={props.item.img}
-          alt={props.item.name}
-          height={100}
-          width={100}
-        ></Image>
+    <div className="cart-item-holder">
+      <div className="cart-item">
+        <div className="cart-item-image">
+          <Image
+            src={props.item.img}
+            alt={props.item.name}
+            height={100}
+            width={100}
+          ></Image>
+        </div>
+        <div className="cart-item-info">
+          <h2>{`${props.item.name} x${props.quantity}`}</h2>
+          <p>{`${props.item.prices}`}</p>
+        </div>
       </div>
-      <div className="cart-item-info">
-        {`${props.item.name} ${props.item.prices} x${props.quantity}`}
-
+      <div className="cart-item-quantity-holder">
         <div className="cart-item-quantity">
           <button onClick={decrement}>-</button>
           <span>{itemQuantity}</span>

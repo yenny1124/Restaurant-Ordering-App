@@ -6,4 +6,19 @@
 
 .checkout-form input {
   width: 100px;
+  height: 1.5rem;
+  width: 200px;
+  border: 1px black solid;
+  margin-bottom: 12px;
+}
+
+.checkout-form input:valid {
+  border: green 1px solid;
+}
+
+.checkout-form input:not(:placeholder-shown):invalid {
+  border: red 1px solid;
+}
+.checkout-form label {
+  font-size: 1.25rem;
 }

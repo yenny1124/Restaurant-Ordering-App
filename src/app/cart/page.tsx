@@ -83,6 +83,7 @@ export default function Cart() {
 
   // clears cart items and count in local storage
   function clearCart() {
+    if (!confirm("Do you really want to clear your cart?")) return;
     const localStorageKeys = Object.keys(localStorage);
     localStorageKeys.forEach((key) => {
       if (key.includes("cart-item")) localStorage.removeItem(key);
@@ -93,14 +94,18 @@ export default function Cart() {
 
   return (
     <main className="cart-main">
-      <div className="cart-content">
-        <CartItems items={cartItems}></CartItems>
+      <div className="cart-background">
+        <div className="cart-content">
+          <CartItems items={cartItems}></CartItems>
 
-        <button onClick={clearCart}>clear cart</button>
-      </div>
-      <div className="cart-bill">
-        <ItemizedBill items={cartItems} />
-        <LinkButton link="/checkout" text="Checkout" />
+          <button onClick={clearCart} className="clear-cart">
+            Clear Cart
+          </button>
+        </div>
+        <div className="cart-bill">
+          <ItemizedBill items={cartItems} />
+          <LinkButton link="/checkout" text="Checkout" />
+        </div>
       </div>
     </main>
   );
