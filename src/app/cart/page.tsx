@@ -32,24 +32,31 @@ export default function Cart() {
 
   return (
     <main className="cart-main">
-      <div className="cart-background">
-        <div className="cart-content">
-          <CartItems items={cartItems}></CartItems>
+      <h1 style={{ textAlign: "center" }}>Cart</h1>
+      <div className="cart-details">
+        <div className="cart-background">
+          <div className="cart-content">
+            {!Array.isArray(cartItems) ||
+              (!cartItems.length && (
+                <p style={{ color: "white" }}>loading cart details...</p>
+              ))}
+            <CartItems items={cartItems}></CartItems>
 
-          <button
-            onClick={() => {
-              clearCart();
-            }}
-            className="clear-cart"
-          >
-            Clear Cart
-          </button>
-        </div>
-        <div className="cart-bill">
-          <ItemizedBill items={cartItems} />
-          <Link className="button-lg" href="/checkout">
-            Checkout
-          </Link>
+            <button
+              onClick={() => {
+                clearCart();
+              }}
+              className="clear-cart"
+            >
+              Clear Cart
+            </button>
+          </div>
+          <div className="cart-bill">
+            <ItemizedBill items={cartItems} />
+            <Link className="button-lg" href="/checkout">
+              Checkout
+            </Link>
+          </div>
         </div>
       </div>
     </main>
