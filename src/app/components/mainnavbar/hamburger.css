@@ -32,6 +32,7 @@
 }
 
 .hamburger-menu {
+  top: 0px;
   right: -65%;
   width: 65%;
   height: 100vh;

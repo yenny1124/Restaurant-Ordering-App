@@ -1,19 +1,47 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHouse,
   faBookOpen,
   faTimeline,
-  faUtensils,
   faCalendarDay,
-  faPhone,
   faCartShopping,
   faCircle,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
-import "./hamburger.css";
-import { useState, useEffect } from "react";
 
-export default function HamburgerMenu(props: { className: string }) {
+import "./hamburger.css";
+
+export default function Hamburger() {
+  const [menuOn, toggleMenu] = useState(false);
+  const [menuState, setMenuState] = useState("on-screen");
+
+  function handleMenu() {
+    toggleMenu(!menuOn);
+    if (menuOn) setMenuState("on-screen");
+    else setMenuState("off-screen");
+  }
+
+  return (
+    <>
+      <HamburgerMenu className={menuState} />
+      <HamburgerIcon clickFunction={handleMenu} />
+    </>
+  );
+}
+
+function HamburgerIcon(props: { clickFunction: () => void }) {
+  return (
+    <div className="burger-icon" onClick={props.clickFunction}>
+      <FontAwesomeIcon icon={faBars} />
+    </div>
+  );
+}
+
+function HamburgerMenu(props: { className: string }) {
   const [cartCount, setCartCount] = useState(0);
 
   // render cart count when localstorage changes
