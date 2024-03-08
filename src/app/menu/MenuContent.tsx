@@ -2,8 +2,8 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import "./menucategorylinks.css";
-import MenuNavbarLink from "../menunavbar/MenuNavLink";
+import "./menu.css";
+import MenuNavbarLink from "../components/menu/menunavbar/MenuNavLink";
 import { fetchCategories } from "@/app/services/fetchservices";
 
 export default function MenuCategoryLinks(props: { navType: string }) {

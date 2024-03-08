@@ -1,4 +1,4 @@
-import MenuNavbar from "../components/menunavbar/MenuNavbar";
+import MenuNavbar from "../../components/menu/menunavbar/MenuNavbar";
 
 export default function MenuLayout({
   children,

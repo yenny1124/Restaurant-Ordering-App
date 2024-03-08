@@ -2,7 +2,7 @@
 import React from "react";
 import "./menunavbar.css";
 import { useState, useEffect } from "react";
-import MenuNavbarLink from "../menunavbar/MenuNavLink";
+import MenuNavbarLink from "./MenuNavLink";
 import { fetchCategories } from "@/app/services/fetchservices";
 
 export default function MenuNavbar() {

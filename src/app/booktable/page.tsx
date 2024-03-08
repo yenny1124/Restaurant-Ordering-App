@@ -1,6 +1,6 @@
 "use client";
 import "./booktable.css";
-import Map from "../components/map/Map";
+import Map from "../components/global/map/Map";
 import { ChangeEvent, FormEvent, useState } from "react";
 export default function BookTable() {
   const [formData, setFormData] = useState({
@@ -10,12 +10,13 @@ export default function BookTable() {
     numberOfPeople: "",
     reserveDateTime: "",
   });
+  const [submissionStatus, setSubmissionStatus] = useState(0);
+
   const statusMessage = [
     <p></p>,
     <p>Submission Success</p>,
     <p>Submission Failed</p>,
   ];
-  const [submissionStatus, setSubmissionStatus] = useState(0);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -49,13 +50,9 @@ export default function BookTable() {
       }
 
       const result = await response.json();
-      console.log("Reservation submitted successfully", result);
-
-      // Navigate to a success page or show a success message
       setSubmissionStatus(1);
     } catch (error) {
-      console.error("Reservation submission error:", error);
-      // Optionally inform the user of the failure to submit the order
+      setSubmissionStatus(2);
     }
   };
   return (

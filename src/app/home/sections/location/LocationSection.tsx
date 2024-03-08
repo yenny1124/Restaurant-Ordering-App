@@ -1,6 +1,6 @@
 import { Architects_Daughter } from "next/font/google";
 import "./locationsection.css";
-import Map from "@/app/components/map/Map";
+import Map from "@/app/components/global/map/Map";
 import Link from "next/link";
 const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],

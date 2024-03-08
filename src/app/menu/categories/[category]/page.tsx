@@ -1,6 +1,6 @@
 import React from "react";
 import "./category.css";
-import CategoryContent from "./categorycontent/CategoryContent";
+import CategoryContent from "./CategoryContent";
 
 export default async function Category({
   params,

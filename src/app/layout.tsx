@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Fredoka } from "next/font/google";
-import Footer from "./components/footer/Footer";
-import MainNavBar from "./components/mainnavbar/MainNavBar";
+import Footer from "./components/global/footer/Footer";
+import MainNavBar from "./components/global/mainnavbar/MainNavBar";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;

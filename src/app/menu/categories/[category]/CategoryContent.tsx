@@ -1,9 +1,9 @@
 "use client";
 import React, { createContext, useState, useRef } from "react";
 
-import { ItemCard } from "../../components/itemcard/ItemCard";
+import { ItemCard } from "../../../components/categories/itemcard/ItemCard";
 import { ItemType } from "@/app/types";
-import ItemModal from "../../components/itemmodal/ItemModal";
+import ItemModal from "../../../components/categories/itemmodal/ItemModal";
 import { useEffect } from "react";
 import { fetchProductsByCategory } from "@/app/services/fetchservices";
 import { ModalType } from "@/app/types";
