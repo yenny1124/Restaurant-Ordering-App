@@ -36,6 +36,10 @@
 .book-table-form {
   width: auto;
   height: auto;
+  background-color: var(--brown);
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
 }
 .book-table-input {
   height: 1.5rem;
@@ -95,4 +99,11 @@
     text-align: center;
     margin-bottom: 0px;
   }
+}
+
+.hello {
+  background-color: white;
+  border-radius: var(--border-radius);
+  padding: 30px;
+  box-shadow: var(--box-shadow);
 }

@@ -63,90 +63,91 @@ export default function BookTable() {
       <div className="book-table-grid">
         <div className="book-table-content">
           <form className="book-table-form" onSubmit={handleSubmit}>
-            <div>
-              <label className="book-table-input-label" htmlFor="name">
-                Name
-                <br />
-              </label>
-              <input
-                type="text"
-                className="book-table-input"
-                name="name"
-                id="name"
-                placeholder="John Doe"
-                onChange={handleChange}
-                required
-              ></input>
+            <div className="hello">
+              <div>
+                <label className="book-table-input-label" htmlFor="name">
+                  Name
+                  <br />
+                </label>
+                <input
+                  type="text"
+                  className="book-table-input"
+                  name="name"
+                  id="name"
+                  placeholder="John Doe"
+                  onChange={handleChange}
+                  required
+                ></input>
+              </div>
+              <div>
+                <label className="book-table-input-label" htmlFor="phoneNumber">
+                  Phone Number
+                  <br />
+                </label>
+                <input
+                  type="tel"
+                  className="book-table-input"
+                  name="phoneNumber"
+                  id="phoneNumber"
+                  pattern="[0-9]{9}"
+                  placeholder="123456789"
+                  onChange={handleChange}
+                  required
+                ></input>
+              </div>
+              <div>
+                <label className="book-table-input-label" htmlFor="email">
+                  Email
+                  <br />
+                </label>
+                <input
+                  type="email"
+                  className="book-table-input"
+                  name="email"
+                  id="email"
+                  pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
+                  placeholder="johndoe@gmail.com"
+                  onChange={handleChange}
+                  required
+                ></input>
+              </div>
+              <div>
+                <label
+                  className="book-table-input-label"
+                  htmlFor="numberOfPeople"
+                >
+                  Party Size
+                  <br />
+                </label>
+                <input
+                  type="number"
+                  className="book-table-input"
+                  name="numberOfPeople"
+                  id="numberOfPeople"
+                  placeholder="Enter a number"
+                  onChange={handleChange}
+                  required
+                ></input>
+              </div>
+              <div>
+                <label
+                  className="book-table-input-label"
+                  htmlFor="reserveDateTime"
+                >
+                  Date
+                  <br />
+                </label>
+                <input
+                  type="datetime-local"
+                  className="book-table-input"
+                  name="reserveDateTime"
+                  id="reserveDateTime"
+                  onChange={handleChange}
+                  required
+                ></input>
+              </div>
+              <input type="submit" className="submit-button"></input>
             </div>
-            <div>
-              <label className="book-table-input-label" htmlFor="phoneNumber">
-                Phone Number
-                <br />
-              </label>
-              <input
-                type="tel"
-                className="book-table-input"
-                name="phoneNumber"
-                id="phoneNumber"
-                pattern="[0-9]{9}"
-                placeholder="123456789"
-                onChange={handleChange}
-                required
-              ></input>
-            </div>
-            <div>
-              <label className="book-table-input-label" htmlFor="email">
-                Email
-                <br />
-              </label>
-              <input
-                type="email"
-                className="book-table-input"
-                name="email"
-                id="email"
-                pattern="[A-Za-z0-9._+\-']+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$"
-                placeholder="johndoe@gmail.com"
-                onChange={handleChange}
-                required
-              ></input>
-            </div>
-            <div>
-              <label
-                className="book-table-input-label"
-                htmlFor="numberOfPeople"
-              >
-                Party Size
-                <br />
-              </label>
-              <input
-                type="number"
-                className="book-table-input"
-                name="numberOfPeople"
-                id="numberOfPeople"
-                placeholder="Enter a number"
-                onChange={handleChange}
-                required
-              ></input>
-            </div>
-            <div>
-              <label
-                className="book-table-input-label"
-                htmlFor="reserveDateTime"
-              >
-                Date
-                <br />
-              </label>
-              <input
-                type="datetime-local"
-                className="book-table-input"
-                name="reserveDateTime"
-                id="reserveDateTime"
-                onChange={handleChange}
-                required
-              ></input>
-            </div>
-
-            <input type="submit" className="submit-button"></input>
             {statusMessage[submissionStatus]}
           </form>
         </div>
