@@ -56,6 +56,8 @@ export default function ItemizedBill(props: {
         >
           Order Summary
         </h2>
+        {!Array.isArray(props.items) ||
+          (!props.items.length && <p>loading order summary...</p>)}
         {createBillDisplay()}
       </div>
       {props.button && (
