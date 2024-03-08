@@ -27,7 +27,8 @@
   left: 50%;
   text-align: center;
   background-color: white;
-  box-sizing: content-box;
+  box-sizing: border-box;
+
   border: black 2px solid;
   display: flex;
   flex-direction: column;
@@ -50,6 +51,8 @@
   right: 10px;
   height: 40px;
   width: 40px;
+  border-radius: var(--border-radius);
+  padding: 8px;
 }
 
 .close-button:hover {
@@ -102,17 +105,17 @@
   }
 }
 
-.modal-info form {
+.modal-info .modal-input-div {
   display: flex;
   flex-direction: column;
   width: 60%;
   align-items: center;
 }
 
-.modal-info form textarea {
+.modal-info .modal-input-div textarea {
   width: 100%;
 }
 
-.modal-info form button {
+.modal-info .modal-input-div button {
   margin-top: 20px;
 }

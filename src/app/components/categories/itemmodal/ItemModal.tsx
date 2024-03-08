@@ -1,5 +1,12 @@
 "use client";
-import { useContext, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  FormEvent,
+  useContext,
+  useEffect,
+  useState,
+  useRef,
+} from "react";
 import { ModalContext } from "@/app/menu/categories/[category]/page";
 import "./itemmodal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,9 +15,10 @@ import Image from "next/image";
 import { addToCart } from "@/app/services/cartservices";
 const ItemModal = () => {
   const [modalState, setModalState] = useState(false);
+  const additionalDetailsRef = useRef<HTMLTextAreaElement>(null);
+  let additionalDetails = "";
   const modalContent = useContext(ModalContext).modalContent;
   const setModalContext = useContext(ModalContext).setModalContent;
-
   useEffect(() => {
     if (modalContent.open == true) {
       setModalState(true);
@@ -18,6 +26,11 @@ const ItemModal = () => {
       setModalState(false);
     }
   }, [modalContent.open]);
+
+  const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    e.preventDefault();
+    additionalDetails = e.target.value;
+  };
 
   return (
     <>
@@ -51,23 +64,35 @@ const ItemModal = () => {
           <div className="modal-info">
             <h2>{modalContent.name + " " + modalContent.prices}</h2>
             <p>{modalContent.desc}</p>
-            <form>
-              <textarea name="" id="" rows={10}></textarea>
+            <div className="modal-input-div">
+              <textarea
+                onChange={handleChange}
+                name="additionalDetails"
+                id="additionalDetails"
+                rows={10}
+                ref={additionalDetailsRef}
+              ></textarea>
               <button
                 className="oval-button"
                 onClick={() => {
-                  addToCart(modalContent._id);
+                  addToCart(modalContent._id, additionalDetails);
                 }}
               >
                 Add to Cart
               </button>
-            </form>
+            </div>
           </div>
 
           <FontAwesomeIcon
             icon={faX}
             className="close-button"
             onClick={() => {
+              if (
+                additionalDetailsRef.current !== null &&
+                additionalDetailsRef.current !== undefined
+              ) {
+                additionalDetailsRef.current.value = "";
+              }
               setModalContext({
                 _id: modalContent._id,
                 name: modalContent.name,

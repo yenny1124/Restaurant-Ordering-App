@@ -56,7 +56,7 @@ function getItemQuantity(id: string) {
 }
 
 // adds a single item to local storage, if it already exists the quantity is incremented
-function addToCart(id: string) {
+function addToCart(id: string, additionalDetails?: string) {
   if (
     localStorage.getItem("cartCount") === null ||
     localStorage.getItem("cartCount") == "NaN"
@@ -71,7 +71,11 @@ function addToCart(id: string) {
     item === null ? 0 : parseInt(JSON.parse(item ?? "").quantity ?? "0");
   quantity++;
 
-  localStorage.setItem(`cart-item${id}`, JSON.stringify({ _id: id, quantity }));
+  let categoryItem =
+    !additionalDetails || additionalDetails == ""
+      ? { _id: id, quantity }
+      : { _id: id, quantity, additionalDetails: additionalDetails };
+  localStorage.setItem(`cart-item${id}`, JSON.stringify(categoryItem));
   window.dispatchEvent(new Event("storage"));
 }
 
@@ -80,13 +84,16 @@ function decrementItem(id: string) {
   if (stringItem === null) return;
   let objectItem = JSON.parse(stringItem);
   let quantity = objectItem.quantity - 1;
+  let additionalDetails = objectItem.additionalDetails;
+  let categoryItem =
+    !additionalDetails || additionalDetails == ""
+      ? { _id: id, quantity }
+      : { _id: id, quantity, additionalDetails: additionalDetails };
+
   if (quantity <= 0) {
     localStorage.removeItem(`cart-item${id}`);
   } else {
-    localStorage.setItem(
-      `cart-item${id}`,
-      JSON.stringify({ _id: id, quantity })
-    );
+    localStorage.setItem(`cart-item${id}`, JSON.stringify(categoryItem));
   }
 
   let cartItems = parseInt(localStorage.getItem("cartCount") ?? "0") - 1;
@@ -98,8 +105,13 @@ function incrementItem(id: string) {
   if (stringItem === null) return;
   let objectItem = JSON.parse(stringItem);
   let quantity = objectItem.quantity + 1;
+  let additionalDetails = objectItem.additionalDetails;
+  let categoryItem =
+    !additionalDetails || additionalDetails == ""
+      ? { _id: id, quantity }
+      : { _id: id, quantity, additionalDetails: additionalDetails };
 
-  localStorage.setItem(`cart-item${id}`, JSON.stringify({ _id: id, quantity }));
+  localStorage.setItem(`cart-item${id}`, JSON.stringify(categoryItem));
 
   let cartItems = parseInt(localStorage.getItem("cartCount") ?? "0") + 1;
   localStorage.setItem("cartCount", cartItems.toString());

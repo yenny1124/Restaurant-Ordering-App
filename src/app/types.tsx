@@ -10,6 +10,7 @@ export type ItemType = {
 export type CartItemType = {
   item: ItemType;
   quantity: number;
+  additionalDetails?: string;
 };
 
 export type ModalType = {
