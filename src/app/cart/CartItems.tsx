@@ -1,7 +1,7 @@
 "use client";
 import { CartItemType } from "../types";
 import React from "react";
-import CartItem from "../components/cart/CartItem";
+import CartItem from "../components/cart/CartItem/CartItem";
 
 export default function CartItems(props: { items: Array<CartItemType> }) {
   function createCartDisplay() {
