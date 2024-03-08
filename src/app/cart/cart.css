@@ -82,3 +82,8 @@
   box-shadow: var(--box-shadow);
   cursor: pointer;
 }
+
+.clear-cart:hover {
+  background-color: var(--background-color-2);
+  color: var(--logo-red);
+}

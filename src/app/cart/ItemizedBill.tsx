@@ -13,6 +13,7 @@ export default function ItemizedBill(props: { items: Array<CartItemType> }) {
   function createBillDisplay() {
     let cards: Array<React.FunctionComponentElement<CartItemType>> = [];
     let total = 0;
+
     props.items.forEach(({ item, quantity }) => {
       let itemTotal = round(item.prices[0] * quantity);
       total += itemTotal;
@@ -21,9 +22,35 @@ export default function ItemizedBill(props: { items: Array<CartItemType> }) {
         <p key={item._id}>{`${item.prices[0]} x ${quantity} = ${itemTotal}`}</p>
       );
     });
-    cards.push(<p key="total">{`Order Total: $${round(total)}`}</p>);
+    cards.push(
+      <h2
+        key="total"
+        style={{
+          paddingTop: "24px",
+          borderBottom: "2px solid black",
+          borderTop: "2px solid black",
+          fontWeight: "normal",
+          textAlign: "center",
+          paddingBottom: "24px",
+        }}
+      >{`Order Total: $${round(total)}`}</h2>
+    );
     return cards;
   }
 
-  return <div>{createBillDisplay()}</div>;
+  return (
+    <div>
+      <h2
+        style={{
+          fontWeight: "normal",
+          borderBottom: "2px solid black",
+          textAlign: "center",
+          paddingBottom: "24px",
+        }}
+      >
+        Order Summary
+      </h2>
+      {createBillDisplay()}
+    </div>
+  );
 }
