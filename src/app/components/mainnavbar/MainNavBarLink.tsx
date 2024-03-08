@@ -1,8 +1,12 @@
 "use client";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactNode } from "react";
 import { usePathname } from "next/navigation";
-export default function NavBarLink(props: { path: string; text: string }) {
+export default function MainNavBarLink(props: {
+  path: string;
+  text: string;
+  children?: ReactNode;
+}) {
   const [selectedClass, setClass] = useState("");
 
   const pathname = usePathname();
@@ -25,6 +29,7 @@ export default function NavBarLink(props: { path: string; text: string }) {
       className={`main-navbar-link ${selectedClass}`}
     >
       {props.text}
+      {props.children}
     </Link>
   );
 }

@@ -1,14 +1,17 @@
+import CartCounter from "./CartCounter";
 import MainNavBarLink from "./MainNavBarLink";
-import CartLink from "./CartLink";
 
-export default function NavBarLinks() {
+export default function MainNavBarLinks() {
   return (
     <nav className={`main-navbar-links`}>
       <MainNavBarLink path="/home" text="Home" />
       <MainNavBarLink path="/menu" text="Menu" />
       <MainNavBarLink path="/about" text="About" />
       <MainNavBarLink path="/booktable" text="Book Table" />
-      <CartLink path="/cart" text="Cart" />
+      <MainNavBarLink path="/cart" text="Cart">
+        &nbsp;
+        <CartCounter />
+      </MainNavBarLink>
     </nav>
   );
 }

@@ -1,0 +1,23 @@
+.cart-counter {
+  display: inline-block;
+  width: 30px;
+  position: relative;
+}
+
+.cart-counter-circle {
+  position: absolute;
+  display: inline-flex;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background-color: var(--logo-red);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cart-counter span {
+  color: white;
+  position: relative;
+  display: inline-flex;
+}

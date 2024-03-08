@@ -1,9 +1,7 @@
-import Link from "next/link";
 import "./mainnavbar.css";
 import HamburgerMenu from "./HamburgerMenu";
 import RestaurantLogo from "./RestaurantLogo";
 import MainNavBarLinks from "./MainNavBarLinks";
-import { useState } from "react";
 
 export default function MainNavBar() {
   return (

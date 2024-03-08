@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./hamburger.css";
+import CartCounter from "./CartCounter";
 
 export default function Hamburger() {
   const [menuOn, toggleMenu] = useState(false);
@@ -87,13 +88,10 @@ function HamburgerMenu(props: { className: string }) {
           Book Table
         </Link>
 
-        <Link href="/cart" className="burger-link">
+        <Link href="/cart" className={`burger-link`}>
           <FontAwesomeIcon icon={faCartShopping} />
-          Cart
-          <div className="cart-item-counter">
-            <FontAwesomeIcon icon={faCircle} />
-            <span> {cartCount}</span>
-          </div>
+          Cart&nbsp;
+          <CartCounter />
         </Link>
       </nav>
     </div>
