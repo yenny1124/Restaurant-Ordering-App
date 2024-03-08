@@ -1,0 +1,27 @@
+.cart-bill {
+  background-color: white;
+  height: auto;
+  border-radius: var(--border-radius);
+  margin-left: 12px;
+  box-shadow: var(--box-shadow);
+  display: grid;
+  grid-template-rows: 1fr 125px;
+  overflow-x: hidden;
+}
+
+.cart-bill div {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+@media screen and (max-width: 767px) {
+  .cart-bill {
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .cart-bill {
+    width: 250px;
+  }
+}

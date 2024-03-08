@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  padding: 0px 40px;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
 }
 
 .checkout-form input {
@@ -45,7 +49,7 @@
 .checkout-content {
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: var(--brown);
   padding: 20px 40px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -55,18 +59,20 @@
 @media screen and (max-width: 767px) {
   .checkout-content {
     flex-direction: column;
+    padding: 20px 30px;
   }
+
   .checkout-summary {
-    border-bottom: 1px solid black;
+    padding-bottom: 40px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .checkout-summary {
-    border-right: 1px solid black;
-    padding-right: 40px;
+    padding-right: 30px;
   }
-  .checkout-form {
-    padding-left: 40px;
+  .checkout-summary .cart-bill {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }

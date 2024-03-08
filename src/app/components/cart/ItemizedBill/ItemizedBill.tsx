@@ -1,8 +1,13 @@
 "use client";
-import { CartItemType } from "../types";
+import { CartItemType } from "../../../types";
 import React from "react";
+import "./itemizedbill.css";
+import Link from "next/link";
 
-export default function ItemizedBill(props: { items: Array<CartItemType> }) {
+export default function ItemizedBill(props: {
+  items: Array<CartItemType>;
+  button?: string;
+}) {
   function round(number: number) {
     // Round up to the third decimal
     let roundedNumber = Math.ceil(number * 1000) / 1000;
@@ -39,18 +44,25 @@ export default function ItemizedBill(props: { items: Array<CartItemType> }) {
   }
 
   return (
-    <div>
-      <h2
-        style={{
-          fontWeight: "normal",
-          borderBottom: "2px solid black",
-          textAlign: "center",
-          paddingBottom: "24px",
-        }}
-      >
-        Order Summary
-      </h2>
-      {createBillDisplay()}
+    <div className="cart-bill">
+      <div>
+        <h2
+          style={{
+            fontWeight: "normal",
+            borderBottom: "2px solid black",
+            textAlign: "center",
+            paddingBottom: "24px",
+          }}
+        >
+          Order Summary
+        </h2>
+        {createBillDisplay()}
+      </div>
+      {props.button && (
+        <Link className="button-lg" href="/checkout">
+          Checkout
+        </Link>
+      )}
     </div>
   );
 }

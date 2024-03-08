@@ -4,7 +4,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { CartItemType } from "../types";
 import CartItems from "./CartItems";
-import ItemizedBill from "./ItemizedBill";
+import ItemizedBill from "../components/cart/ItemizedBill/ItemizedBill";
 import Link from "next/link";
 import { fetchCartItems } from "../services/fetchservices";
 import { clearCart, localCartRefresh } from "../services/cartservices";
@@ -51,11 +51,8 @@ export default function Cart() {
               Clear Cart
             </button>
           </div>
-          <div className="cart-bill">
-            <ItemizedBill items={cartItems} />
-            <Link className="button-lg" href="/checkout">
-              Checkout
-            </Link>
+          <div>
+            <ItemizedBill items={cartItems} button="cart" />
           </div>
         </div>
       </div>

@@ -32,23 +32,6 @@
   align-items: center;
 }
 
-.cart-bill {
-  background-color: white;
-  height: auto;
-  border-radius: var(--border-radius);
-  margin-left: 12px;
-  box-shadow: var(--box-shadow);
-  display: grid;
-  grid-template-rows: 1fr 125px;
-  overflow-x: hidden;
-}
-
-.cart-bill div {
-  width: 100%;
-  overflow-x: hidden;
-  overflow-wrap: break-word;
-}
-
 @media screen and (max-width: 767px) {
   .cart-background {
     flex-direction: column;

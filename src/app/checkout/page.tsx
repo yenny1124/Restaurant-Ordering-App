@@ -2,7 +2,7 @@
 import React, { useLayoutEffect, FormEvent, ChangeEvent } from "react";
 import { useEffect, useState } from "react";
 import { CartItemType, ItemType } from "../types";
-import ItemizedBill from "../cart/ItemizedBill";
+import ItemizedBill from "../components/cart/ItemizedBill/ItemizedBill";
 import Link from "next/link";
 import "./checkout.css";
 import { clearCart } from "../services/cartservices";
@@ -166,12 +166,11 @@ export default function Checkout() {
       <div className="checkout-body">
         <div className="checkout-content">
           <div className="checkout-summary">
-            <h2>Order Summary</h2>
             <ItemizedBill items={cartItems} />
           </div>
 
           <form onSubmit={handleSubmit} className="checkout-form">
-            <h2>Credit Card Details</h2>
+            <h2 style={{ fontWeight: "normal" }}>Credit Card Details</h2>
             <div>
               <label htmlFor="name">
                 Name
@@ -255,7 +254,7 @@ export default function Checkout() {
               ></input>
             </div>
 
-            <button type="submit" className="button-md">
+            <button type="submit" className="button-lg">
               Submit
             </button>
             {statusMessage[submissionStatus]}
