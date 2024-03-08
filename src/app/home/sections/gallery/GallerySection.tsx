@@ -1,7 +1,7 @@
 import FeaturedItem from "./components/FeaturedItem";
 import "./gallerysection.css";
 import { Architects_Daughter } from "next/font/google";
-import LinkButton from "@/app/components/linkbutton/LinkButton";
+import Link from "next/link";
 const architectsDaughter = Architects_Daughter({
   subsets: ["latin"],
   weight: ["400"],
@@ -16,7 +16,9 @@ export default function GallerySection() {
         <FeaturedItem />
         <FeaturedItem />
       </div>
-      <LinkButton text="See More!" link="menu" />
+      <Link href="/menu" className="button-lg">
+        See More!
+      </Link>
     </section>
   );
 }

@@ -1,12 +1,11 @@
 "use client";
 import "./cart.css";
-import React, { useLayoutEffect } from "react";
+import React from "react";
 import { useEffect, useState } from "react";
-import { CartItemType, ItemType } from "../types";
+import { CartItemType } from "../types";
 import CartItems from "./CartItems";
 import ItemizedBill from "./ItemizedBill";
 import Link from "next/link";
-import LinkButton from "../components/linkbutton/LinkButton";
 export default function Cart() {
   const [cartItems, setCartItems] = useState<Array<CartItemType>>([]);
 
@@ -104,7 +103,9 @@ export default function Cart() {
         </div>
         <div className="cart-bill">
           <ItemizedBill items={cartItems} />
-          <LinkButton link="/checkout" text="Checkout" />
+          <Link className="button-lg" href="/checkout">
+            Checkout
+          </Link>
         </div>
       </div>
     </main>

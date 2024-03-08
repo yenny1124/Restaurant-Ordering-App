@@ -1,7 +1,6 @@
 import Image from "next/image";
 import "./herosection.css";
 import Link from "next/link";
-import LinkButton from "@/app/components/linkbutton/LinkButton";
 import { Architects_Daughter } from "next/font/google";
 
 const architectsDaughter = Architects_Daughter({
@@ -29,7 +28,9 @@ export default function HeroSection() {
           <br />
           New Journey of Flavors!
         </p>
-        <LinkButton link="order-online" text="Order Now!" />
+        <Link href="/order-now" className="button-lg">
+          Order Now!
+        </Link>
       </div>
       <Image src="/sushiplatter.png" width={450} height={300} alt="" />
     </section>

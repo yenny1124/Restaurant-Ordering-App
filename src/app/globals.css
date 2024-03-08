@@ -146,3 +146,77 @@ address {
   width: 100%;
   display: flex;
 }
+
+.button-lg:hover {
+  animation: var(--tilt-animation);
+}
+
+.button-lg {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  background-color: var(--brown);
+
+  text-align: center;
+  margin: 20px;
+  margin-top: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+.button-md:hover {
+  animation: var(--tilt-animation);
+}
+
+.button-md {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  background-color: var(--brown);
+  text-align: center;
+  margin: 20px;
+  margin-top: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+@media screen and (max-width: 768px) {
+  .button-lg {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 1.25rem 1rem;
+  }
+  .button-md {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    padding: 1.25rem 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .button-lg {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    padding: 1.125em 1.25rem;
+  }
+  .button-md {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    padding: 1.125em 1.25rem;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .button-lg {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    padding: 1.5rem 1.25rem;
+  }
+  .button-md {
+    font-size: 1.25rem;
+    line-height: 1.5625rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+button {
+  border: none;
+}

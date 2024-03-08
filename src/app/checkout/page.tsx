@@ -2,10 +2,8 @@
 import React, { useLayoutEffect, FormEvent, ChangeEvent } from "react";
 import { useEffect, useState } from "react";
 import { CartItemType, ItemType } from "../types";
-import CartItems from "../cart/CartItems";
 import ItemizedBill from "../cart/ItemizedBill";
 import Link from "next/link";
-import LinkButton from "../components/linkbutton/LinkButton";
 import "./checkout.css";
 export default function Checkout() {
   const [cartItems, setCartItems] = useState<Array<CartItemType>>([]);
@@ -264,7 +262,7 @@ export default function Checkout() {
               ></input>
             </div>
 
-            <button type="submit" className="submit-button">
+            <button type="submit" className="button-md">
               Submit
             </button>
             {statusMessage[submissionStatus]}
