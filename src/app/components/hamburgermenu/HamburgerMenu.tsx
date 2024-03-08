@@ -14,7 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 import "./hamburger.css";
-import CartCounter from "./CartCounter";
+import CartCounter from "../cartcounter/CartCounter";
 
 export default function Hamburger() {
   const [menuOn, toggleMenu] = useState(false);
