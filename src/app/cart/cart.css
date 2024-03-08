@@ -43,7 +43,7 @@
     width: 100%;
     margin-left: 0px;
   }
-  .clear-cart {
+  .oval-button {
     margin-bottom: 12px;
   }
 }
@@ -54,19 +54,4 @@
   .cart-bill {
     width: 250px;
   }
-}
-
-.clear-cart {
-  height: 25px;
-  width: 100px;
-  background: white;
-  border: none;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  cursor: pointer;
-}
-
-.clear-cart:hover {
-  background-color: var(--background-color-2);
-  color: var(--logo-red);
 }

@@ -51,14 +51,17 @@ const ItemModal = () => {
           <div className="modal-info">
             <h2>{modalContent.name + " " + modalContent.prices}</h2>
             <p>{modalContent.desc}</p>
-            <p>INGREDIENTS STUFF</p>
-            <button
-              onClick={() => {
-                addToCart(modalContent._id);
-              }}
-            >
-              add to cart
-            </button>
+            <form>
+              <textarea name="" id="" rows={10}></textarea>
+              <button
+                className="oval-button"
+                onClick={() => {
+                  addToCart(modalContent._id);
+                }}
+              >
+                Add to Cart
+              </button>
+            </form>
           </div>
 
           <FontAwesomeIcon

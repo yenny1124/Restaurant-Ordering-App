@@ -46,7 +46,7 @@ export default function Cart() {
               onClick={() => {
                 clearCart();
               }}
-              className="clear-cart"
+              className="oval-button"
             >
               Clear Cart
             </button>

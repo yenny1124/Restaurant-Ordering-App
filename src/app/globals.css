@@ -220,3 +220,18 @@ address {
 button {
   border: none;
 }
+
+.oval-button {
+  height: 25px;
+  width: 100px;
+  background: white;
+  border: none;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  cursor: pointer;
+}
+
+.oval-button:hover {
+  background-color: var(--background-color-2);
+  color: var(--logo-red);
+}
