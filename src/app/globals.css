@@ -116,6 +116,10 @@ main {
   padding-bottom: var(--footer-height);
 }
 
+.hover-tilt:hover {
+  animation: var(--tilt-animation);
+}
+
 @keyframes tilt {
   0% {
     transform: rotate(0);
