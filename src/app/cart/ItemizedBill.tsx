@@ -1,8 +1,7 @@
 "use client";
 import { CartItemType } from "../types";
 import React from "react";
-import CartItem from "./components/CartItem";
-import { useEffect, useState } from "react";
+
 export default function ItemizedBill(props: { items: Array<CartItemType> }) {
   function round(number: number) {
     // Round up to the third decimal

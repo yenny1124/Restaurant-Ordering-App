@@ -1,8 +1,8 @@
 "use client";
 import { CartItemType } from "../types";
 import React from "react";
-import CartItem from "./components/CartItem";
-import { useEffect, useState } from "react";
+import CartItem from "../components/cart/CartItem";
+
 export default function CartItems(props: { items: Array<CartItemType> }) {
   function createCartDisplay() {
     let cards: Array<React.FunctionComponentElement<CartItemType>> = [];
