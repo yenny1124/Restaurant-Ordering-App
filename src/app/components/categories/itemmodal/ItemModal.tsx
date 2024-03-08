@@ -1,6 +1,6 @@
 "use client";
 import { useContext, useEffect, useState } from "react";
-import { ModalContext } from "@/app/menu/categories/[category]/CategoryContent";
+import { ModalContext } from "@/app/menu/categories/[category]/page";
 import "./itemmodal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
