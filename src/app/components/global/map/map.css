@@ -15,3 +15,8 @@
 .map-element {
   height: 800px;
 }
+
+.map-container {
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}

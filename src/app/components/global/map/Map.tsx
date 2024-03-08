@@ -25,6 +25,7 @@ export default function Map(props: { height: number }) {
         mapContainerStyle={mapContainerStyle}
         center={center}
         zoom={14}
+        mapContainerClassName="map-container"
       >
         <Marker
           position={center}
