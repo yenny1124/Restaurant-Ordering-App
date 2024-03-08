@@ -3,10 +3,10 @@ import { useMemo } from "react";
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import "./map.css";
 
-export default function Map() {
+export default function Map(props: { height: number }) {
   const mapContainerStyle = {
     width: "100%",
-    height: "500px",
+    height: `${props.height}px`,
   };
   const center = useMemo(() => {
     return { lat: 47.620846191058924, lng: -122.19347104604529 };

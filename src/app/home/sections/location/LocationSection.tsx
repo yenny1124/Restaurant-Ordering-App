@@ -30,7 +30,7 @@ export default function LocationSection() {
         </Link>
       </div>
       <div className="location-section-map">
-        <Map />
+        <Map height={459} />
       </div>
     </section>
   );

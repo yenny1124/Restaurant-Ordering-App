@@ -147,7 +147,7 @@ export default function BookTable() {
         </div>
         <div className="book-table-content">
           <div className="map-spacer">
-            <Map />
+            <Map height={446} />
           </div>
         </div>
       </div>
