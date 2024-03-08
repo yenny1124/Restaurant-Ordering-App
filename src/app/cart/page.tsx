@@ -26,7 +26,11 @@ export default function Cart() {
 
   function cartListener() {
     const updatedCartItems = localCartRefresh(cartItems);
-    if (!Array.isArray(updatedCartItems) || !updatedCartItems.length) return;
+    if (!Array.isArray(updatedCartItems) || !updatedCartItems.length) {
+      setCartItems([]);
+
+      return;
+    }
     setCartItems(updatedCartItems);
   }
 
