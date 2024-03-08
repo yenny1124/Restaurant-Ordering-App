@@ -10,7 +10,6 @@ import { addToCart } from "@/app/services/cartservices";
 
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
-  // to avoid hydration issues with conditional rendering
 
   return (
     <div className="item-card">
@@ -22,12 +21,7 @@ export function ItemCard(props: ItemType) {
         <p className="item-desc">{props.desc}</p>
       </div>
       <div
-        style={{
-          height: "100%",
-          width: "100%",
-          position: "absolute",
-          cursor: "pointer",
-        }}
+        className="item-card-overlay"
         onClick={() => {
           modalContext.setModalContent({
             _id: props._id,

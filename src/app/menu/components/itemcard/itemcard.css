@@ -108,3 +108,10 @@
     color: var(--logo-red);
   }
 }
+
+.item-card-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+}
