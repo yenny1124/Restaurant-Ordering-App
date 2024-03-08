@@ -2,11 +2,11 @@
 
 import React from "react";
 import { useState, useEffect } from "react";
-import "./categorylinks.css";
+import "./menucategorylinks.css";
 import MenuNavbarLink from "../menunavbar/MenuNavLink";
 import { fetchCategories } from "@/app/services/fetchservices";
 
-export default function CategoryLinks(props: { navType: string }) {
+export default function MenuCategoryLinks(props: { navType: string }) {
   const [categories, setCategories] = useState(null);
 
   useEffect(() => {
@@ -18,9 +18,9 @@ export default function CategoryLinks(props: { navType: string }) {
         console.error("Error fetching categories:", error);
       }
     };
-
     fetchCategoriesData();
-  }, []); // Empty dependency array means this effect runs only once on component mount
+  }, []);
+
   function createCategoryLinks(categories: []) {
     let categoryElements: any = [];
     categoryElements = categories.map(
