@@ -1,46 +1,47 @@
 "use client";
 import React, { createContext, useState, useRef } from "react";
 
-import { ItemCard } from "./itemcard/ItemCard";
+import { ItemCard } from "../../components/itemcard/ItemCard";
 import { ItemType } from "@/app/types";
-import ItemModal from "./itemmodal/ItemModal";
+import ItemModal from "../../components/itemmodal/ItemModal";
+import { useEffect } from "react";
+import { fetchProductsByCategory } from "@/app/services/fetchservices";
+import { ModalType } from "@/app/types";
+import { defaultItemType } from "@/app/types";
 
 interface ModalContext {
   modalContent: ModalType;
   setModalContent: React.Dispatch<React.SetStateAction<ModalType>>;
 }
 
-type ModalType = {
-  _id: string;
-  name: string;
-  desc: string;
-  img: string;
-  prices: number[];
-  open: boolean;
-};
-
-const defaultItemType = {
-  _id: "loading",
-  name: "loading",
-  desc: "loading",
-  img: "loading",
-  prices: [0],
-  open: false,
-};
 export const ModalContext = React.createContext<ModalContext>({
   modalContent: defaultItemType,
   setModalContent: () => {},
 });
 
-export default function CategoryContent(props: {
-  items: Array<ItemType> | null;
-}) {
+export default function CategoryContent(props: { category: string }) {
   const [modalContent, setModalContent] = useState<ModalType>(defaultItemType);
+  const [items, setItems] = useState<ItemType[] | null>(null);
+
+  useEffect(() => {
+    const fetchItems = async () => {
+      try {
+        const fetchedItems = await fetchProductsByCategory(props.category);
+        setItems(fetchedItems);
+      } catch (error) {
+        console.error("Error fetching categories:", error);
+      }
+    };
+    fetchItems();
+  }, []);
+
   function createCards() {
-    if (props.items == null) return;
+    if (items == null) {
+      return <p>loading items...</p>;
+    }
     let itemCards: any = [];
     try {
-      props.items.forEach((element: ItemType) => {
+      items.forEach((element: ItemType) => {
         let itemCard = React.createElement(ItemCard, {
           name: element.name,
           desc: element.desc,

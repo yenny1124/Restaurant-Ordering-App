@@ -11,3 +11,21 @@ export type CartItemType = {
   item: ItemType;
   quantity: number;
 };
+
+export type ModalType = {
+  _id: string;
+  name: string;
+  desc: string;
+  img: string;
+  prices: number[];
+  open: boolean;
+};
+
+export const defaultItemType = {
+  _id: "loading",
+  name: "loading",
+  desc: "loading",
+  img: "loading",
+  prices: [0],
+  open: false,
+};
