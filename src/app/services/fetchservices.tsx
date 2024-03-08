@@ -1,4 +1,4 @@
-import { CategoryType, ItemType } from "./types";
+import { CategoryType, ItemType, CartItemType } from "../types";
 
 const fetchCategories = async () => {
   try {
@@ -35,4 +35,37 @@ const fetchProductsByCategory = async (
   }
 };
 
-export { fetchCategories, fetchProductsByCategory };
+const fetchCartItems = async () => {
+  if (typeof localStorage === "undefined") {
+    return [];
+  }
+  const keys = Object.keys(localStorage);
+  let items: Array<CartItemType> = [];
+
+  await Promise.all(
+    keys.map(async (key: string) => {
+      if (!key.includes("cart-item")) return [];
+      const stringValue = localStorage.getItem(key);
+      if (stringValue === null) return [];
+      const objectValue = JSON.parse(stringValue);
+      let response;
+      if (objectValue === undefined) return [];
+
+      response = await fetch(
+        `https://restaurant-ecommerce.onrender.com/api/get/product/${objectValue._id}`
+      );
+
+      if (!response.ok) {
+        console.log(`Could not retrieve ${objectValue._id} item from database`);
+        return [];
+      }
+
+      const item = await response.json();
+      items.push({ item, quantity: objectValue.quantity });
+    })
+  );
+
+  return items;
+};
+
+export { fetchCategories, fetchProductsByCategory, fetchCartItems };

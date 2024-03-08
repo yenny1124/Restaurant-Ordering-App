@@ -5,6 +5,7 @@ import "./itemmodal.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
+import { addToCart } from "@/app/services/cartservices";
 const ItemModal = () => {
   const [modalState, setModalState] = useState(false);
   const modalContent = useContext(ModalContext).modalContent;
@@ -17,29 +18,6 @@ const ItemModal = () => {
       setModalState(false);
     }
   }, [modalContent.open]);
-
-  // adds a single item to local storage, if it already exists the quantity is incremented
-  function addToCart() {
-    if (
-      localStorage.getItem("cartCount") === null ||
-      localStorage.getItem("cartCount") == "NaN"
-    ) {
-      localStorage.setItem("cartCount", "0");
-    }
-    let numItems = parseInt(localStorage.getItem("cartCount") ?? "0") + 1;
-    localStorage.setItem("cartCount", numItems.toString());
-
-    let item = localStorage.getItem(`cart-item${modalContent._id}`);
-    let quantity =
-      item === null ? 0 : parseInt(JSON.parse(item ?? "").quantity ?? "0");
-    quantity++;
-
-    localStorage.setItem(
-      `cart-item${modalContent._id}`,
-      JSON.stringify({ item: modalContent, quantity })
-    );
-    window.dispatchEvent(new Event("storage"));
-  }
 
   return (
     <>
@@ -74,7 +52,13 @@ const ItemModal = () => {
             <h2>{modalContent.name + " " + modalContent.prices}</h2>
             <p>{modalContent.desc}</p>
             <p>INGREDIENTS STUFF</p>
-            <button onClick={addToCart}>add to cart</button>
+            <button
+              onClick={() => {
+                addToCart(modalContent._id);
+              }}
+            >
+              add to cart
+            </button>
           </div>
 
           <FontAwesomeIcon

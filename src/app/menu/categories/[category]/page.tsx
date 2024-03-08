@@ -3,8 +3,8 @@ import React from "react";
 import "./category.css";
 import CategoryContent from "../../components/CategoryContent";
 import { CategoryType, ItemType } from "@/app/types";
-import { fetchCategories } from "@/app/fetches";
-import { fetchProductsByCategory } from "@/app/fetches";
+import { fetchCategories } from "@/app/services/fetchservices";
+import { fetchProductsByCategory } from "@/app/services/fetchservices";
 
 export default async function Category({
   params,

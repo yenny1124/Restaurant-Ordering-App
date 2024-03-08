@@ -6,33 +6,11 @@ import { ItemType } from "@/app/types";
 import { ModalContext } from "../CategoryContent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { addToCart } from "@/app/services/cartservices";
 
 export function ItemCard(props: ItemType) {
   const modalContext = useContext(ModalContext);
   // to avoid hydration issues with conditional rendering
-
-  // adds a single item to local storage, if it already exists the quantity is incremented
-  function addToCart() {
-    if (
-      localStorage.getItem("cartCount") === null ||
-      localStorage.getItem("cartCount") == "NaN"
-    ) {
-      localStorage.setItem("cartCount", "0");
-    }
-    let numItems = parseInt(localStorage.getItem("cartCount") ?? "0") + 1;
-    localStorage.setItem("cartCount", numItems.toString());
-
-    let item = localStorage.getItem(`cart-item${props._id}`);
-    let quantity =
-      item === null ? 0 : parseInt(JSON.parse(item ?? "").quantity ?? "0");
-    quantity++;
-
-    localStorage.setItem(
-      `cart-item${props._id}`,
-      JSON.stringify({ _id: props._id, quantity })
-    );
-    window.dispatchEvent(new Event("storage"));
-  }
 
   return (
     <div className="item-card">
@@ -64,7 +42,9 @@ export function ItemCard(props: ItemType) {
       <button className="add-cart-button">
         <FontAwesomeIcon
           icon={faPlus}
-          onClick={addToCart}
+          onClick={() => {
+            addToCart(props._id);
+          }}
           style={{ height: "25px", width: "25px" }}
         />
       </button>

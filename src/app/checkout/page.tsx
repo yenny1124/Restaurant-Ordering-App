@@ -5,6 +5,8 @@ import { CartItemType, ItemType } from "../types";
 import ItemizedBill from "../cart/ItemizedBill";
 import Link from "next/link";
 import "./checkout.css";
+import { clearCart } from "../services/cartservices";
+
 export default function Checkout() {
   const [cartItems, setCartItems] = useState<Array<CartItemType>>([]);
   const [formData, setFormData] = useState({
@@ -70,7 +72,7 @@ export default function Checkout() {
       console.log("Order submitted successfully", result);
       setSubmissionStatus(1);
       // Optionally clear the cart after successful order submission
-      clearCart();
+      clearCart(true);
       // Navigate to a success page or show a success message
       //navigate(`/order/${result._id}`); // Adjust the route as needed
     } catch (error) {
@@ -81,15 +83,6 @@ export default function Checkout() {
     }
   };
 
-  // clears cart items and count in local storage
-  function clearCart() {
-    const localStorageKeys = Object.keys(localStorage);
-    localStorageKeys.forEach((key) => {
-      if (key.includes("cart-item")) localStorage.removeItem(key);
-    });
-    localStorage.setItem("cartCount", "0");
-    window.dispatchEvent(new Event("storage"));
-  }
   useEffect(() => {
     getItems();
   }, []);

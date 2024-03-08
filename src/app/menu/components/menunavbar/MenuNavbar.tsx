@@ -1,7 +1,7 @@
 import React from "react";
 import "./menunavbar.css";
 import CategoryLinks from "../categorylinks/CategoryLinks";
-import { fetchCategories } from "@/app/fetches";
+import { fetchCategories } from "@/app/services/fetchservices";
 
 export default async function MenuNavbar() {
   return (
