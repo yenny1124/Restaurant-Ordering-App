@@ -63,7 +63,7 @@ export default function BookTable() {
       <div className="book-table-grid">
         <div className="book-table-content">
           <form className="book-table-form" onSubmit={handleSubmit}>
-            <div className="hello">
+            <div className="form-top">
               <div>
                 <label className="book-table-input-label" htmlFor="name">
                   Name

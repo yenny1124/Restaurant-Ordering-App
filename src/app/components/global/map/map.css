@@ -11,3 +11,7 @@
   padding: 2px 6px !important;
   border-radius: var(--border-radius) !important;
 }
+
+.map-element {
+  height: 800px;
+}

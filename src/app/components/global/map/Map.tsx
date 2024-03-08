@@ -6,7 +6,7 @@ import "./map.css";
 export default function Map() {
   const mapContainerStyle = {
     width: "100%",
-    height: "400px",
+    height: "500px",
   };
   const center = useMemo(() => {
     return { lat: 47.620846191058924, lng: -122.19347104604529 };
