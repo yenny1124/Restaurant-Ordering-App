@@ -3,8 +3,10 @@ import React from "react";
 import "./category.css";
 import CategoryContent from "../../components/CategoryContent";
 import { CategoryType, ItemType } from "@/app/types";
+import { fetchCategories } from "@/app/fetches";
+import { fetchProductsByCategory } from "@/app/fetches";
 
-export default async function CategoryType({
+export default async function Category({
   params,
 }: {
   params: { category: string };
@@ -24,40 +26,6 @@ export default async function CategoryType({
 
 // Fetch products by selected category
 // !IMPORTANT! FIX LATER category from URL is being used for fetching items, potential sql injection vulnerability
-const fetchProductsByCategory = async (
-  category: string
-): Promise<Array<ItemType> | null> => {
-  // FIX LATER
-  // ugly way of finding category id for the current category
-
-  let categories: []; // need to check this somehow
-  try {
-    const response = await fetch(
-      "https://restaurant-ecommerce.onrender.com/api/get/categories"
-    ); // Adjust URL as needed
-    const data = await response.json();
-    categories = data;
-  } catch (error) {
-    console.error("Error fetching categories:", error);
-    categories = [];
-  }
-
-  let categoryId: string;
-  categoryId = ""; //FIX LATER
-  categories.forEach((element: CategoryType) => {
-    if (element.name == category.replace("-", " ")) categoryId = element._id;
-  });
-  try {
-    if (categoryId == "") throw new Error();
-    let url = `https://restaurant-ecommerce.onrender.com/api/get/products/category/${categoryId}`;
-    const response = await fetch(url);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error("Error fetching products:", error);
-    return null;
-  }
-};
 
 /* old example using json placeholder
 const getItems = async () => {
