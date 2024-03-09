@@ -1,0 +1,117 @@
+.item-card {
+  height: var(--card-height);
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  margin-bottom: 16px;
+  justify-content: space-between;
+  border-radius: 12px;
+  grid-template-columns: var(--card-height) 1fr;
+}
+
+.item-info {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (max-width: 575px) {
+  .item-card {
+    width: 100%;
+    --card-height: 140px;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .item-card {
+    width: 100%;
+    --card-height: 180px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .item-card {
+    width: 450px;
+    --card-height: 180px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.item-desc {
+  font-size: 1rem;
+}
+
+.item-price {
+  font-size: 1.25rem;
+}
+
+.item-card-image {
+  height: var(--card-height);
+  width: var(--card-height);
+  background-color: var(--light-grey);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-card-image img {
+  height: 90%;
+  width: 90%;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.item-card h2 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.add-cart-button {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.add-cart-button svg {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .add-cart-button:hover {
+    background-color: var(--background-color-2);
+    color: var(--logo-red);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .add-cart-button:active {
+    background-color: var(--background-color-2);
+    color: var(--logo-red);
+  }
+}
+
+.item-card-overlay {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  cursor: pointer;
+}

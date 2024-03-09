@@ -1,0 +1,60 @@
+.conveyor-belt {
+  width: 200%;
+  left: -100%;
+  height: calc(var(--main-navbar-height) * var(--main-navbar-ratio));
+  background-color: var(--background-color-2);
+  position: relative;
+  background-image: url("/yay.png");
+  /*
+   NEED TO ADD ATTRIBUTION FROM HERE LATERhttps://www.flaticon.com/free-icon/sushi_2252075?related_id=2252071&origin=search
+    */
+  background-size: auto 100%;
+  background-repeat: space;
+  animation: conveyor 20s linear infinite;
+  border: black solid 2px;
+}
+
+svg {
+}
+
+@media screen and (min-width: 1080px) {
+  @keyframes conveyor {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(5%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  @keyframes conveyor {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(12.5%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1080px) {
+  @keyframes conveyor {
+    0% {
+      transform: translateX(0%);
+    }
+    50% {
+      transform: translateX(12.5%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+}

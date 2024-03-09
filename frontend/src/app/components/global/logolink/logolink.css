@@ -1,0 +1,5 @@
+.logo-link {
+  pointer-events: auto;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}

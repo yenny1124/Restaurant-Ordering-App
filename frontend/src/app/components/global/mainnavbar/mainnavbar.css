@@ -1,0 +1,118 @@
+.main-navbar {
+  display: flex;
+  position: relative;
+  z-index: 10;
+}
+
+.main-navbar-placeholder {
+  width: 100%;
+  height: calc(var(--main-navbar-height) * var(--main-navbar-ratio));
+  position: relative;
+  z-index: 0;
+  background-color: var(--background-color);
+}
+
+.main-navbar-contents {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: calc(var(--main-navbar-height) * var(--main-navbar-ratio));
+  z-index: 10;
+  padding: 0px calc(var(--main-navbar-height) * 0.25);
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.restaurant-logo:hover {
+  animation: var(--tilt-animation);
+}
+
+.main-navbar-icon {
+  height: var(--main-navbar-height);
+  width: var(--main-navbar-height);
+
+  cursor: pointer;
+}
+
+.restaurant-logo {
+  height: var(--main-navbar-height);
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+  border-radius: 2px;
+  background-color: white;
+  pointer-events: auto;
+}
+
+.main-navbar-links {
+  display: flex;
+  position: relative;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  pointer-events: auto;
+}
+
+.main-navbar-link {
+  position: relative;
+  height: 100%;
+  display: inline-block;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.25rem;
+  text-decoration: none;
+
+  margin-right: 5px;
+  margin-left: 5px;
+  color: black;
+  padding: 4px;
+  background-color: white;
+  height: 100%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.main-navbar-link:hover {
+  background-color: var(--background-color-2);
+  color: var(--logo-red);
+  /*
+    animation-name: tilt;
+  animation-duration: 0.3s;
+  transition: transform 1s;*/
+}
+
+.main-navbar-link:first-child {
+  margin-left: 10px;
+}
+
+.main-navbar-link:last-child {
+  margin-right: 10px;
+}
+
+.main-navbar-link .main-navbar-icon {
+  height: calc(var(--main-navbar-height) * 0.4);
+  width: calc(var(--main-navbar-height) * 0.4);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1079px) {
+  .main-navbar-links {
+    display: none;
+  }
+}
+
+.off-screen {
+  transform: translateX(-100%);
+}
+
+.on-screen {
+  transform: translateX(0%);
+}
+
+.restaurant-logo:active {
+  opacity: 50%;
+}
+
+.current-page {
+  border-bottom: 2px red solid;
+}

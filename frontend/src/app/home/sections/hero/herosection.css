@@ -1,0 +1,164 @@
+.hero-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 45px;
+  position: relative;
+  z-index: 4;
+  background-color: var(--background-color);
+}
+
+.hero-section h1 {
+  text-align: center;
+  color: black;
+}
+
+.hero-section .roll1 {
+  transform: rotateZ(5deg);
+  margin: 0;
+  animation: roll 6s linear infinite;
+}
+.roll2 {
+  transform: rotateZ(-5deg);
+  text-shadow: 2px 2px;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  50% {
+    transform: rotateZ(5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .hero-section {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .hero-section div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .hero-section div img {
+    margin-top: -50px;
+    margin-bottom: -25px;
+    display: block;
+  }
+
+  .hero-section img {
+    display: none;
+  }
+
+  .hero-section h1 {
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+
+  .hero-section div p {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .hero-section div .special-paragraph {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1079px) {
+  .hero-section {
+    padding-top: 45px;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .hero-section div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 25px;
+  }
+
+  .hero-section div img {
+    margin-top: -50px;
+    margin-bottom: -25px;
+    display: block;
+  }
+
+  .hero-section img {
+    width: 60%;
+    height: 45%;
+    display: none;
+  }
+
+  .hero-section h1 {
+    margin-bottom: 0;
+    margin-top: 15px;
+  }
+
+  .hero-section div p {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 3.125rem;
+  }
+
+  .hero-section div .special-paragraph {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 50px;
+  }
+
+  .hero-section div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .hero-section div img {
+    margin-top: -50px;
+    margin-bottom: -25px;
+    display: none;
+  }
+
+  .hero-section img {
+    width: 45%;
+    height: 30%;
+  }
+
+  .hero-section div p {
+    color: black;
+    margin: 0;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .hero-section div .special-paragraph {
+    font-size: 1.75rem;
+    font-weight: bold;
+  }
+}

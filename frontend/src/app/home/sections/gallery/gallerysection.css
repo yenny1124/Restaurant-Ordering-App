@@ -1,0 +1,32 @@
+.gallery-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 45px;
+  position: relative;
+  z-index: 3;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+}
+
+.gallery-section h1 {
+  text-align: center;
+  color: black;
+  margin-bottom: 0;
+  line-height: 56px;
+  margin-top: 45px;
+  margin-bottom: 15px;
+}
+
+.gallery-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .gallery-section h1 {
+    margin-bottom: 45px;
+  }
+}
