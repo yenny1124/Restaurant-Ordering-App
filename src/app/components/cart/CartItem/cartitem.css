@@ -122,3 +122,9 @@
     width: 576px;
   }
 }
+
+.cart-additional-details {
+  border: black 1px solid;
+  height: 30%;
+  width: 80%;
+}

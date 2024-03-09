@@ -55,7 +55,18 @@ function getItemQuantity(id: string) {
   return quantity;
 }
 
-// adds a single item to local storage, if it already exists the quantity is incremented
+// pass in a single item's id, and get the quantity
+function getItemAdditionalDetails(id: string) {
+  let stringItem = localStorage.getItem(`cart-item${id}`);
+  if (stringItem === null) {
+    return "";
+  }
+  let objectItem: CartItemType = JSON.parse(stringItem);
+  let additionalDetails = objectItem.additionalDetails;
+  return additionalDetails;
+}
+
+// adds a single item to local storage, if it already exists the additionalDetails is incremented
 function addToCart(id: string, additionalDetails?: string) {
   if (
     localStorage.getItem("cartCount") === null ||
@@ -125,4 +136,5 @@ export {
   incrementItem,
   decrementItem,
   getItemQuantity,
+  getItemAdditionalDetails,
 };

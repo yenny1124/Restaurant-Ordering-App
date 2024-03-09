@@ -2,23 +2,29 @@ import "./cartitem.css";
 import { ItemType } from "@/app/types";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { decrementItem, incrementItem } from "@/app/services/cartservices";
+import {
+  decrementItem,
+  getItemAdditionalDetails,
+  incrementItem,
+} from "@/app/services/cartservices";
 import { getItemQuantity } from "@/app/services/cartservices";
 export default function CartItem(props: { item: ItemType; quantity: number }) {
   const [itemQuantity, setItemQuantity] = useState(0);
+  const [additionalDetails, setAdditionalDetails] = useState("");
 
   // correctly render when local storage state changes
   useEffect(() => {
-    cartCountListener();
-    window.addEventListener("storage", () => {
-      setItemQuantity(getItemQuantity(props.item._id));
-    });
-
+    wrapperListener();
+    window.addEventListener("storage", wrapperListener);
     return () => {
-      window.removeEventListener("storage", cartCountListener);
+      window.removeEventListener("storage", wrapperListener);
     };
-  }, [itemQuantity]);
+  }, [itemQuantity, additionalDetails]);
 
+  const wrapperListener = () => {
+    cartCountListener();
+    textareaListener();
+  };
   const cartCountListener = () => {
     let stringItem = localStorage.getItem(`cart-item${props.item._id}`);
     if (stringItem === null) {
@@ -28,6 +34,13 @@ export default function CartItem(props: { item: ItemType; quantity: number }) {
     let objectItem = JSON.parse(stringItem);
     let quantity = objectItem.quantity;
     setItemQuantity(quantity);
+  };
+  const textareaListener = () => {
+    let details = getItemAdditionalDetails(props.item._id);
+    if (details !== null && details !== undefined) {
+      setAdditionalDetails(details);
+      console.log(details);
+    }
   };
 
   return (
@@ -44,6 +57,11 @@ export default function CartItem(props: { item: ItemType; quantity: number }) {
         <div className="cart-item-info">
           <h2>{`${props.item.name} x${props.quantity}`}</h2>
           <p>{`${props.item.prices}`}</p>
+          {additionalDetails && !(additionalDetails == "") && (
+            <p style={{ color: "grey" }}>
+              Additional Details: {additionalDetails}
+            </p>
+          )}
         </div>
       </div>
       <div className="cart-item-quantity-holder">
