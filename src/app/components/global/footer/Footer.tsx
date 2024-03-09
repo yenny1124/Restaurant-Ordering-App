@@ -45,6 +45,13 @@ export default function Footer() {
 
       <div className="copyright">
         <p>&copy;All Rights Reserved By Rolls and Rolls </p>
+        <a
+          href="https://www.flaticon.com/free-icons/sushi"
+          title="sushi icons"
+          style={{ color: "black" }}
+        >
+          Sushi icons created by Freepik - Flaticon
+        </a>
       </div>
     </footer>
   );
