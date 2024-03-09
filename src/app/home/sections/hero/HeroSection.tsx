@@ -19,7 +19,7 @@ export default function HeroSection() {
             <div className="roll1">Rolls&nbsp;&&nbsp;Rolls</div>
           </div>
         </h1>
-        <Image src="/sushi.png" width={250} height={250} alt="" />
+        <Image src="/sushiicon.png" width={250} height={250} alt="" />
         <p className={`${architectsDaughter.className} special-paragraph`}>
           Experience
         </p>
@@ -28,7 +28,7 @@ export default function HeroSection() {
           <br />
           New Journey of Flavors!
         </p>
-        <Link href="/order-now" className="button-lg">
+        <Link href="/menu" className="button-lg">
           Order Now!
         </Link>
       </div>

@@ -35,7 +35,11 @@ export default function Footer() {
           >
             Contacts
           </h1>
-          <p>put phone number here and email here</p>
+          <p>
+            (425) 454-4313
+            <br />
+            powermaju87@gmail.com
+          </p>
         </div>
       </div>
 

@@ -4,7 +4,7 @@
   height: calc(var(--main-navbar-height) * var(--main-navbar-ratio));
   background-color: var(--background-color-2);
   position: relative;
-  background-image: url("/nigiri.png");
+  background-image: url("/yay.png");
   /*
    NEED TO ADD ATTRIBUTION FROM HERE LATERhttps://www.flaticon.com/free-icon/sushi_2252075?related_id=2252071&origin=search
     */
@@ -23,7 +23,7 @@ svg {
       transform: translateX(0%);
     }
     50% {
-      transform: translateX(10%);
+      transform: translateX(5%);
     }
     100% {
       transform: translateX(0%);
@@ -37,7 +37,7 @@ svg {
       transform: translateX(0%);
     }
     50% {
-      transform: translateX(50%);
+      transform: translateX(12.5%);
     }
     100% {
       transform: translateX(0%);
@@ -51,7 +51,7 @@ svg {
       transform: translateX(0%);
     }
     50% {
-      transform: translateX(25%);
+      transform: translateX(12.5%);
     }
     100% {
       transform: translateX(0%);

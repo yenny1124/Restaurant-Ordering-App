@@ -24,7 +24,7 @@ export default function MenuItem() {
   let itemImage = (
     <div
       className="menu-item-image"
-      style={{ backgroundImage: "url(sushi.png)" }}
+      style={{ backgroundImage: "url(tamago.png)" }}
     ></div>
   );
 
