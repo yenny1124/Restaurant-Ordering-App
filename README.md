@@ -21,15 +21,16 @@ The About page is incomplete at this time.
 
 **Instructions to run this project locally**  
 git clone https://github.com/yenny1124/Restaurant-Ordering-App.git  
-cd .\Restaurant-Ordering-App\
 Open up two terminals, so that you can run the frontend and backend. 
   
 To run the frontend:  
+cd .\Restaurant-Ordering-App\
 cd .\frontend\
 npm i   
 npm run dev  
   
 To run the backend:  
+cd .\Restaurant-Ordering-App\
 cd .\backend\
 npm i   
 npm start  
