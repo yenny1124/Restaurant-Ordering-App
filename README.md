@@ -17,7 +17,7 @@ The reservations and placed orders are not acted upon in the real-world; this wa
 Sessions are currently local to the browser, meaning there are no accounts or authentication. Cart data which needs to be persistent is handled through local storage.  
 The About page is incomplete at this time.
 
-Live Demo: https://rollsandrollssushi.netlify.app/
+Live Demo: https://rollsandrollssushi.netlify.app/home
 
 Instructions to run this project locally  
 git clone https://github.com/yenny1124/Restaurant-Ordering-App.git  
