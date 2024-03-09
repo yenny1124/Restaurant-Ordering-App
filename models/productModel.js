@@ -23,7 +23,7 @@ const productSchema = new mongoose.Schema({
     // Add a reference to CategoryModel
     category: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Category', // Ensure this matches your Category model's name
+        ref: 'Category', // Ensure this matches the Category model's name
         required: true,
     },
 },
