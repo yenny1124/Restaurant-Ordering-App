@@ -1,10 +1,8 @@
 import { CategoryType, ItemType, CartItemType } from "../types";
-
+import { backendHostName } from "../backendhostname";
 const fetchCategories = async () => {
   try {
-    const response = await fetch(
-      "https://restaurant-ecommerce.onrender.com/api/get/categories"
-    ); // Adjust URL as needed
+    const response = await fetch(`${backendHostName}/api/get/categories`); // Adjust URL as needed
     const data = await response.json();
     // console.log(data); // to debug
     return data;
@@ -25,7 +23,7 @@ const fetchProductsByCategory = async (
   });
   try {
     if (categoryId == "") throw new Error();
-    let url = `https://restaurant-ecommerce.onrender.com/api/get/products/category/${categoryId}`;
+    let url = `${backendHostName}/api/get/products/category/${categoryId}`;
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -52,7 +50,7 @@ const fetchCartItems = async () => {
       if (objectValue === undefined) return [];
 
       response = await fetch(
-        `https://restaurant-ecommerce.onrender.com/api/get/product/${objectValue._id}`
+        `${backendHostName}/api/get/product/${objectValue._id}`
       );
 
       if (!response.ok) {

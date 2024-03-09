@@ -2,6 +2,7 @@
 import "./booktable.css";
 import Map from "../components/global/map/Map";
 import { ChangeEvent, FormEvent, useState } from "react";
+import { backendHostName } from "../backendhostname";
 export default function BookTable() {
   const [formData, setFormData] = useState({
     name: "",
@@ -29,16 +30,13 @@ export default function BookTable() {
     };
 
     try {
-      const response = await fetch(
-        "https://restaurant-ecommerce.onrender.com/api/save/reservation",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(reservationData),
-        }
-      );
+      const response = await fetch(`${backendHostName}/api/save/reservation`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reservationData),
+      });
 
       if (!response.ok) {
         setSubmissionStatus(2);

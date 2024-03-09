@@ -8,6 +8,7 @@ import "./checkout.css";
 import { clearCart, localCartRefresh } from "../services/cartservices";
 import { useRouter } from "next/navigation";
 import { fetchCartItems } from "../services/fetchservices";
+import { backendHostName } from "../backendhostname";
 export default function Checkout() {
   const router = useRouter();
   const [cartItems, setCartItems] = useState<Array<CartItemType>>([]);
@@ -55,16 +56,13 @@ export default function Checkout() {
         throw new Error("Not a valid cart");
       }
 
-      const response = await fetch(
-        "https://restaurant-ecommerce.onrender.com/api/save/order",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(orderData),
-        }
-      );
+      const response = await fetch(`${backendHostName}/api/save/order`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
 
       if (!response.ok) {
         throw new Error("Failed to submit order");
